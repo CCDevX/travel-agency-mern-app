@@ -18,6 +18,8 @@ const tripSchema = new Schema(
   { timestamps: true }
 );
 
-const Trip = mongoose.model("Trip", tripSchema);
+// const Trip = mongoose.model("Trip", tripSchema);
+
+const Trip = mongoose.models.Trip || mongoose.model("Trip", tripSchema);
 
 module.exports = Trip;
