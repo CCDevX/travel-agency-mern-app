@@ -2,23 +2,37 @@ const { StatusCodes } = require("http-status-codes");
 const Trip = require("../models/trip");
 const { categoryCodes, tags } = require("../helpers/data");
 const path = require("path");
+const { logger } = require("../utils/logger");
 const fs = require("fs").promises;
 
 const getAll = async (req, res) => {
+  // Extract query parameters from the request
   const params = req.query;
+
+  // Prepare an object to store query filters
   let formattedParams = {};
+
+  // Filter by region if the value is not "0"
   if (params.region && params.region !== "0") {
     formattedParams.region = parseInt(params.region);
   }
+
+  // Filter by duration if the value is not "0"
   if (params.duration && params.duration !== "0") {
     formattedParams.duration = parseInt(params.duration);
   }
+
+  // Filter by town name (case-insensitive partial match)
   if (params.town) {
     formattedParams.town = { $regex: params.town, $options: "i" };
   }
+
+  // Filter by maximum adult price
   if (params.price) {
     formattedParams.adultPrice = { $lte: params.price };
   }
+
+  // Filter by category name based on a numeric code
   if (params.category && params.category !== "0") {
     const category = categoryCodes.find(
       (cat) => cat.code === parseInt(params.category)
@@ -27,17 +41,24 @@ const getAll = async (req, res) => {
       formattedParams.category = category.name;
     }
   }
+
+  // Filter by tag name based on a numeric code
   if (params.tags && params.tags !== "0") {
     const tag = tags.find((tag) => tag.code === parseInt(params.tags));
     if (tag) {
       formattedParams.tags = tag.name;
     }
   }
+
   try {
+    // Search for trips that match the formatted filters
     const trips = await Trip.find(formattedParams);
+
+    // Return the result with a 200 OK status
     return res.status(StatusCodes.OK).send(trips);
   } catch (error) {
-    console.log(error);
+    // Log any errors and return a 500 error response
+    logger.error(error);
     return res
       .status(StatusCodes.INTERNAL_SERVER_ERROR)
       .send("Error while fetching trips");
@@ -46,9 +67,13 @@ const getAll = async (req, res) => {
 
 const getAllBestsellers = async (req, res) => {
   try {
+    // Find all trips where the "tags" array includes "bestseller"
     const trips = await Trip.find({ tags: "bestseller" });
+
+    // Send the list of matching trips with a 200 OK status
     return res.status(StatusCodes.OK).send(trips);
   } catch (error) {
+    // Log the error and send a 500 Internal Server Error response
     console.log(error);
     return res
       .status(StatusCodes.INTERNAL_SERVER_ERROR)
@@ -59,15 +84,23 @@ const getAllBestsellers = async (req, res) => {
 const create = async (req, res) => {
   try {
     const { title } = req.body;
+
+    // If 'title' is missing, return a 400 Bad Request
     if (!title) {
       return res.status(StatusCodes.BAD_REQUEST).send("Missing field(s)");
     }
+
+    // Create a new Trip document in the database using the request body
     const trip = await Trip.create(req.body);
+
+    // Return a 201 Created response with a success message and the created trip
     return res
       .status(StatusCodes.CREATED)
       .json({ message: "Trip created", trip });
   } catch (error) {
-    console.log(error);
+    logger.error(error);
+
+    // Return a 500 Internal Server Error if something goes wrong
     return res
       .status(StatusCodes.INTERNAL_SERVER_ERROR)
       .send("Creation failed");
@@ -75,18 +108,28 @@ const create = async (req, res) => {
 };
 
 const getOne = async (req, res) => {
+  // Extract the ID from the route parameters
   const id = req.params.id;
+
+  // If no ID is provided, return a 400 Bad Request error
   if (!id) {
     return res.status(StatusCodes.BAD_REQUEST).send("No ID provided");
   }
+
   try {
+    // Attempt to find the trip by its ID in the database
     const trip = await Trip.findById(id);
+
+    // If no trip is found, return a 400 Bad Request error
     if (!trip) {
       return res.status(StatusCodes.BAD_REQUEST).send("No match");
     }
+
+    // If the trip is found, return it with a 200 OK status
     return res.status(StatusCodes.OK).send(trip);
   } catch (error) {
-    console.log(error);
+    // If an error occurs (e.g. invalid ID format), log it and return a 500 error
+    logger.error(error);
     return res
       .status(StatusCodes.INTERNAL_SERVER_ERROR)
       .send("Error while retrieving the trip");
@@ -95,17 +138,26 @@ const getOne = async (req, res) => {
 
 const patchOne = async (req, res) => {
   const id = req.params.id;
+
   if (!id) {
     return res.status(StatusCodes.BAD_REQUEST).send("No ID provided");
   }
+
   try {
+    // Attempt to update the trip with the provided data
+    // The 'new: true' option ensures the updated document is returned
     const trip = await Trip.findByIdAndUpdate(id, req.body, { new: true });
+
+    // If no matching trip is found, return a 404 Not Found response
     if (!trip) {
       return res.status(StatusCodes.NOT_FOUND).send("No resource found");
     }
+
+    // Return the updated trip with a 200 OK status
     return res.status(StatusCodes.OK).send(trip);
   } catch (error) {
-    console.log(error);
+    // Log any error and return a 500 Internal Server Error response
+    logger.error(error);
     return res
       .status(StatusCodes.INTERNAL_SERVER_ERROR)
       .send("Error while patching the trip");
@@ -114,17 +166,25 @@ const patchOne = async (req, res) => {
 
 const deleteOne = async (req, res) => {
   const id = req.params.id;
+
   if (!id) {
     return res.status(StatusCodes.BAD_REQUEST).send("No ID provided");
   }
+
   try {
+    // Try to delete the trip by its ID
     const trip = await Trip.findByIdAndDelete(id);
+
+    // If no matching trip is found, return a 404 Not Found response
     if (!trip) {
       return res.status(StatusCodes.NOT_FOUND).send("Nothing to delete");
     }
+
+    // Return the deleted trip with a 200 OK status
     return res.status(StatusCodes.OK).send(trip);
   } catch (error) {
-    console.log(error);
+    // Log any error and return a 500 Internal Server Error response
+    logger.error(error);
     return res
       .status(StatusCodes.INTERNAL_SERVER_ERROR)
       .send("Error while deleting the trip");
@@ -134,18 +194,22 @@ const deleteOne = async (req, res) => {
 const deleteAll = async (req, res) => {
   try {
     const result = await Trip.deleteMany();
+
+    // If no documents were deleted, return a 404 Not Found response
     if (result.deletedCount === 0) {
       return res.status(StatusCodes.NOT_FOUND).send("Nothing to delete");
     }
+
+    // If deletion was successful, return a 200 OK status with a success message
     return res.status(StatusCodes.OK).send("All deleted");
   } catch (error) {
-    console.log(error);
+    // Log any error and return a 500 Internal Server Error response
+    logger.error(error);
     return res
       .status(StatusCodes.INTERNAL_SERVER_ERROR)
       .send("Error while deleting the trips");
   }
 };
-
 const addImages = async (req, res) => {
   const { id } = req.params;
   const files = req.files;
