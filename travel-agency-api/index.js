@@ -11,6 +11,7 @@ const adviserRoutes = require("./routes/adviser.routes");
 const agencyRoutes = require("./routes/agency.routes");
 const tripRoutes = require("./routes/trips.routes.js");
 const authRoutes = require("./routes/auth.routes");
+const profileRoutes = require("./routes/profile.routes");
 
 //Config
 const port = 3000;
@@ -36,6 +37,7 @@ app.use("/advisers", adviserRoutes);
 app.use("/agencies", agencyRoutes);
 app.use("/trips", tripRoutes);
 app.use("/auth", authRoutes);
+app.use("/profile", profileRoutes);
 
 //Catch all
 app.use((req, res) => {
