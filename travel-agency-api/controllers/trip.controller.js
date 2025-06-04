@@ -27,7 +27,7 @@ const getAll = async (req, res) => {
     formattedParams.town = { $regex: params.town, $options: "i" };
   }
 
-  // Filter by maximum adult price
+  // Filter by maximum price
   if (params.price) {
     formattedParams.adultPrice = { $lte: params.price };
   }
@@ -210,51 +210,62 @@ const deleteAll = async (req, res) => {
       .send("Error while deleting the trips");
   }
 };
+
 const addImages = async (req, res) => {
   const { id } = req.params;
   const files = req.files;
 
-  // Get out if no id :
+  // Stop if no trip ID is provided
   if (!id) {
     return res.status(StatusCodes.BAD_REQUEST).send("No id provided. Failure.");
   }
 
-  // Fetch matching adviser :
+  // Fetch the trip from the database using the provided ID
   let trip;
   try {
     trip = await Trip.findById(id);
     if (!trip) {
-      return res.status().send("No trip found. Failure.");
+      return res.status(StatusCodes.NOT_FOUND).send("No trip found. Failure.");
     }
   } catch (error) {
     console.log(error);
     return res
       .status(StatusCodes.INTERNAL_SERVER_ERROR)
-      .send("Error while fetching agency. Failure.");
+      .send("Error while fetching trip. Failure.");
   }
 
-  // Get out if something is wrong :
+  // Stop if there are no uploaded files or no trip found
   if (!files || files.length === 0 || Object.keys(trip).length === 0) {
     return res.status(StatusCodes.BAD_REQUEST).send("No upload/trip. Failure.");
   }
 
-  // Save image in the node fs, and attach it to the correct adviser in db :
+  // Save each image to the filesystem and update the trip's image list
   try {
     await Promise.all(
       files.map(async (file) => {
+        // Build the path where the image will be saved
         const uploadPath = path.join(
           __dirname,
           "../public/images/trips",
           id,
           file.originalname
         );
+
+        // Ensure the target directory exists
         const directory = path.dirname(uploadPath);
         await fs.mkdir(directory, { recursive: true });
+
+        // Write the file to the filesystem
         await fs.writeFile(uploadPath, file.buffer);
+
+        // Add the image filename to the trip's image list
         trip.images.push(file.originalname);
       })
     );
+
+    // Save the updated trip document
     await trip.save();
+
     return res
       .status(StatusCodes.CREATED)
       .send("File(s) attached successfully.");

@@ -9,7 +9,7 @@ const singleFileUploaderMiddleware = (req, res, next) => {
 
   // Call the Multer middleware and handle possible errors
   singleFileUploader(req, res, (error) => {
-    // Handle Multer-specific errors (e.g. file too large, invalid format)
+    // Handle Multer-specific errors
     if (error instanceof multer.MulterError) {
       return res.status(StatusCodes.BAD_REQUEST).json({ error: error.message });
     }

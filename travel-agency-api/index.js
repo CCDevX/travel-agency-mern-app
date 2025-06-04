@@ -3,17 +3,20 @@ const express = require("express");
 const morgan = require("morgan");
 const connectToDatabase = require("./database");
 const bodyParser = require("body-parser");
+const dotenv = require("dotenv");
 
 //Routes
 const orderRoutes = require("./routes/order.routes");
 const adviserRoutes = require("./routes/adviser.routes");
 const agencyRoutes = require("./routes/agency.routes");
 const tripRoutes = require("./routes/trips.routes.js");
+const authRoutes = require("./routes/auth.routes");
 
 //Config
 const port = 3000;
 
 //Init app
+dotenv.config();
 const app = express();
 app.use(morgan("dev"));
 app.use(
@@ -22,6 +25,7 @@ app.use(
   })
 );
 app.use(bodyParser.json());
+app.use(express.static("public"));
 
 //connect to database
 connectToDatabase();
@@ -31,6 +35,7 @@ app.use("/orders", orderRoutes);
 app.use("/advisers", adviserRoutes);
 app.use("/agencies", agencyRoutes);
 app.use("/trips", tripRoutes);
+app.use("/auth", authRoutes);
 
 //Catch all
 app.use((req, res) => {
