@@ -1,0 +1,33 @@
+[{
+  "_id": {
+    "$oid": "67557042e213584906d72bed"
+  },
+  "address": "45 Rue des Fleurs, 75012 Paris, France",
+  "phone": "06 23 45 67 89",
+  "photo": "paris-office.jpg",
+  "title": "HexaTrip Paris",
+  "email": "hexa-paris@gmail.com",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67559ea45c4b62736a03f1a4"
+  },
+  "address": "18 Avenue des Lumières, 69003 Lyon, France",
+  "phone": "04 91 22 33 44",
+  "photo": "lyon-office.jpg",
+  "title": "HexaTrip Lyon",
+  "email": "hexa-lyon@gmail.com",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67559efb5c4b62736a03f1a8"
+  },
+  "address": "72 Boulevard de la Mer, 13008 Marseille, France",
+  "phone": "07 89 12 34 56",
+  "photo": "marseille-office.jpg",
+  "title": "HexaTrip Marseille",
+  "email": "hexa-marseille@gmail.com",
+  "__v": 0
+}]

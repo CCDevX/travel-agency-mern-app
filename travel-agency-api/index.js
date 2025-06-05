@@ -1,45 +1,74 @@
-// Load environment variables
-require("dotenv").config();
-
 const express = require("express");
 const morgan = require("morgan");
-const helmet = require("helmet");
-const cors = require("cors");
 const bodyParser = require("body-parser");
+const dotenv = require("dotenv");
+const helmet = require("helmet");
+const rateLimit = require("express-rate-limit");
+const cors = require("cors");
+const { StatusCodes } = require("http-status-codes");
 
 const connectToDatabase = require("./database");
 const { logger } = require("./utils/logger");
 
-// Config
-const corsOptions = require("./config/cors.config");
-const rateLimiter = require("./config/rateLimiter.config");
+// Load environment variables from .env file
+dotenv.config();
 
+// Initialize Express app
 const app = express();
 const port = process.env.PORT || 3000;
+
+// Middleware: Logging HTTP requests
+app.use(morgan("dev"));
+
+// Middleware: Secure HTTP headers
+app.use(helmet());
+
+// Middleware: Parse incoming request bodies
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+
+// Middleware: Serve static files from /public
+app.use(express.static("public"));
+
+// Rate Limiting: Prevent abuse by limiting repeated requests
+const limiter = rateLimit({
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  max: 100, // limit each IP to 100 requests per window
+  standardHeaders: true,
+  legacyHeaders: false,
+  handler: (req, res) => {
+    res.status(StatusCodes.TOO_MANY_REQUESTS).json({
+      status: StatusCodes.TOO_MANY_REQUESTS,
+      error: "Too many requests",
+    });
+  },
+});
+app.use(limiter);
+
+// CORS Configuration
+const allowedOrigins = [
+  "https://production-site.com",
+  "http://localhost:5173",
+  "http://localhost:3000",
+];
+
+const corsOptions = {
+  origin: (origin, callback) => {
+    if (!origin || allowedOrigins.includes(origin)) {
+      return callback(null, true);
+    }
+    callback(new Error("Not allowed by CORS"));
+  },
+  methods: ["GET", "POST", "PATCH", "DELETE"],
+  allowedHeaders: ["Content-Type", "Authorization", "X-Forwarded-For"],
+  credentials: true,
+};
+app.use(cors(corsOptions));
 
 // Connect to MongoDB
 connectToDatabase();
 
-// Middleware: Logs HTTP requests
-app.use(morgan("dev"));
-
-// Middleware: Security headers
-app.use(helmet());
-
-// Middleware: Rate limiting
-app.use(rateLimiter);
-
-// Middleware: CORS
-app.use(cors(corsOptions));
-
-// Middleware: Parse request body
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
-
-// Middleware: Serve static files
-app.use(express.static("public"));
-
-// Routes
+// Route Modules
 app.use("/orders", require("./routes/order.routes"));
 app.use("/advisers", require("./routes/adviser.routes"));
 app.use("/agencies", require("./routes/agency.routes"));
@@ -50,10 +79,10 @@ app.use("/create-checkout-session", require("./routes/checkout.routes"));
 
 // Catch-all route for undefined endpoints
 app.use((req, res) => {
-  res.status(404).send("Page not found");
+  res.status(StatusCodes.NOT_FOUND).send("Page not found");
 });
 
-// Start server
+// Start the server
 app.listen(port, () => {
-  logger.info(`Server is running on port ${port}`);
+  logger.info(` Server is running on port ${port}`);
 });

@@ -1,0 +1,875 @@
+[{
+  "_id": {
+    "$oid": "67489c66d636affe35fcebab"
+  },
+  "title": "Hôtel Élyséum Lyon",
+  "summary": "Dive into the heart of Lyon, France's gastronomic capital and a UNESCO World Heritage gem. With its cobblestone streets in the Old Town, mysterious traboules, and charming banks of the Rhône and Saône rivers, the city offers an enchanting setting for every visitor. Marvel at the splendor of the Basilica of Fourvière, soak in the lively atmosphere of Place Bellecour, and let yourself be seduced by the unique flavors of bouchons lyonnais. Whether you're a history buff, culture enthusiast, or foodie, Lyon is a destination that will awaken all your senses!",
+  "region": 1,
+  "town": "Lyon",
+  "desc": "",
+  "category": "short",
+  "images": [
+    "lyon1.jpg",
+    "lyon2.jpg",
+    "lyon3.jpg",
+    "lyon4.jpg",
+    "lyon5.jpg",
+    "lyon6.jpg",
+    "lyon-bar.jpg",
+    "lyon-restaurant.jpg",
+    "lyon-gym.jpg",
+    "lyon-spa.jpg",
+    "lyon-bath.jpg",
+    "lyon-bed.jpg"
+  ],
+  "duration": 2,
+  "adultPrice": 5000,
+  "youngPrice": 1200,
+  "createdAt": {
+    "$date": "2024-11-28T16:37:58.879Z"
+  },
+  "updatedAt": {
+    "$date": "2024-12-07T12:30:39.719Z"
+  },
+  "__v": 12,
+  "tags": [
+    "bestseller"
+  ]
+},
+{
+  "_id": {
+    "$oid": "67489cb3d636affe35fcebae"
+  },
+  "title": "Château Lumière Dijon",
+  "summary": "Dive into the heart of Dijon, the capital of Burgundy and a true treasure of French heritage. Stroll through its elegant medieval streets, admire its beautifully preserved mansions, and follow the famous Owl Trail that leads visitors through its historical gems. Marvel at the Palace of the Dukes and States of Burgundy, savor the unique flavors of Dijon mustard, and indulge in the prestigious wines of the region. Combining history, culture, and gastronomy, Dijon is an irresistible destination just waiting to captivate you!",
+  "region": 2,
+  "town": "Dijon",
+  "desc": "",
+  "category": "short",
+  "images": [
+    "dijon1.jpg",
+    "dijon2.jpg",
+    "dijon3.jpg",
+    "dijon4.jpg",
+    "dijon-gym.jpg",
+    "dijon-food.jpg",
+    "dijon-restaurant.jpg",
+    "dijon-bath.jpg",
+    "dijon-bed.jpg"
+  ],
+  "duration": 3,
+  "adultPrice": 2800,
+  "youngPrice": 1100,
+  "createdAt": {
+    "$date": "2024-11-28T16:39:15.061Z"
+  },
+  "updatedAt": {
+    "$date": "2024-12-07T12:32:55.761Z"
+  },
+  "__v": 9,
+  "tags": [
+    "kids"
+  ]
+},
+{
+  "_id": {
+    "$oid": "67489ce9d636affe35fcebb0"
+  },
+  "title": "Manoir des Horizons Rennes",
+  "summary": "Dive into the heart of Rennes, the capital of Brittany, where modernity and heritage blend in perfect harmony. Wander through the cobbled streets of the historic center, admire the colorful half-timbered houses, and be captivated by the elegance of the Place du Parlement de Bretagne. Enjoy the city’s vibrant cultural scene, from festivals and lively markets like Place des Lices to its dynamic arts scene. Don’t miss tasting Breton specialties, such as savory galettes and local cider. With its unique charm and welcoming atmosphere, Rennes promises an unforgettable getaway!",
+  "region": 3,
+  "town": "Rennes",
+  "desc": "",
+  "category": "short",
+  "images": [
+    "rennes1.jpg",
+    "rennes2.jpg",
+    "rennes3.jpg",
+    "rennes4.jpg",
+    "rennes-bed.jpg",
+    "rennes-food.jpg",
+    "rennes-restaurant.jpg",
+    "rennes-bath.jpg"
+  ],
+  "duration": 2,
+  "adultPrice": 8000,
+  "youngPrice": 2000,
+  "createdAt": {
+    "$date": "2024-11-28T16:40:09.954Z"
+  },
+  "updatedAt": {
+    "$date": "2024-12-07T12:34:36.180Z"
+  },
+  "__v": 8,
+  "tags": [
+    "families"
+  ]
+},
+{
+  "_id": {
+    "$oid": "67489d3bd636affe35fcebb2"
+  },
+  "title": "Hôtel Belle Rive Tours",
+  "summary": "Dive into the heart of Tours, the capital of the Loire Valley châteaux and a city of timeless charm. Stroll through the picturesque streets of the Old Town, where half-timbered houses and lively terraces invite you to relax. Marvel at the majestic Saint-Gatien Cathedral and explore the historical treasures of the Museum of Fine Arts. Nestled in an exceptional wine region, Tours offers unique culinary experiences, from renowned wines to local specialties. Combining history, art de vivre, and gastronomy, Tours is the perfect destination for an unforgettable getaway in the Loire Valley!",
+  "town": "Tours",
+  "desc": "",
+  "category": "short",
+  "images": [
+    "tours1.jpg",
+    "tours2.jpg",
+    "tours3.jpg",
+    "tours4.jpg",
+    "tours5.jpg",
+    "tours-gym.jpg",
+    "tours-bed.jpg",
+    "tours-restaurant.jpg",
+    "tours-bath.jpg"
+  ],
+  "duration": 4,
+  "adultPrice": 3300,
+  "youngPrice": 1500,
+  "createdAt": {
+    "$date": "2024-11-28T16:41:31.233Z"
+  },
+  "updatedAt": {
+    "$date": "2024-12-07T12:36:47.717Z"
+  },
+  "__v": 9,
+  "region": 4,
+  "tags": [
+    "kids"
+  ]
+},
+{
+  "_id": {
+    "$oid": "67489d88d636affe35fcebb5"
+  },
+  "title": "Villa Maréa Ajaccio",
+  "summary": "Dive into the heart of Ajaccio, the jewel of Corsica and the birthplace of Napoleon Bonaparte. Bordered by turquoise waters and surrounded by majestic mountains, this Mediterranean city will captivate you with its authentic charm. Wander through its lively streets, visit the Emperor’s birthplace, and marvel at the beauty of the Cathedral of Notre-Dame-de-l'Assomption. Enjoy pristine beaches, savor Corsican specialties like brocciu and fiadone, and witness an unforgettable sunset over the Sanguinaires Islands. Blending history, nature, and the art of living, Ajaccio is a breathtaking destination!",
+  "desc": "",
+  "category": "short",
+  "images": [
+    "ajaccio1.jpg",
+    "ajaccio2.jpg",
+    "ajaccio3.jpg",
+    "ajaccio4.jpg",
+    "aja-bed.jpg",
+    "aja-bath.jpg",
+    "aja-restaurant.jpg",
+    "aja-chief.jpg"
+  ],
+  "duration": 3,
+  "adultPrice": 18000,
+  "youngPrice": 2500,
+  "createdAt": {
+    "$date": "2024-11-28T16:42:48.811Z"
+  },
+  "updatedAt": {
+    "$date": "2024-12-07T12:38:15.482Z"
+  },
+  "__v": 8,
+  "region": 5,
+  "town": "Ajaccio",
+  "tags": [
+    "couples"
+  ]
+},
+{
+  "_id": {
+    "$oid": "67489e60d636affe35fcebb9"
+  },
+  "title": "Le Jardin des Rives Strasbourg",
+  "summary": "Dive into the heart of Strasbourg, a city where history, culture, and modernity meet with elegance. Explore the UNESCO World Heritage-listed Old Town, with its picturesque streets, half-timbered houses, and the majestic Notre-Dame Cathedral, a masterpiece of Gothic architecture. Stroll along the canals of La Petite France, a charming quarter that feels like a postcard, and indulge in the rich Alsatian cuisine, from choucroute and flammekueche to refined wines. A true European crossroads, Strasbourg will captivate you with its unique atmosphere and cosmopolitan spirit.",
+  "region": 6,
+  "town": "Strasbourg",
+  "desc": "",
+  "category": "short",
+  "images": [
+    "strasbourg1.jpg",
+    "strasbourg2.jpg",
+    "strasbourg3.jpg",
+    "strasbourg4.jpg",
+    "stras-bed.jpg",
+    "stras-bath.jpg",
+    "stras-restaurant.jpg"
+  ],
+  "duration": 2,
+  "adultPrice": 28000,
+  "youngPrice": 4000,
+  "createdAt": {
+    "$date": "2024-11-28T16:46:24.453Z"
+  },
+  "updatedAt": {
+    "$date": "2024-12-07T12:39:55.398Z"
+  },
+  "__v": 7,
+  "tags": [
+    "bestseller"
+  ]
+},
+{
+  "_id": {
+    "$oid": "67489eadd636affe35fcebbb"
+  },
+  "title": "L'Opéra des Flâneries Lille",
+  "summary": "Dive into the heart of Lille, a vibrant and welcoming city where history, culture, and the art of living blend seamlessly. Explore the Grand Place, framed by majestic buildings, and be enchanted by the beauty of the Opera House and the Palais des Beaux-Arts. Wander through the lively streets of the Old Town, with its cobbled alleys, trendy shops, and cozy brasseries. Be sure to taste the local specialties like moules-frites and the famous northern beer. With its friendly atmosphere and rich heritage, Lille is the perfect destination for an unforgettable getaway in Hauts-de-France!",
+  "region": 7,
+  "town": "Lille",
+  "desc": "",
+  "category": "short",
+  "images": [
+    "lille1.jpg",
+    "lille2.jpg",
+    "lille3.jpg",
+    "lille4.jpg",
+    "lille5.jpg",
+    "lille-bed.jpg",
+    "lille-spa.jpg",
+    "lille-food.jpg",
+    "lille-bath.jpg"
+  ],
+  "duration": 3,
+  "adultPrice": 13000,
+  "youngPrice": 500,
+  "createdAt": {
+    "$date": "2024-11-28T16:47:41.497Z"
+  },
+  "updatedAt": {
+    "$date": "2024-12-07T12:41:17.008Z"
+  },
+  "__v": 9,
+  "tags": [
+    "families"
+  ]
+},
+{
+  "_id": {
+    "$oid": "6749ab8e1f86b3c4a88c9025"
+  },
+  "title": "Le Palais de la Lune Paris",
+  "summary": "Dive into the heart of Paris, the City of Light, where elegance and creativity shine at every corner. Explore iconic landmarks like the Eiffel Tower, the Louvre, and Notre-Dame Cathedral, then wander along the Seine, between historic bridges and lively quays. Discover legendary neighborhoods such as Montmartre, the Marais, and Saint-Germain-des-Prés, where art, fashion, and gastronomy blend with refinement. Savor the delights of Parisian pastries, from a croissant for breakfast to a delicious crème brûlée for dessert. With its unmatched atmosphere, Paris promises you an unforgettable and magical experience.",
+  "region": 8,
+  "town": "Paris",
+  "desc": "",
+  "category": "short",
+  "images": [
+    "paris1.jpg",
+    "paris2.jpg",
+    "paris3.jpg",
+    "paris4.jpg",
+    "paris5.jpg",
+    "paris6.jpg",
+    "paris-spa.jpg",
+    "paris-gym.jpg",
+    "paris-bufet.jpg",
+    "paris-restaurant.jpg"
+  ],
+  "duration": 3,
+  "adultPrice": 22000,
+  "youngPrice": 500,
+  "createdAt": {
+    "$date": "2024-11-29T11:54:54.470Z"
+  },
+  "updatedAt": {
+    "$date": "2024-12-07T12:43:12.594Z"
+  },
+  "__v": 10,
+  "tags": [
+    "bestseller"
+  ]
+},
+{
+  "_id": {
+    "$oid": "6749ac191f86b3c4a88c9027"
+  },
+  "title": "Hôtel Saint-Romain Rouen",
+  "summary": "Dive into the heart of Rouen, a city with a thousand historical treasures, where the past blends harmoniously with the present. Discover the majestic Notre-Dame Cathedral, immortalized in famous paintings by Monet, and wander through the cobblestone streets of the city center, lined with half-timbered houses. Explore the Old Market Square, where Joan of Arc was burned at the stake, and be enchanted by the medieval ambiance of the city. Rouen is also a gastronomic hub, where you can savor Norman specialties such as Camembert, seafood, and cider. With its history, culture, and culinary delights, Rouen is a destination full of charm and discovery.",
+  "region": 9,
+  "town": "Rouen",
+  "desc": "",
+  "category": "short",
+  "images": [
+    "rouen1.jpg",
+    "rouen2.jpg",
+    "rouen3.jpg",
+    "rouen4.jpg",
+    "rouen5.jpg",
+    "rouen6.jpg",
+    "rouen-food.jpg",
+    "rouen-bath.jpg",
+    "rouen-bed.jpg"
+  ],
+  "duration": 3,
+  "adultPrice": 7000,
+  "youngPrice": 500,
+  "createdAt": {
+    "$date": "2024-11-29T11:57:13.332Z"
+  },
+  "updatedAt": {
+    "$date": "2024-12-07T12:44:31.055Z"
+  },
+  "__v": 9,
+  "tags": []
+},
+{
+  "_id": {
+    "$oid": "6749ac861f86b3c4a88c9029"
+  },
+  "title": "Le Clos des Vins Bordeaux",
+  "summary": "Dive into the heart of Bordeaux, the jewel of the Southwest, where elegant classical architecture meets the vibrancy of a city full of energy. Stroll along the Garonne River, admire Place de la Bourse and its stunning water mirror, a true outdoor masterpiece. Explore the lively streets of the city center, filled with refined boutiques, trendy cafés, and gourmet restaurants. Bordeaux is also a paradise for wine lovers, with its prestigious vineyards and must-try tastings. Combining history, art of living, and gastronomy, Bordeaux offers you an unforgettable experience that’s both chic and welcoming.",
+  "region": 10,
+  "town": "Bordeaux",
+  "desc": "",
+  "category": "short",
+  "images": [
+    "bordeaux1.jpg",
+    "bordeaux2.jpg",
+    "bordeaux3.jpg",
+    "bordeaux4.jpg",
+    "bordeaux5.jpg",
+    "bordeaux6.jpg",
+    "bor-billiard.jpg",
+    "bor-bed.jpg",
+    "bor-bath.jpg",
+    "bor-restaurant.jpg",
+    "bor-gym.jpg",
+    "bor-food.jpg",
+    "bor-spa.jpg"
+  ],
+  "duration": 3,
+  "adultPrice": 28000,
+  "youngPrice": 500,
+  "createdAt": {
+    "$date": "2024-11-29T11:59:02.010Z"
+  },
+  "updatedAt": {
+    "$date": "2024-12-07T12:47:19.327Z"
+  },
+  "__v": 13,
+  "tags": [
+    "couples"
+  ]
+},
+{
+  "_id": {
+    "$oid": "6749acda1f86b3c4a88c902b"
+  },
+  "title": "La Cité des Vents Toulouse",
+  "summary": "Dive into the heart of Toulouse, the Pink City, where red brick architecture and the sunny charm of the Southwest create a unique and welcoming atmosphere. Discover the majestic Place du Capitole, the vibrant heart of the city, and take a stroll along the Canal du Midi, a UNESCO World Heritage site. Explore the picturesque streets of the historic center, with its Romanesque churches and lively squares. Toulouse is also the birthplace of aerospace, with fascinating museums like the Cité de l'Espace. Enjoy the local cuisine, with specialties such as cassoulet and foie gras, and be charmed by the warm hospitality of the Toulousains. Combining history, culture, and gastronomy, Toulouse promises you an unforgettable experience.",
+  "region": 11,
+  "town": "Toulouse",
+  "desc": "",
+  "category": "short",
+  "images": [
+    "toulouse1.jpg",
+    "toulouse2.jpg",
+    "toulouse3.jpg",
+    "toulouse4.jpg",
+    "toulouse5.jpg",
+    "toul-restaurant.jpg",
+    "toul-bed.jpg",
+    "toul-bath.jpg"
+  ],
+  "duration": 3,
+  "adultPrice": 1000,
+  "youngPrice": 500,
+  "createdAt": {
+    "$date": "2024-11-29T12:00:26.645Z"
+  },
+  "updatedAt": {
+    "$date": "2024-12-07T12:48:39.141Z"
+  },
+  "__v": 8,
+  "tags": []
+},
+{
+  "_id": {
+    "$oid": "6749ad341f86b3c4a88c902d"
+  },
+  "title": "Le Manoir des Dunes Nantes",
+  "summary": "Dive into the heart of Nantes, a vibrant city full of surprises, where history and innovation meet in perfect harmony. Stroll along the Loire estuary, discover the Château des Ducs de Bretagne, and explore the historic district of the city, with its lively streets and picturesque squares. Nantes is also a city of art and culture, with iconic spots like the Machines of the Isle, where you can ride a giant elephant. Don’t miss out on the local culinary delights, from fresh seafood to the famous gâteau nantais and muscadet wine. Nantes offers you a modern yet charming experience, perfect for an unforgettable getaway.",
+  "region": 12,
+  "town": "Nantes",
+  "desc": "",
+  "category": "short",
+  "images": [
+    "nantes1.jpg",
+    "nantes2.jpg",
+    "nantes3.jpg",
+    "nantes4.jpg",
+    "nant-gym.jpg",
+    "nant-bed.jpg",
+    "nant-bath.jpg"
+  ],
+  "duration": 3,
+  "adultPrice": 12000,
+  "youngPrice": 500,
+  "createdAt": {
+    "$date": "2024-11-29T12:01:56.133Z"
+  },
+  "updatedAt": {
+    "$date": "2024-12-07T12:50:07.008Z"
+  },
+  "__v": 7,
+  "tags": []
+},
+{
+  "_id": {
+    "$oid": "6749ad991f86b3c4a88c902f"
+  },
+  "title": "L'Horizon Méditerranéen Marseille",
+  "summary": "Dive into the heart of Marseille, the Phocaean city, where the Mediterranean Sea meets a rich heritage and vibrant culture. Explore the Old Port, the true soul of the city, and be enchanted by the breathtaking view of Château d'If and the Calanques. Hike up to the Basilica of Notre-Dame-de-la-Garde for a panoramic view of the city and its surroundings. Marseille is also a gastronomic crossroads, with delights like bouillabaisse, tapenade, and pastis, not to mention its lively markets. A city of history and encounters, Marseille invites you to discover its unique energy and warm hospitality.",
+  "region": 13,
+  "town": "Marseille-Aix-en-Provence",
+  "desc": "",
+  "category": "short",
+  "images": [
+    "marseille1.jpg",
+    "marseille2.jpg",
+    "marseille3.jpg",
+    "marseille4.jpg",
+    "marseille5.jpg",
+    "marseille6.jpg",
+    "mars-spa.jpg",
+    "mars-bath.jpg",
+    "mars-bed.jpg",
+    "mars-bar.jpg",
+    "mars-gym.jpg",
+    "mars-restaurant.jpg"
+  ],
+  "duration": 3,
+  "adultPrice": 19000,
+  "youngPrice": 500,
+  "createdAt": {
+    "$date": "2024-11-29T12:03:37.631Z"
+  },
+  "updatedAt": {
+    "$date": "2024-12-07T12:51:39.520Z"
+  },
+  "__v": 12,
+  "tags": [
+    "couples",
+    "beach"
+  ]
+},
+{
+  "_id": {
+    "$oid": "67532d06942ac91b165b5275"
+  },
+  "title": "Hôtel Alpin Lumière",
+  "summary": "Nestled at the heart of stunning mountain ranges, Grenoble is a vibrant blend of nature, culture, and innovation. Stroll through its charming old town, where cobblestone streets lead to bustling squares filled with cafés and boutiques. Take the iconic cable car up to the Bastille for breathtaking panoramic views, or explore the city's renowned museums and galleries. Whether you're hiking in the surrounding Alps, savoring local delicacies like gratin dauphinois, or simply soaking up the lively atmosphere, Grenoble offers something for every traveler. Adventure and elegance meet here—are you ready to experience it?",
+  "region": 1,
+  "town": "Grenoble",
+  "desc": "",
+  "category": "long",
+  "images": [
+    "grenoble-1.jpg",
+    "grenoble-2.jpg",
+    "grenoble-3.jpg",
+    "grenoble-4.jpg",
+    "gre-bed.jpg",
+    "gre-bath.jpg",
+    "gre-bar.jpg",
+    "gre-bufet.jpg"
+  ],
+  "duration": 8,
+  "adultPrice": 1500,
+  "youngPrice": 500,
+  "tags": [
+    "kids",
+    "families",
+    "deal",
+    "mountains"
+  ],
+  "createdAt": {
+    "$date": "2024-12-06T16:57:42.439Z"
+  },
+  "updatedAt": {
+    "$date": "2024-12-06T17:10:35.667Z"
+  },
+  "__v": 8
+},
+{
+  "_id": {
+    "$oid": "67532d4e942ac91b165b5278"
+  },
+  "title": "Hôtel Lac et Lumière",
+  "summary": "With its crystal-clear lake framed by majestic mountains, Annecy is a picture-perfect destination that feels like a dream. Wander through the enchanting canals of the old town, lined with pastel-colored houses and flower-filled balconies. Relax on the shores of Lake Annecy, Europe's purest, or glide across its turquoise waters by boat or paddleboard. Indulge in the region’s delectable cuisine, from creamy tartiflette to sweet praline pastries. Whether you’re seeking romance, adventure, or serenity, Annecy’s timeless beauty and charm will leave you captivated. Make your escape to this alpine paradise today!",
+  "region": 1,
+  "town": "Annecy",
+  "desc": "",
+  "category": "long",
+  "images": [
+    "annecy-1.jpg",
+    "annecy-2.jpg",
+    "annecy-3.jpg",
+    "annecy-4.jpg",
+    "anne-bed.jpg",
+    "anne-bath.jpg",
+    "anne-restaurant.jpg"
+  ],
+  "duration": 10,
+  "adultPrice": 2000,
+  "youngPrice": 500,
+  "tags": [
+    "kids",
+    "families",
+    "deal",
+    "mountains"
+  ],
+  "createdAt": {
+    "$date": "2024-12-06T16:58:54.166Z"
+  },
+  "updatedAt": {
+    "$date": "2024-12-06T17:18:42.462Z"
+  },
+  "__v": 7
+},
+{
+  "_id": {
+    "$oid": "67532d6b942ac91b165b527b"
+  },
+  "title": "Hôtel Sommet Blanc",
+  "summary": "Set against the awe-inspiring backdrop of Mont Blanc, Chamonix is a paradise for thrill-seekers and nature lovers alike. Whether you're skiing world-class slopes, hiking through pristine alpine meadows, or soaring above the peaks in a cable car, every moment in Chamonix is unforgettable. Stroll through the lively village with its chic boutiques, cozy cafés, and vibrant après-ski scene, or unwind with a hot chocolate by the fire after a day of adventure. From breathtaking vistas to endless outdoor activities, Chamonix is the ultimate destination for those who crave the extraordinary. Your mountain escape starts here!",
+  "region": 1,
+  "town": "Chamonix",
+  "desc": "",
+  "category": "long",
+  "images": [
+    "chamonix-1.jpg",
+    "chamonix-2.jpg",
+    "chamonix-3.jpg",
+    "chamonix-4.jpg",
+    "chamo-bed.jpg",
+    "chamo-bath.jpg",
+    "chamo-bar.jpg",
+    "chamo-bufet.jpg"
+  ],
+  "duration": 10,
+  "adultPrice": 2000,
+  "youngPrice": 500,
+  "tags": [
+    "couples",
+    "deal",
+    "mountains"
+  ],
+  "createdAt": {
+    "$date": "2024-12-06T16:59:23.735Z"
+  },
+  "updatedAt": {
+    "$date": "2024-12-06T17:21:40.854Z"
+  },
+  "__v": 8
+},
+{
+  "_id": {
+    "$oid": "6753363f942ac91b165b52d9"
+  },
+  "title": "Hôtel Soleil & Jardin",
+  "summary": "Bask in the Mediterranean charm of Montpellier, a city where history and modernity blend seamlessly. Wander through the picturesque streets of the historic Écusson district, discover grand squares like the Place de la Comédie, and marvel at architectural wonders like the iconic Arc de Triomphe. With its sun-drenched terraces, vibrant markets, and buzzing cultural scene, Montpellier is a feast for the senses. Just a short drive from stunning beaches and vineyards, it’s the perfect base for exploring the South of France. Come for the sunshine, stay for the charm—Montpellier is calling!",
+  "region": 11,
+  "town": "Montpellier",
+  "desc": "",
+  "category": "long",
+  "images": [
+    "montpellier-1.jpg",
+    "montpellier-2.jpg",
+    "montpellier-3.jpg",
+    "montpellier-4.jpg",
+    "montpellier-5.jpg",
+    "montpellier-6.jpg",
+    "montp-bed.jpg",
+    "montp-gym.jpg",
+    "montp-restaurant.jpg"
+  ],
+  "duration": 7,
+  "adultPrice": 2000,
+  "youngPrice": 500,
+  "tags": [
+    "couples",
+    "beach"
+  ],
+  "createdAt": {
+    "$date": "2024-12-06T17:37:03.342Z"
+  },
+  "updatedAt": {
+    "$date": "2024-12-06T17:45:01.474Z"
+  },
+  "__v": 9
+},
+{
+  "_id": {
+    "$oid": "67533670942ac91b165b52db"
+  },
+  "title": "Hôtel La Cité Royale",
+  "summary": "Immerse yourself in the magic of Carcassonne, a medieval gem that feels like it’s straight out of a storybook. Explore the majestic cité, a UNESCO World Heritage site, with its towering walls, winding cobblestone streets, and the iconic double fortifications. Lose yourself in the charm of its ancient alleys, discover artisan shops, and savor local delights like cassoulet in quaint restaurants. Whether you're captivated by history, awed by panoramic views of the surrounding countryside, or enchanted by the city's timeless atmosphere, Carcassonne offers an unforgettable journey into the past. The adventure awaits—will you answer its call?",
+  "region": 11,
+  "town": "Carcassonne",
+  "desc": "",
+  "category": "long",
+  "images": [
+    "carcassonne-1.jpg",
+    "carcassonne-2.jpg",
+    "carcassonne-3.jpg",
+    "carca-gym.jpg",
+    "carca-spa.jpg",
+    "carca-bufet.jpg",
+    "carca-bath.jpg",
+    "carca-bed.jpg"
+  ],
+  "duration": 9,
+  "adultPrice": 3000,
+  "youngPrice": 1000,
+  "tags": [
+    "couples"
+  ],
+  "createdAt": {
+    "$date": "2024-12-06T17:37:52.805Z"
+  },
+  "updatedAt": {
+    "$date": "2024-12-06T17:48:05.365Z"
+  },
+  "__v": 8
+},
+{
+  "_id": {
+    "$oid": "67533699942ac91b165b52dd"
+  },
+  "title": "Hôtel Les Salins d'Or",
+  "summary": "Step into the enchanting walled town of Aigues-Mortes, where history and nature meet in perfect harmony. Surrounded by salt flats that shimmer in shades of pink and white, this medieval marvel invites you to stroll its ancient streets and explore its perfectly preserved ramparts. Discover local markets, charming boutiques, and the flavors of the Camargue, from fresh seafood to regional wines. Just minutes from the Mediterranean Sea, Aigues-Mortes is your gateway to a world of cultural and natural wonders. Let its unique beauty and rich heritage capture your heart!",
+  "region": 11,
+  "town": "Aigues Mortes",
+  "desc": "",
+  "category": "long",
+  "images": [
+    "aigues-1.jpg",
+    "aigues-2.jpg",
+    "aigues-3.jpg",
+    "aig-bed.jpg",
+    "aig-spa.jpg",
+    "aig-gym.jpg",
+    "aig-restaurant.jpg"
+  ],
+  "duration": 12,
+  "adultPrice": 3000,
+  "youngPrice": 800,
+  "tags": [
+    "kids",
+    "families",
+    "beach"
+  ],
+  "createdAt": {
+    "$date": "2024-12-06T17:38:33.815Z"
+  },
+  "updatedAt": {
+    "$date": "2024-12-06T17:50:12.552Z"
+  },
+  "__v": 7
+},
+{
+  "_id": {
+    "$oid": "67533b25942ac91b165b533a"
+  },
+  "title": "Hôtel Azure Riviera",
+  "summary": "Bask in the timeless allure of Nice, where the sparkling Mediterranean meets vibrant city life. Stroll along the famous Promenade des Anglais, where palm trees line the turquoise waters, or explore the charming Old Town with its colorful markets and narrow, winding streets. Indulge in delicious Mediterranean cuisine, relax on sun-drenched beaches, and soak in the city's unique blend of art, culture, and history. Whether you're savoring the views from Castle Hill or enjoying the lively atmosphere of local cafés, Nice promises an unforgettable escape on the French Riviera. Come and experience the sunshine, elegance, and magic that make Nice truly unforgettable!",
+  "region": 13,
+  "town": "Nice",
+  "desc": "",
+  "category": "short",
+  "images": [
+    "nice-1.jpg",
+    "nice-2.jpg",
+    "nice-3.jpg",
+    "nice-4.jpg",
+    "nice-5.jpg",
+    "nice-bufet.jpg",
+    "nice-bath.jpg",
+    "nice-bed.jpg"
+  ],
+  "duration": 5,
+  "adultPrice": 3000,
+  "youngPrice": 800,
+  "tags": [
+    "couples"
+  ],
+  "createdAt": {
+    "$date": "2024-12-06T17:57:57.509Z"
+  },
+  "updatedAt": {
+    "$date": "2024-12-06T18:59:13.445Z"
+  },
+  "__v": 8
+},
+{
+  "_id": {
+    "$oid": "67533b46942ac91b165b533c"
+  },
+  "title": "Hôtel Palais des Papes",
+  "summary": "Step into the enchanting world of Avignon, where history, culture, and stunning architecture await at every turn. Wander through the cobblestone streets of the medieval town, marvel at the imposing Palais des Papes, and cross the famous Pont Saint-Bénézet. Immerse yourself in the vibrant local life, with bustling markets, charming cafés, and a thriving arts scene. Whether you’re enjoying the lavender fields in full bloom, savoring the flavors of Provence, or exploring centuries of history, Avignon offers a truly unique experience. Let this beautiful city captivate your heart and leave you with unforgettable memories.",
+  "region": 13,
+  "town": "Avignon",
+  "desc": "",
+  "category": "long",
+  "images": [
+    "avignon-1.jpg",
+    "avignon-2.jpg",
+    "avignon-3.jpg",
+    "avignon-4.jpg",
+    "avignon-5.jpg",
+    "avi-buffet.jpg",
+    "avi-bath.jpg",
+    "avi-bed.jpg"
+  ],
+  "duration": 15,
+  "adultPrice": 8000,
+  "youngPrice": 800,
+  "tags": [
+    "families",
+    "kids"
+  ],
+  "createdAt": {
+    "$date": "2024-12-06T17:58:30.684Z"
+  },
+  "updatedAt": {
+    "$date": "2024-12-06T19:01:29.579Z"
+  },
+  "__v": 8
+},
+{
+  "_id": {
+    "$oid": "67533b5f942ac91b165b533e"
+  },
+  "title": "Hôtel Étoile d'Or",
+  "summary": "Experience the glamour and elegance of Cannes, where luxury meets the sparkling Mediterranean. Stroll along the iconic Croisette, lined with palm trees and high-end boutiques, or relax on pristine beaches under the sun. Known for its world-renowned film festival, Cannes is a city of sophistication, art, and culture. Explore charming old streets, enjoy exquisite French cuisine, and soak in the vibrant nightlife. Whether you’re here to celebrate the stars or simply indulge in the Riviera’s beauty, Cannes promises an unforgettable escape filled with luxury and style.",
+  "region": 13,
+  "town": "Cannes",
+  "desc": "",
+  "category": "long",
+  "images": [
+    "cannes-1.jpg",
+    "canes-2.jpg",
+    "cannes-3.jpg",
+    "cannes-bufet.jpg",
+    "cannes-bath.jpg",
+    "cannes-bed.jpg"
+  ],
+  "duration": 10,
+  "adultPrice": 8000,
+  "youngPrice": 800,
+  "tags": [
+    "families",
+    "kids",
+    "beach"
+  ],
+  "createdAt": {
+    "$date": "2024-12-06T17:58:55.720Z"
+  },
+  "updatedAt": {
+    "$date": "2024-12-06T19:04:59.602Z"
+  },
+  "__v": 6
+},
+{
+  "_id": {
+    "$oid": "6755c4db1c0e8483ad0fa974"
+  },
+  "title": "Rhône Sérénité : Voyage de Lyon à la Camargue",
+  "summary": "Discover a unique experience with our barge cruise on the majestic Rhône, from Lyon to the Camargue. Embark on an enchanting journey that blends relaxation and discovery as you navigate the calm waters. Admire the rolling vineyards of the Rhône Valley, explore charming historic villages, and be captivated by the wild beauty of the Camargue. Onboard, enjoy refined comfort, exquisite regional cuisine, and ever-changing panoramas. An unforgettable river adventure awaits, combining nature, culture, and serenity.",
+  "region": 1,
+  "town": "",
+  "desc": "Stops : Lyon, Condrieu, Montelimar, Avignon, Arles, Camargue",
+  "category": "cruise",
+  "images": [
+    "camargue-2.jpg",
+    "camargue-1.jpg",
+    "arles-1.jpg",
+    "arles-2.jpg",
+    "avignon.jpg",
+    "lyon.jpg",
+    "peniche-rhone.jpg",
+    "boat-bed.jpg"
+  ],
+  "duration": 14,
+  "adultPrice": 15000,
+  "youngPrice": 5000,
+  "tags": [
+    "couples"
+  ],
+  "createdAt": {
+    "$date": "2024-12-08T16:10:03.319Z"
+  },
+  "updatedAt": {
+    "$date": "2024-12-08T16:12:21.199Z"
+  },
+  "__v": 8
+},
+{
+  "_id": {
+    "$oid": "6755cc1c1c0e8483ad0fa989"
+  },
+  "title": "Rêve Royal : Les Châteaux de la Loire",
+  "summary": "Embark on an exceptional cruise along the Loire River and be captivated by the splendor of the castles that line its banks. Onboard our elegant barge, combine comfort and exploration as you discover treasures like Chambord, Chenonceau, and Amboise—true gems of French heritage. Drift peacefully between history and nature, marvel at breathtaking landscapes, and savor local specialties prepared by our onboard chef. This unique adventure offers you an intimate and warm immersion into the heart of the Renaissance. A royal journey awaits you on the waters of the Loire.",
+  "region": 12,
+  "town": "",
+  "desc": "Stops : Orleans, Chambord, Blois, Cheverny, Amboise, Chenonceaux, Villandry, Azay-Le-Rideau, Tours, Angers, Nantes, Saint Nazaire",
+  "category": "cruise",
+  "images": [
+    "chambord.jpg",
+    "Chinon.jpg",
+    "blois.jpg",
+    "villandry.jpg",
+    "azay-2.jpg",
+    "azay.jpg",
+    "cheverny.jpg",
+    "chenonceaux.jpg",
+    "amboise.jpg",
+    "boat.jpg",
+    "boat-bed.jpg"
+  ],
+  "duration": 17,
+  "adultPrice": 30000,
+  "youngPrice": 10000,
+  "tags": [
+    "couples"
+  ],
+  "createdAt": {
+    "$date": "2024-12-08T16:41:00.765Z"
+  },
+  "updatedAt": {
+    "$date": "2024-12-08T16:49:43.865Z"
+  },
+  "__v": 11
+},
+{
+  "_id": {
+    "$oid": "6755d52e1c0e8483ad0fa9b7"
+  },
+  "title": "Escapade Bretonne : Aventure au Coeur de la Bretagne",
+  "summary": "Embark on an adventure with our tour of Brittany, from Carnac to Jersey, and immerse yourself in the natural and cultural treasures of this fascinating region. Explore the famous standing stones of Carnac, discover charming Breton ports, and take a journey to Jersey, an island with a unique charm. Between rugged landscapes, picturesque villages, and captivating history, this getaway offers a complete immersion into the soul of Brittany and its legendary coastline. Enjoy a comfortable and enriching journey, combining culture, relaxation, and maritime discoveries.",
+  "region": 3,
+  "town": "",
+  "desc": "Stops : Carnac, Rennes, Dinan, Mont Saint Michel, Saint Malo, Jersey, Guernesey",
+  "category": "tour",
+  "images": [
+    "mt-st-michel.jpg",
+    "dinan.jpg",
+    "guernesey.jpg",
+    "somewhere.jpg",
+    "st-malo.jpg",
+    "rennes.jpg",
+    "carnac.jpg"
+  ],
+  "duration": 20,
+  "adultPrice": 40000,
+  "youngPrice": 16000,
+  "tags": [
+    "couples"
+  ],
+  "createdAt": {
+    "$date": "2024-12-08T17:19:42.647Z"
+  },
+  "updatedAt": {
+    "$date": "2024-12-15T17:07:23.346Z"
+  },
+  "__v": 7
+}]
