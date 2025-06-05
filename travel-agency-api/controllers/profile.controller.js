@@ -1,61 +1,93 @@
 const { StatusCodes } = require("http-status-codes");
-const User = require("../models/user");
-const Order = require("../models/order");
+const profileService = require("../services/profile.service");
 const { logger } = require("../utils/logger");
 
-const getProfile = async (req, res) => {
-  // Extract the authenticated user from the request object (injected by authentication middleware)
-  const middlewareUser = req.user;
+/**
+ * Controller: Return the authenticated user's profile.
+ */
+const getProfile = (req, res) => {
+  if (!req.user) {
+    return res.status(StatusCodes.UNAUTHORIZED).send("User not authenticated");
+  }
 
-  // Respond with the user's profile and a 200 OK status
-  return res.status(StatusCodes.OK).send(middlewareUser);
+  const user = profileService.getProfile(req.user);
+  return res.status(StatusCodes.OK).send(user);
 };
 
+/**
+ * Controller: Update a user's profile by ID.
+ */
 const updateProfile = async (req, res) => {
   const { id } = req.params;
   const data = req.body;
+  const requester = req.user;
 
-  // If no ID is provided, respond with a 400 Bad Request
+  // Validate ID
   if (!id) {
-    return res.status(StatusCodes.BAD_REQUEST).send("No adviser ID provided.");
+    return res.status(StatusCodes.BAD_REQUEST).send("No user ID provided.");
+  }
+
+  // Check that the requester is updating their own profile
+  if (requester._id !== id && requester.role !== "admin") {
+    return res
+      .status(StatusCodes.FORBIDDEN)
+      .send("You can only update your own profile.");
+  }
+
+  // Optionally: Validate required fields or sanitize inputs
+  if (data.email && !data.email.includes("@")) {
+    return res.status(StatusCodes.BAD_REQUEST).send("Invalid email address.");
   }
 
   try {
-    // Attempt to update the user by ID with the provided data
-    // { new: true } ensures the returned document is the updated one
-    // Exclude sensitive fields like password and version key
-    const user = await User.findByIdAndUpdate(id, data, { new: true }).select(
-      "-password -__v"
-    );
-
-    // Return the updated user with a 200 OK status
-    return res.status(StatusCodes.OK).send(user);
+    const updatedUser = await profileService.updateProfile(id, data);
+    if (!updatedUser) {
+      return res.status(StatusCodes.NOT_FOUND).send("User not found.");
+    }
+    return res.status(StatusCodes.OK).send(updatedUser);
   } catch (error) {
-    logger.error(error); // Log the error for debugging
-
-    // If an error occurs (e.g., invalid ID), respond with a 404 Not Found
-    return res.status(StatusCodes.NOT_FOUND).send("No resource found");
+    logger.error(`Error updating profile: ${error.message}`);
+    return res
+      .status(StatusCodes.INTERNAL_SERVER_ERROR)
+      .send("Failed to update profile");
   }
 };
 
+/**
+ * Controller: Delete the authenticated user's profile and related orders.
+ */
 const deleteProfile = async (req, res) => {
   try {
-    const middlewareUser = req.user;
+    const user = req.user;
+    const { id } = req.params;
 
-    // Delete the user from the database using their ID
-    await User.findByIdAndDelete(middlewareUser._id);
+    // Check if the user is authenticated
+    if (!user) {
+      return res
+        .status(StatusCodes.UNAUTHORIZED)
+        .send("User not authenticated");
+    }
 
-    // Delete all orders associated with the user's email
-    await Order.deleteMany({ email: middlewareUser.email });
+    // Check if the user is allowed to delete this profile
+    // Either admin, or deleting their own account
+    if (user.role !== "admin" && user._id !== id) {
+      return res
+        .status(StatusCodes.FORBIDDEN)
+        .send("You are not authorized to delete this profile");
+    }
 
-    // Respond with a success message and a 200 OK status
+    await profileService.deleteProfileById(id);
     return res.status(StatusCodes.OK).send("User profile deleted");
   } catch (error) {
-    logger.error(error); // Log any error that occurs during the deletion process
-
-    // Respond with a 404 Not Found if deletion fails
-    return res.status(StatusCodes.NOT_FOUND).send("Deletion failed");
+    logger.error(`Error deleting profile: ${error.message}`);
+    return res
+      .status(StatusCodes.INTERNAL_SERVER_ERROR)
+      .send("Deletion failed");
   }
 };
 
-module.exports = { getProfile, updateProfile, deleteProfile };
+module.exports = {
+  getProfile,
+  updateProfile,
+  deleteProfile,
+};
