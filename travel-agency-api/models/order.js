@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const { Schema } = mongoose;
-const Trip = require("./Trip");
+const Trip = require("./trip");
 
 const orderSchema = new Schema(
   {
