@@ -1,4 +1,4 @@
-import type { FiltersParams } from "../filter-params";
+import type { FiltersParams } from "../utils/filter-params";
 import type { Trip } from "../entities/trip";
 
 export type ResearchLoaderType = {
