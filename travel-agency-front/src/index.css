@@ -47,6 +47,9 @@ body {
   .hover-card:hover {
     transform: translateY(-10px);
   }
+  .text-shadow-custom {
+    text-shadow: 3px 3px 12px rgba(0, 0, 0, 0.85);
+  }
 }
 
 @theme inline {
