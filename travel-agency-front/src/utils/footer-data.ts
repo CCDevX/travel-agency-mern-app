@@ -19,20 +19,23 @@ const colTitles: string[] = [
 
 const col1: string[] = [
   "Who are we ?",
-  "Travel Agency Academy",
+  "Travel Agency academy",
   "Join us",
   "Business trip",
   "All our destinations",
 ];
 
-const col2: string[] = ["Travel Agency Foundation", "Why choose HexaTrip?"];
+const col2: string[] = [
+  "Travel Agency foundation",
+  "Why choose Travel Agency ?",
+];
 
 const col3: string[] = ["Contact us", "Press area"];
 
 const col4: string[] = [
-  "Legal Notices",
+  "Legal notices",
   "General conditions of sale",
-  "Cookie Consent Management",
+  "Cookie consent management",
 ];
 
 export { icons, text, colTitles, col1, col2, col3, col4 };
