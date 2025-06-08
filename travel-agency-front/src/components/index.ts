@@ -6,3 +6,4 @@ export { default as UserBar } from "./user-bar";
 export { default as LinksMobile } from "./links-mobile";
 export { default as LinksDesktop } from "./links-desktop";
 export { default as RegionsCarousel } from "./regions-carousel";
+export { default as TagsCarousel } from "./tags-carousel";

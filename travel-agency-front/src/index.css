@@ -49,6 +49,19 @@ body {
   }
   .text-shadow-custom {
     text-shadow: 3px 3px 12px rgba(0, 0, 0, 0.85);
+    /* font-family: "Playfair Display", serif; */
+  }
+
+  /* Tailwind style override : scrollbar fine et transparente */
+  .scroll-thin::-webkit-scrollbar {
+    width: 4px;
+  }
+  .scroll-thin::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+  }
+  .scroll-thin::-webkit-scrollbar-track {
+    background: transparent;
   }
 }
 

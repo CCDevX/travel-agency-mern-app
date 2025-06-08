@@ -1,4 +1,4 @@
-import { regionsCarouselData } from "@/types/utils/regions-carousel-data";
+import { regionsCarouselData } from "@/utils/regions-carousel-data";
 import {
   Carousel,
   CarouselContent,
@@ -7,14 +7,13 @@ import {
   CarouselPrevious,
 } from "./ui/carousel";
 import { Link } from "react-router-dom";
-import { Card, CardContent } from "./ui/card";
 import Autoplay from "embla-carousel-autoplay";
 import Fade from "embla-carousel-fade";
 
 const RegionsCarousel = () => {
   return (
-    <section>
-      <div className="">
+    <section className="py-8 mx-5">
+      <div className="max-w-7xl mx-auto rounded-2xl overflow-hidden shadow-lg">
         <Carousel
           className="relative"
           plugins={[Autoplay({ delay: 5000 }), Fade()]}
@@ -23,25 +22,25 @@ const RegionsCarousel = () => {
           <CarouselContent>
             {regionsCarouselData.map((region, index) => (
               <CarouselItem key={index}>
-                <Link to={`/research?region=${region.region}`}>
-                  <Card className="relative">
-                    <CardContent className="flex items-center justify-center p-0 overflow-hidden max-h-[70vh]">
+                <div className="relative w-full h-auto">
+                  <CarouselPrevious className="absolute top-1/2 left-4 -translate-y-1/2 z-10 p-4 md:p-6 rounded-full bg-[#c99628] hover:bg-[#b38220] text-white" />
+                  <CarouselNext className="absolute top-1/2 right-4 -translate-y-1/2 z-10 p-4 md:p-6 rounded-full bg-[#c99628] hover:bg-[#b38220] text-white" />
+                  <Link to={`/research?region=${region.region}`}>
+                    <div className="flex items-center justify-center overflow-hidden max-h-[70vh] rounded-2xl">
                       <img
                         src={region.photo}
                         alt={`Photo ${region.name}`}
-                        className="h-full w-full object-cover"
+                        className="w-full h-[70vh] object-cover"
                       />
-                      <p className="text-shadow-custom absolute top-[5%] left-[50%] -translate-x-[50%] capitalize text-[5rem] text-white italic text-shadow-2xs">
+                      <p className="text-shadow-custom absolute top-[5%] left-[50%] -translate-x-1/2 capitalize text-[4rem] lg:text-[5rem] text-[#c99628] italic">
                         {region.name}
                       </p>
-                    </CardContent>
-                  </Card>
-                </Link>
+                    </div>
+                  </Link>
+                </div>
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious className="absolute top-[50%] left-[10px] -translate-y-[50%] hover:scale-105 transition p-6"></CarouselPrevious>
-          <CarouselNext className="absolute top-[50%] right-[10px] -translate-y-[50%] hover:scale-105 transition p-6"></CarouselNext>
         </Carousel>
       </div>
     </section>

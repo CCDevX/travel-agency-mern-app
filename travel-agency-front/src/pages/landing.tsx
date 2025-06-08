@@ -1,9 +1,10 @@
-import { RegionsCarousel } from "@/components";
+import { RegionsCarousel, TagsCarousel } from "@/components";
 
 const Landing = () => {
   return (
     <>
       <RegionsCarousel></RegionsCarousel>
+      <TagsCarousel></TagsCarousel>
     </>
   );
 };
