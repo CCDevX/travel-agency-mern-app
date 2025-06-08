@@ -7,3 +7,6 @@ export { default as LinksMobile } from "./links-mobile";
 export { default as LinksDesktop } from "./links-desktop";
 export { default as RegionsCarousel } from "./regions-carousel";
 export { default as TagsCarousel } from "./tags-carousel";
+export { default as WhyUsText } from "./why-us-text";
+export { default as WhyUs } from "./why-us";
+export { default as Gallary } from "./gallery";

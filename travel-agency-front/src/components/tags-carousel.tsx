@@ -18,7 +18,10 @@ const TagsCarousel = () => {
         >
           <CarouselContent>
             {tagsCarouselData.map((tag, index) => (
-              <CarouselItem key={index} className="sm:basis-1/2 lg:basis-1/3">
+              <CarouselItem
+                key={index}
+                className="flex justify-center sm:basis-1/2 lg:basis-1/3"
+              >
                 <Link to={`/research?tags=${tag.code}`}>
                   <Card className="m-4 p-0 h-[500px] w-full max-w-xs flex flex-col rounded-xl shadow-md">
                     <CardHeader className="p-0 h-[200px]">
@@ -33,7 +36,7 @@ const TagsCarousel = () => {
                       <p className="text-lg font-semibold mb-2 text-[#333] capitalize">
                         {tag.title}
                       </p>
-                      <p className="text-sm text-gray-700 leading-relaxed max-h-[200px] overflow-y-auto pr-1 scroll-thin">
+                      <p className="text-sm text-[#555]  leading-relaxed max-h-[200px] overflow-y-auto pr-1 scroll-thin">
                         {tag.text}
                       </p>
                     </CardContent>
