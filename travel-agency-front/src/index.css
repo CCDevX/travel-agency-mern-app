@@ -63,6 +63,11 @@ body {
   .scroll-thin::-webkit-scrollbar-track {
     background: transparent;
   }
+
+  .advisors {
+    background-image: url(./assets/images/advisors/whiteBG.jpg);
+    background-size: cover;
+  }
 }
 
 @theme inline {

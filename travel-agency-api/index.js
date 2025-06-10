@@ -22,6 +22,7 @@ app.use(morgan("dev"));
 
 // Middleware: Secure HTTP headers
 app.use(helmet());
+app.use(helmet.crossOriginResourcePolicy({ policy: "cross-origin" }));
 
 // Middleware: Parse incoming request bodies
 app.use(bodyParser.urlencoded({ extended: false }));

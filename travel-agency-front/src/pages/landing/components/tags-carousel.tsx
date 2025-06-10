@@ -1,8 +1,13 @@
 import { Link } from "react-router-dom";
-import { Carousel, CarouselContent, CarouselItem } from "./ui/carousel";
-import { Card, CardContent, CardHeader } from "./ui/card";
+
 import { tagsCarouselData } from "@/utils/tags-carousel-data";
 import Autoplay from "embla-carousel-autoplay";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+} from "@/components/ui/carousel";
 
 const TagsCarousel = () => {
   return (

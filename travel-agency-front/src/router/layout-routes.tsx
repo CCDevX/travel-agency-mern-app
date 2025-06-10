@@ -10,6 +10,9 @@ import {
   HotlinePage,
   ProfilePage,
 } from "../pages";
+import { agenciesLoader } from "@/loaders/agencies-loader";
+import { advisorsLoader } from "@/loaders/advisors-loader";
+import { advisorByIdLoader } from "@/loaders/advisor-by-id";
 
 export const layoutRoutes: RouteObject[] = [
   {
@@ -27,10 +30,12 @@ export const layoutRoutes: RouteObject[] = [
   {
     path: "advisors",
     element: <AdvisorsPage />,
+    loader: advisorsLoader,
   },
   {
     path: "advisors/:id",
     element: <AdvisorsSinglePage />,
+    loader: advisorByIdLoader,
   },
   {
     path: "checkout",
@@ -39,6 +44,7 @@ export const layoutRoutes: RouteObject[] = [
   {
     path: "agencies",
     element: <AgenciesPage />,
+    loader: agenciesLoader,
   },
   {
     path: "hotline",

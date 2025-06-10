@@ -1,18 +1,19 @@
 import { regionsCarouselData } from "@/utils/regions-carousel-data";
+
+import { Link } from "react-router-dom";
+import Autoplay from "embla-carousel-autoplay";
+import Fade from "embla-carousel-fade";
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselNext,
   CarouselPrevious,
-} from "./ui/carousel";
-import { Link } from "react-router-dom";
-import Autoplay from "embla-carousel-autoplay";
-import Fade from "embla-carousel-fade";
+  CarouselNext,
+} from "@/components/ui/carousel";
 
 const RegionsCarousel = () => {
   return (
-    <section className="py-8 mx-5">
+    <section className="py-8 mx-5 flex justify-center items-center">
       <div className="max-w-7xl mx-auto rounded-2xl overflow-hidden shadow-lg">
         <Carousel
           className="relative"

@@ -1,5 +1,4 @@
 import { galleryImages } from "@/utils/gallery-data";
-
 const Gallery = () => {
   return (
     <section className="w-full px-4 py-8">
