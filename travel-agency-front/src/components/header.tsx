@@ -5,7 +5,7 @@ import { MapPin, Phone, User, Users } from "lucide-react";
 const Header = () => {
   return (
     <>
-      <header className="w-full text-blue-900">
+      <header className="w-full text-blue-900 py-4">
         <div className="align-center h-full flex flex-col md:flex-row justify-between items-center">
           <div className="h-full place-content-center py-5 md:py-0">
             <Link to="/" className="flex items-center hover-btn">

@@ -5,9 +5,7 @@ const WhyUs = () => {
     <section className="font-bold pb-8">
       <div className="align-center px-6">
         <div className="text-center">
-          <h3 className="text-5xl text-center my-5 font-special font-bold text-[#555555]">
-            {headerText}
-          </h3>
+          <h3 className="text-center text-4xl font-thin my-2">{headerText}</h3>
         </div>
         <div className="grid md:grid-cols-3 gap-12 mt-10">
           {blocksText.map((block, index) => (

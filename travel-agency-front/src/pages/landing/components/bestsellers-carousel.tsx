@@ -32,9 +32,7 @@ const BestsellersCarousel = () => {
   return (
     <section className="py-6 my-12 w-full">
       <div className="align-center relative">
-        <h1 className="text-5xl text-center my-5 font-special font-bold text-[#555555]">
-          Bestsellers
-        </h1>
+        <h1 className="text-center text-4xl font-thin my-2">Bestsellers</h1>
         <Carousel
           className="relative"
           plugins={[Autoplay({ delay: 6000 }), Fade()]}

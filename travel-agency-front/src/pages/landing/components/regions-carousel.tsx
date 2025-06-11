@@ -33,7 +33,7 @@ const RegionsCarousel = () => {
                         alt={`Photo ${region.name}`}
                         className="w-full h-[70vh] object-cover"
                       />
-                      <p className="text-shadow-custom absolute top-[5%] left-[50%] -translate-x-1/2 capitalize text-[4rem] lg:text-[5rem] text-[#c99628] italic">
+                      <p className="text-shadow-custom absolute top-[5%] left-[50%] -translate-x-1/2 capitalize text-[4rem] lg:text-[5rem] text-[#c99628]">
                         {region.name}
                       </p>
                     </div>

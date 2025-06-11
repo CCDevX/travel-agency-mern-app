@@ -16,11 +16,11 @@ const LinksMobile = () => {
     <DropdownMenu>
       <DropdownMenuTrigger asChild className="lg:hidden">
         <Button variant="outline" size="icon">
-          <AlignLeft></AlignLeft>
+          <AlignLeft className="text-blue-900" />
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent
-        className="gap-y-2 p-2 lg:hidden"
+        className="gap-y-2 p-2 lg:hidden border border-blue-900 rounded-md shadow-md"
         align="start"
         sideOffset={10}
       >
@@ -33,8 +33,8 @@ const LinksMobile = () => {
                 to={ref}
                 key={label}
                 className={() => {
-                  return `capitalize p-1 tracking-wide text-black hover:text-[#e23d30] ${
-                    isActive ? "underline" : ""
+                  return `capitalize p-1 tracking-wide text-blue-900 hover:text-blue-500 ${
+                    isActive ? "font-bold" : ""
                   }`;
                 }}
               >

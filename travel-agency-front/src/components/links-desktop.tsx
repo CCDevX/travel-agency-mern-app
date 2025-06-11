@@ -14,8 +14,10 @@ const LinksDesktop = () => {
             to={ref}
             key={label}
             className={() => {
-              return `capitalize tracking-wide text-black hover:text-[#e23d30] ${
-                isActive ? "underline" : ""
+              return `capitalize tracking-wide text-blue-900 font-normal hover:text-blue-500 ${
+                isActive
+                  ? "border-solid border-2 border-blue-900 p-2 rounded-md hover:border-blue-500"
+                  : ""
               }`;
             }}
           >

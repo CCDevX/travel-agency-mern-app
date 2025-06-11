@@ -6,6 +6,7 @@ const helmet = require("helmet");
 const rateLimit = require("express-rate-limit");
 const cors = require("cors");
 const { StatusCodes } = require("http-status-codes");
+const path = require("path");
 
 const connectToDatabase = require("./database");
 const { logger } = require("./utils/logger");
@@ -29,7 +30,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 // Middleware: Serve static files from /public
-app.use(express.static("public"));
+// app.use(express.static("public"));
 
 // Rate Limiting: Prevent abuse by limiting repeated requests
 const limiter = rateLimit({
@@ -61,6 +62,20 @@ const corsOptions = {
   credentials: true,
 };
 app.use(cors(corsOptions));
+
+// Middleware: Serve static files from /public avec headers CORS personnalisés
+app.use(
+  express.static(path.join(__dirname, "public"), {
+    setHeaders: (res, filePath) => {
+      const origin = res.req.headers.origin;
+      if (allowedOrigins.includes(origin)) {
+        res.setHeader("Access-Control-Allow-Origin", origin);
+        res.setHeader("Vary", "Origin");
+        res.setHeader("Cross-Origin-Resource-Policy", "cross-origin");
+      }
+    },
+  })
+);
 
 // Connect to MongoDB
 connectToDatabase();
