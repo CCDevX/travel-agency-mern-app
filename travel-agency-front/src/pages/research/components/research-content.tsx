@@ -18,7 +18,7 @@ const ResearchContent = () => {
           </p>
         </div>
       ) : (
-        <div className="align-center grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 auto-rows-[650px]">
+        <div className="align-center grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 auto-rows-[400px]">
           {data.map((trip, index) => (
             <TripCard key={index} trip={trip} />
           ))}

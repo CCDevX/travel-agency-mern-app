@@ -8,7 +8,7 @@ import {
 } from "@/components/ui/breadcrumb";
 import { Home } from "lucide-react";
 
-const Breadrumbs = ({ title }: { title?: string }) => {
+const Breadcrumbs = ({ title }: { title?: string }) => {
   return (
     <section className="bg-gray-50 py-4 px-6">
       <Breadcrumb>
@@ -49,4 +49,4 @@ const Breadrumbs = ({ title }: { title?: string }) => {
   );
 };
 
-export default Breadrumbs;
+export default Breadcrumbs;

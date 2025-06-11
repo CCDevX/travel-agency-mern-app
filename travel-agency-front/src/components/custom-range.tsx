@@ -4,7 +4,7 @@ import type { CustomRangeProps } from "@/types/utils/custom-range-props";
 import { useState } from "react";
 
 const CustomRange = ({ name, defaultValue }: CustomRangeProps) => {
-  const maxPrice = 30000;
+  const maxPrice = 100000;
   const step = 1000;
   const defaultPrice = defaultValue ? Number(defaultValue) : maxPrice;
   const [selectedPrice, setSelectedPrice] = useState(defaultPrice);

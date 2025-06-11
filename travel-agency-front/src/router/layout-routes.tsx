@@ -15,6 +15,7 @@ import { advisorsLoader } from "@/loaders/advisors-loader";
 import { advisorByIdLoader } from "@/loaders/advisor-by-id";
 import { ErrorElement } from "@/components";
 import { researchLoader } from "@/loaders/research-loader";
+import { singleTripLoader } from "@/loaders/single-trip-loader";
 
 export const layoutRoutes: RouteObject[] = [
   {
@@ -32,6 +33,7 @@ export const layoutRoutes: RouteObject[] = [
   {
     path: "research/:id",
     element: <SingleTripPage />,
+    loader: singleTripLoader,
     errorElement: <ErrorElement />,
   },
   {
