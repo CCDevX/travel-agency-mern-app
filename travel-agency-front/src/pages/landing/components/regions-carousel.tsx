@@ -15,6 +15,9 @@ const RegionsCarousel = () => {
   return (
     <section className="py-8 mx-5 flex justify-center items-center">
       <div className="max-w-7xl mx-auto rounded-2xl overflow-hidden shadow-lg">
+        <h2 className="text-center text-3xl font-thin text-gray-800 my-10 tracking-wide">
+          Explore Our Most Popular Regions
+        </h2>
         <Carousel
           className="relative"
           plugins={[Autoplay({ delay: 5000 }), Fade()]}

@@ -16,7 +16,7 @@ const CustomInput = ({
   return (
     <div className={`w-[200px] ${classname}`}>
       {!nolabel && (
-        <Label className="capitalize w-full" htmlFor={name}>
+        <Label className="capitalize w-full py-2" htmlFor={name}>
           {label || name}
         </Label>
       )}

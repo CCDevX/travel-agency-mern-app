@@ -9,5 +9,6 @@ export { default as Layout } from "./layout";
 export { default as LoginPage } from "./login-page";
 export { default as ProfilePage } from "./profile-page";
 export { default as RegisterPage } from "./register-page";
-export { default as ResearchPage } from "./research-page";
+export { default as ResearchPage } from "./research/research-page";
 export { default as SingleTripPage } from "./single-trip-page";
+export { default as ErrorPage } from "./error-page";

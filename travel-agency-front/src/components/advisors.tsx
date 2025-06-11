@@ -22,7 +22,9 @@ const Advisors = () => {
   return (
     <section className="py-8 border-t-2 border-b-2 advisors">
       <div className="align-center flex flex-col items-center">
-        <p className="text-4xl font-thin my-2">Meet Our Dedicated Advisors</p>
+        <p className="text-center text-3xl font-thin text-gray-800 my-10 tracking-wide">
+          Meet Our Dedicated Advisors
+        </p>
         <p className="text-2xl font-bold">For each place of France</p>
         <p className="text-sm">
           200 passionate experts ready to help you fully experience this

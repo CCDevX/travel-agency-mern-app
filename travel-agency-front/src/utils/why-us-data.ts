@@ -6,7 +6,7 @@ import incident from "../assets/images/why-us/injury-2-svgrepo-com.svg";
 import trip from "../assets/images/why-us/travel-suitcase-3-svgrepo-com.svg";
 import tick from "../assets/images/why-us/tick-svgrepo-com.svg";
 
-const headerText: string = "Simple and easy!";
+const headerText: string = "Simple and easy !";
 
 const blocksText: { icon: string; text: string }[] = [
   {

@@ -1,4 +1,4 @@
-import Advisors from "./components/advisors";
+import { Advisors, TripFilter } from "@/components";
 import BestsellersCarousel from "./components/bestsellers-carousel";
 import Gallery from "./components/gallery";
 import RegionsCarousel from "./components/regions-carousel";
@@ -9,6 +9,7 @@ import WhyUsText from "./components/why-us-text";
 const Landing = () => {
   return (
     <>
+      <TripFilter></TripFilter>
       <RegionsCarousel></RegionsCarousel>
       <BestsellersCarousel></BestsellersCarousel>
       <TagsCarousel></TagsCarousel>

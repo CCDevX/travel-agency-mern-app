@@ -13,7 +13,9 @@ const TagsCarousel = () => {
   return (
     <section className="py-6 my-12">
       <div className="align-center">
-        <h1 className="text-center text-4xl font-thin my-2">Browse by theme</h1>
+        <h2 className="text-center text-3xl font-thin text-gray-800 my-10 tracking-wide">
+          Browse by theme
+        </h2>
         <Carousel
           className="relative"
           plugins={[Autoplay({ delay: 3000 })]}
