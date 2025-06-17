@@ -3,37 +3,46 @@ import { FaXTwitter } from "react-icons/fa6";
 
 const PreFooter = () => {
   return (
-    <div className="w-full min-h-[10vh] bg-[#0f2c49] text-white place-content-center">
-      <div className="align-center flex flex-col md:flex-row justify-between items-center">
-        <div>
-          <p className="text-2xl font-bold md: py-4">
-            Follow us on social medias!
-          </p>
-        </div>
-        <div className="flex gap-8 items-center md: pb-4">
+    <div className="w-full min-h-[80px] bg-[color:var(--color-primary)] text-[color:var(--color-white)]">
+      <div className="align-center flex flex-col md:flex-row justify-between items-center py-4 gap-4">
+        <p className="text-2xl font-bold text-center md:text-left">
+          Follow us on social medias!
+        </p>
+        <div className="flex gap-6 items-center">
           <FaFacebook
-            size="35"
-            className="hover:text-[#e23d30] cursor-pointer transition-colors"
+            size={28}
+            className="hover:text-[color:var(--color-accent-hover)] transition-colors duration-200 cursor-pointer"
+            title="Facebook"
+            aria-label="Facebook"
           />
           <FaLinkedin
-            size="35"
-            className="hover:text-[#e23d30] cursor-pointer transition-colors"
+            size={28}
+            className="hover:text-[color:var(--color-accent-hover)] transition-colors duration-200 cursor-pointer"
+            title="LinkedIn"
+            aria-label="LinkedIn"
           />
           <FaXTwitter
-            size="35"
-            className="hover:text-[#e23d30] cursor-pointer transition-colors"
+            size={28}
+            className="hover:text-[color:var(--color-accent-hover)] transition-colors duration-200 cursor-pointer"
+            title="Twitter"
+            aria-label="Twitter"
           />
           <FaInstagram
-            size="35"
-            className="hover:text-[#e23d30] cursor-pointer transition-colors"
+            size={28}
+            className="hover:text-[color:var(--color-accent-hover)] transition-colors duration-200 cursor-pointer"
+            title="Instagram"
+            aria-label="Instagram"
           />
           <FaYoutube
-            size="35"
-            className="hover:text-[#e23d30] cursor-pointer transition-colors"
+            size={28}
+            className="hover:text-[color:var(--color-accent-hover)] transition-colors duration-200 cursor-pointer"
+            title="YouTube"
+            aria-label="YouTube"
           />
         </div>
       </div>
     </div>
   );
 };
+
 export default PreFooter;

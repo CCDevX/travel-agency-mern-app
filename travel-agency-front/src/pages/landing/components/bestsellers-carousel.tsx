@@ -1,5 +1,5 @@
 import { apiUrl, axiosHelper } from "@/axios/axios-helper";
-import { Card, CardContent } from "@/components/ui/card";
+import Title from "@/components/title";
 import {
   Carousel,
   CarouselContent,
@@ -30,44 +30,54 @@ const BestsellersCarousel = () => {
   }, []);
 
   return (
-    <section className="py-6 my-12 w-full">
-      <div className="align-center relative">
-        <h1 className="text-center text-3xl font-thin text-gray-800 my-10 tracking-wide">
-          Bestsellers
-        </h1>
+    <section className="py-12 px-4 md:px-8 bg-[color:var(--color-background)]">
+      <div className="w-full max-w-7xl mx-auto rounded-3xl overflow-hidden shadow-xl bg-white/90">
+        <Title text="Bestsellers" level={2} />
+
         <Carousel
           className="relative"
           plugins={[Autoplay({ delay: 6000 }), Fade()]}
           opts={{ align: "start", loop: true }}
         >
-          <CarouselContent className="h-[400px] w-full">
+          <CarouselContent>
             {entities.map((trip, index) => (
-              <CarouselItem key={index} className="h-full w-full">
-                <Link to={`/research/${trip._id}`}>
-                  <Card className="h-full rounded-2xl overflow-hidden shadow-lg p-0 w-full">
-                    <CardContent className="relative p-0 h-full">
+              <CarouselItem key={index}>
+                <div className="relative w-full h-auto">
+                  {/* Boutons identiques à RegionsCarousel */}
+                  <CarouselPrevious
+                    aria-label="Previous trip"
+                    className="absolute top-1/2 left-4 -translate-y-1/2 z-10 p-3 md:p-4 rounded-full border border-[color:var(--color-primary)] bg-white text-[color:var(--color-primary)] hover:bg-[color:var(--color-primary)] hover:text-white transition shadow"
+                  />
+                  <CarouselNext
+                    aria-label="Next trip"
+                    className="absolute top-1/2 right-4 -translate-y-1/2 z-10 p-3 md:p-4 rounded-full border border-[color:var(--color-primary)] bg-white text-[color:var(--color-primary)] hover:bg-[color:var(--color-primary)] hover:text-white transition shadow"
+                  />
+
+                  <Link
+                    to={`/research/${trip._id}`}
+                    aria-label={`See ${trip.title}`}
+                  >
+                    <div className="flex items-center justify-center overflow-hidden max-h-[70vh] rounded-2xl">
                       <img
                         src={`${apiUrl}/images/trips/${trip._id}/${trip.images[0]}`}
                         alt={trip.title}
-                        className="h-full w-full object-cover"
+                        className="w-full h-[70vh] object-cover rounded-2xl"
                       />
-                      <div className="absolute inset-0 bg-black/30" />
+                      <div className="absolute inset-0" />
                       <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
-                        <p className="text-5xl font-bold text-amber-400 drop-shadow-lg font-special">
+                        <h3 className="font-special text-[2.5rem] md:text-[4rem] lg:text-[5rem] text-[color:var(--color-primary)] tracking-tight px-6 py-2 bg-white/70 backdrop-blur-sm rounded-md shadow-lg max-w-[90%]">
                           {trip.title}
-                        </p>
-                        <p className="text-3xl mt-2 text-white drop-shadow-md tracking-wider">
+                        </h3>
+                        <p className="text-white text-lg md:text-xl mt-2 drop-shadow-sm">
                           {trip.town}
                         </p>
                       </div>
-                    </CardContent>
-                  </Card>
-                </Link>
+                    </div>
+                  </Link>
+                </div>
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious className="absolute top-1/2 -left-8 -translate-y-1/2 z-10 p-4 md:p-6 rounded-full bg-[#c99628] hover:bg-[#b38220] text-white shadow-lg border-4 border-white" />
-          <CarouselNext className="absolute top-1/2 -right-4 -translate-y-1/2 z-10 p-4 md:p-6 rounded-full bg-[#c99628] hover:bg-[#b38220] text-white shadow-lg border-4 border-white" />
         </Carousel>
       </div>
     </section>

@@ -3,7 +3,7 @@ import LinksMobile from "./links-mobile";
 
 const NavBar = () => {
   return (
-    <nav className="border-t-2 border-b-2">
+    <nav className="border-t border-b border-[color:var(--color-border)] bg-white shadow-sm">
       <div className="align-center py-5">
         <LinksMobile></LinksMobile>
         <LinksDesktop></LinksDesktop>

@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import type { Advisor } from "@/types/entities/advisor";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import Title from "./title";
 
 const Advisors = () => {
   const [entities, setEntities] = useState<Advisor[]>([]);
@@ -20,48 +21,41 @@ const Advisors = () => {
     fetchEntities();
   }, []);
   return (
-    <section className="py-8 border-t-2 border-b-2 advisors">
-      <div className="align-center flex flex-col items-center">
-        <p className="text-center text-3xl font-thin text-gray-800 my-10 tracking-wide">
-          Meet Our Dedicated Advisors
-        </p>
-        <p className="text-2xl font-bold">For each place of France</p>
-        <p className="text-sm">
+    <section className="py-12 px-4 md:px-8 bg-[color:var(--color-background)]">
+      <div className="w-full max-w-7xl mx-auto rounded-3xl overflow-hidden shadow-xl bg-white p-8 text-center">
+        <Title text="Meet Our Dedicated Advisors" level={2} />
+
+        <p className="text-2xl font-bold mt-4 mb-2">For each place of France</p>
+        <p className="text-gray-600 mb-8 text-sm md:text-base">
           200 passionate experts ready to help you fully experience this
           beautiful country
         </p>
-        <div className="my-8 flex flex-wrap gap-6 justify-evenly items-center">
+
+        <div className="flex flex-wrap justify-center gap-8 mb-8">
           {entities.map((advisor, index) => (
-            <Link to={`/advisors`} key={index}>
-              <div className="transition-all cursor-pointer hover:scale-105 mix-blend-luminosity hover:mix-blend-normal">
-                <div className="h-[220px] w-[220px]">
+            <Link to={`/advisors`} key={index} className="text-center">
+              <div className="transition-all hover:scale-105">
+                <div className="h-[220px] w-[220px] mx-auto overflow-hidden rounded-full shadow-lg">
                   <img
                     crossOrigin="anonymous"
-                    src={
-                      apiUrl +
-                      "/images" +
-                      "/advisers" +
-                      `/${advisor._id}` +
-                      `/${advisor.image}`
-                    }
-                    alt=""
-                    className="h-full w-full object-cover rounded-full"
+                    src={`${apiUrl}/images/advisers/${advisor._id}/${advisor.image}`}
+                    alt={advisor.name}
+                    className="h-full w-full object-cover rounded-full grayscale hover:grayscale-0 transition duration-300"
                   />
                 </div>
-                <div className="text-center">
-                  <p className="capitalize">{advisor.name}</p>
-                </div>
+                <p className="capitalize mt-2 text-[color:var(--color-primary)] font-medium">
+                  {advisor.name}
+                </p>
               </div>
             </Link>
           ))}
         </div>
-        <div>
-          <Link to={`/advisors`}>
-            <Button className="transition-all rounded-full hover:bg-[#c99628] hover:scale-105 cursor-pointer">
-              Look for a specialist
-            </Button>
-          </Link>
-        </div>
+
+        <Link to="/advisors">
+          <Button className="rounded-full bg-white text-[color:var(--color-primary)] border border-[color:var(--color-primary)] hover:bg-[color:var(--color-primary)] hover:text-white transition-all hover:scale-105">
+            Look for a specialist
+          </Button>
+        </Link>
       </div>
     </section>
   );

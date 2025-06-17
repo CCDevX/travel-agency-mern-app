@@ -14,9 +14,12 @@ const CustomInput = ({
   nolabel,
 }: CustomInputProps) => {
   return (
-    <div className={`w-[200px] ${classname}`}>
+    <div className={`w-full min-w-[200px] ${classname}`}>
       {!nolabel && (
-        <Label className="capitalize w-full py-2" htmlFor={name}>
+        <Label
+          htmlFor={name}
+          className="capitalize block mb-1 text-sm font-semibold text-[color:var(--color-primary)]"
+        >
           {label || name}
         </Label>
       )}
@@ -25,10 +28,10 @@ const CustomInput = ({
         id={name}
         type={type}
         defaultValue={defaultValue}
-        className="w-full"
+        className="w-full rounded-md border border-[color:var(--color-border)] bg-white px-4 py-2 text-[color:var(--color-primary)] placeholder:text-gray-400 shadow-sm transition hover:border-[color:var(--color-secondary-hover)] focus:outline-none focus:ring-2 focus:ring-[color:var(--color-accent)]"
         disabled={disabled}
         required={required}
-        placeholder={placeholder}
+        placeholder={placeholder || "Enter value..."}
       />
     </div>
   );

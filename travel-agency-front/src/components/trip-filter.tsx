@@ -28,20 +28,14 @@ const TripFilter = () => {
   }, [urlRegion, urlTown, urlCategory, urlDuration, urlPrice, urlTags]);
 
   return (
-    <section key={trigger} className="py-12 bg-slate-100 shadow-inner">
-      {/* Titre principal */}
+    <section key={trigger} className="filter-section">
       <div className="mb-10 text-center px-4">
-        <h2 className="text-4xl lg:text-5xl font-special text-blue-900">
+        <h2 className="text-4xl lg:text-5xl font-special text-[color:var(--color-primary)]">
           What kind of trip to France...
         </h2>
       </div>
 
-      {/* Formulaire de recherche */}
-      <Form
-        method="get"
-        action="/research"
-        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 px-6 max-w-7xl mx-auto"
-      >
+      <Form method="get" action="/research" className="filter-grid">
         <CustomSelect
           label="Region"
           name="region"
@@ -77,17 +71,17 @@ const TripFilter = () => {
           defaultValue={urlTags || "0"}
         />
 
-        {/* Prix (texte + slider) */}
-        <div className="col-span-full flex flex-col items-center gap-2 mt-2">
+        {/* Slider */}
+        <div className="slider-wrapper">
           <CustomRange name="price" defaultValue={urlPrice} />
         </div>
 
-        {/* Boutons */}
-        <div className="col-span-full flex justify-center gap-4 mt-6">
+        {/* Buttons */}
+        <div className="filter-buttons">
           <Button
             type="submit"
             size="lg"
-            className="text-xl px-6 py-3 rounded-xl shadow-md hover:bg-black/90 transition-transform hover:scale-[1.03]"
+            className="text-base font-medium bg-[color:var(--color-primary)] text-white px-6 py-3 rounded-xl shadow hover:brightness-110 transition"
           >
             Search
           </Button>
@@ -96,10 +90,10 @@ const TripFilter = () => {
             <Button
               variant="ghost"
               aria-label="Reset filters"
-              className="text-gray-500 hover:text-gray-700 flex items-center gap-2"
+              className="text-[color:var(--color-secondary)] hover:text-[color:var(--color-accent)] flex items-center gap-2 text-base"
             >
               <RotateCcw className="w-5 h-5" />
-              <span className="text-lg">Reset</span>
+              <span>Reset</span>
             </Button>
           </Link>
         </div>

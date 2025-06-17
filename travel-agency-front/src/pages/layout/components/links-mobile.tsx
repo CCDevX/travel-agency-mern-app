@@ -7,36 +7,32 @@ import {
 } from "../../../components/ui/dropdown-menu";
 import { NavLink, useLocation } from "react-router-dom";
 import { links } from "@/utils/navbar-data";
-import type { Link } from "@/types/ui/link";
 import { DropdownMenuItem } from "@radix-ui/react-dropdown-menu";
 
 const LinksMobile = () => {
   const location = useLocation();
+
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild className="lg:hidden">
         <Button variant="outline" size="icon">
-          <AlignLeft className="text-blue-900" />
+          <AlignLeft className="text-[color:var(--color-primary)]" />
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent
-        className="gap-y-2 p-2 lg:hidden border border-blue-900 rounded-md shadow-md"
+        className="flex flex-col gap-1 p-2 lg:hidden border border-[color:var(--color-border)] rounded-md shadow-md bg-white"
         align="start"
         sideOffset={10}
       >
-        {links.map((link) => {
-          const { ref, label } = link as Link;
+        {links.map(({ ref, label }) => {
           const isActive = location.pathname + location.search === ref;
           return (
-            <DropdownMenuItem key={label}>
+            <DropdownMenuItem key={label} className="p-0">
               <NavLink
                 to={ref}
-                key={label}
-                className={() => {
-                  return `capitalize p-1 tracking-wide text-blue-900 hover:text-blue-500 ${
-                    isActive ? "font-bold" : ""
-                  }`;
-                }}
+                className={`dropdown-item block w-full px-2 py-1 rounded-md ${
+                  isActive ? "font-semibold" : ""
+                }`}
               >
                 {label}
               </NavLink>

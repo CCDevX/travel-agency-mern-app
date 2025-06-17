@@ -9,24 +9,22 @@ const AdvisorsFull = () => {
 
   if (advisors.length === 0) {
     return (
-      <section className="flex flex-col items-center justify-center text-center py-16 min-h-[60vh] px-4">
-        {/* <img
-          src="../assets/images/empty.svg"
-          alt="No advisors"
-          className="w-32 h-32 mb-6 opacity-60"
-        /> */}
-        <h2 className="text-xl font-semibold mb-2 text-gray-700">
-          No advisors available for this destination
+      <section className="flex flex-col items-center justify-center text-center py-16 min-h-[60vh] px-4 bg-[color:var(--color-background)]">
+        {/* Optionnel : illustration SVG d’erreur ou d’absence */}
+        {/* <img src={empty} alt="No advisors" className="w-32 h-32 mb-6 opacity-60" /> */}
+
+        <h2 className="text-2xl font-bold text-[color:var(--color-primary)] mb-2">
+          No advisors found
         </h2>
-        <p className="text-sm text-gray-500 mb-6">
-          We're sorry, but we couldn’t find any members associated with your
+        <p className="text-sm text-[color:var(--color-muted-text)] mb-6 max-w-xl">
+          We're sorry, but we couldn’t find any advisors available for your
           current selection.
         </p>
-        <Link
-          to="/"
-          className="inline-block bg-black text-white text-sm font-medium px-5 py-2 rounded-md transition"
-        >
-          Return to Home
+
+        <Link to="/">
+          <button className="bg-[color:var(--color-primary)] text-white px-5 py-2 rounded-full text-sm hover:bg-[color:var(--color-primary-hover)] transition">
+            Return to Home
+          </button>
         </Link>
       </section>
     );
@@ -38,10 +36,10 @@ const AdvisorsFull = () => {
         {advisors.map((advisor, index) => (
           <Card
             key={`${index}`}
-            className="flex flex-col items-center justify-center p-2 pb-6"
+            className="flex flex-col items-center justify-center p-2 pb-6 bg-white rounded-2xl shadow hover:shadow-md transition-all"
           >
-            <CardHeader className="mt-5 flex align-center justify-center h-[200px] w-[200px] cursor-pointer transition-all mix-blend-luminosity hover:scale-105 hover:mix-blend-normal">
-              <Link className="h-full w-fumm" to={`${advisor._id}`}>
+            <CardHeader className="mt-5 flex align-center justify-center h-[200px] w-[200px] cursor-pointer grayscale hover:grayscale-0 transition duration-300">
+              <Link className="h-full w-full" to={`${advisor._id}`}>
                 <img
                   crossOrigin="anonymous"
                   className="h-full w-full object-cover rounded-full"
@@ -51,11 +49,16 @@ const AdvisorsFull = () => {
               </Link>
             </CardHeader>
             <CardContent className="text-center">
-              <p className="capitalize font-bold">{advisor.name}</p>
+              <p className="capitalize font-bold text-[color:var(--color-primary)]">
+                {advisor.name}
+              </p>
             </CardContent>
-            <CardFooter className="flex flex-wrap gap-2">
+            <CardFooter className="flex flex-wrap gap-2 justify-center">
               {advisor.tags.map((tag, index) => (
-                <Badge className="capitalize" key={index}>
+                <Badge
+                  className="capitalize bg-[color:var(--color-primary)] text-white hover:bg-[color:var(--color-primary-hover)]"
+                  key={index}
+                >
                   {tag}
                 </Badge>
               ))}

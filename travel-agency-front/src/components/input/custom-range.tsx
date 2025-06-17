@@ -10,10 +10,21 @@ const CustomRange = ({ name, defaultValue }: CustomRangeProps) => {
   const [selectedPrice, setSelectedPrice] = useState(defaultPrice);
 
   return (
-    <div className="w-[200px] flex flex-col gap-3">
-      <p className="text-center text-md">
-        Max price/pers : {formatAsEuros(selectedPrice)}
-      </p>
+    <div className="w-full min-w-[200px] flex flex-col gap-1">
+      {/* Label comme les autres */}
+      <label
+        htmlFor={name}
+        className="text-sm font-semibold text-[color:var(--color-primary)] leading-tight"
+      >
+        Max price/pers
+      </label>
+
+      {/* Valeur affichée en dessous */}
+      <span className="text-sm text-[color:var(--color-primary)] font-medium mb-1">
+        {formatAsEuros(selectedPrice)}
+      </span>
+
+      {/* Slider */}
       <Slider
         id={name}
         name={name}
@@ -21,6 +32,7 @@ const CustomRange = ({ name, defaultValue }: CustomRangeProps) => {
         max={maxPrice}
         value={[selectedPrice]}
         onValueChange={(value) => setSelectedPrice(value[0])}
+        className="slider-style"
       />
     </div>
   );

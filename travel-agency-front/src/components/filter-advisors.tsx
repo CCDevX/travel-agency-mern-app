@@ -3,6 +3,7 @@ import { Button } from "./ui/button";
 import CustomInput from "./input/custom-input";
 import { RotateCcw } from "lucide-react";
 import { useState } from "react";
+import Title from "./title";
 
 const FilterAdvisors = () => {
   const [trigger, setTrigger] = useState(0);
@@ -11,37 +12,45 @@ const FilterAdvisors = () => {
     setTrigger((oldState) => oldState + 1);
   };
   return (
-    <section className="py-8 bg-slate-100 min-h-[30vh] place-content-center">
-      <div className="align-center flex flex-col gap-2">
-        <div className="flex justify-between mb-4">
-          <p className="text-4xl">Contacts our advisors</p>
-        </div>
-        <p>
-          Enter a place and contact one of our advisor. They are all english
+    <section className="py-12 bg-[color:var(--color-background)]">
+      <div className="align-center flex flex-col gap-6">
+        <Title text="Contacts our advisors" />
+
+        <p className="text-center text-[color:var(--color-muted-text)] text-lg">
+          Enter a place and contact one of our advisors. They are all English
           speakers!
         </p>
-        <Form action="/advisors" className="flex gap-4 items-center">
+
+        <Form
+          action="/advisors"
+          className="flex flex-col sm:flex-row gap-4 items-center justify-center mt-4 w-full"
+        >
           <CustomInput
             label="town"
             name="town"
             type="search"
             required
-            classname="w-full"
+            classname="w-full max-w-xl"
             placeholder="'Lyon', 'Paris'..."
             nolabel
             key={trigger}
           />
-          <Button type="submit" size="lg" className="text-xl py-4">
+          <Button
+            type="submit"
+            size="lg"
+            className="text-lg font-semibold bg-[color:var(--color-primary)] text-white hover:bg-[color:var(--color-primary-hover)] transition"
+          >
             Search
           </Button>
-          {/* Reset button */}
-          <Link
-            to="/advisors"
-            className="flex justify-center items-center cursor-pointer"
-          >
-            <Button variant="ghost" onClick={handleReset}>
-              <RotateCcw className="h-full w-full"></RotateCcw>
-              <p className="text-xl font-extralight">Reset</p>
+
+          <Link to="/advisors">
+            <Button
+              variant="ghost"
+              onClick={handleReset}
+              className="flex gap-2 text-[color:var(--color-muted-text)] hover:text-[color:var(--color-accent)] transition"
+            >
+              <RotateCcw className="w-5 h-5" />
+              <span className="text-base">Reset</span>
             </Button>
           </Link>
         </Form>

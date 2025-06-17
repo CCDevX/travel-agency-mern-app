@@ -14,33 +14,26 @@ const UserBar = () => {
   };
 
   return (
-    <header className="border-b-2 bg-slate-100">
-      <div className="align-center flex justify-end py-1">
+    <header className="userbar-wrapper">
+      <div className="userbar-inner">
         {userData?.username ? (
           <div className="flex items-center gap-4">
-            <p>
+            <p className="user-greeting">
               Hey welcome back,{" "}
-              <span className="text-sky-600 capitalize">
-                {userData.username}
-              </span>
+              <span className="user-name">{userData.username}</span>
             </p>
-            <Button
-              variant="outline"
-              size="sm"
-              onClick={handleLogout}
-              className="hover-btn"
-            >
+            <Button onClick={handleLogout} className="btn-outline text-sm">
               Logout
             </Button>
           </div>
         ) : (
-          <div className="flex items-center gap-6">
-            <Button asChild variant="link" size="lg" className="hover-btn p-0">
-              <Link to={"/login"}>Sign In</Link>
-            </Button>
-            <Button asChild variant="link" size="lg" className="hover-btn p-0">
-              <Link to={"/register"}>Register</Link>
-            </Button>
+          <div className="flex items-center gap-4">
+            <Link to="/login" className="link-secondary text-sm">
+              Sign In
+            </Link>
+            <Link to="/register" className="link-accent text-sm">
+              Register
+            </Link>
           </div>
         )}
       </div>

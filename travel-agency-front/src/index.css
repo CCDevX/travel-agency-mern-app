@@ -35,6 +35,121 @@ html {
 }
 
 @layer components {
+  /* Links */
+  .link-secondary {
+    @apply text-[color:var(--color-secondary)] hover:text-[color:var(--color-secondary-hover)] transition;
+  }
+
+  .link-accent {
+    @apply text-[color:var(--color-accent)] font-semibold hover:text-[color:var(--color-accent-hover)] transition;
+  }
+
+  /* Button styles */
+  .btn-outline {
+    @apply px-4 py-1 rounded-md border border-[color:var(--color-border)] bg-white text-[color:var(--color-primary)] hover:bg-[color:var(--color-secondary)] hover:text-white transition;
+  }
+
+  .btn-link {
+    @apply text-sm font-medium text-[color:var(--color-secondary)] hover:text-[color:var(--color-secondary-hover)] transition;
+  }
+
+  /* User message */
+  .user-greeting {
+    @apply text-sm text-[color:var(--color-primary)] font-medium;
+  }
+
+  .user-name {
+    @apply capitalize text-[color:var(--color-secondary)] font-semibold;
+  }
+
+  /* Layout helpers */
+  .userbar-wrapper {
+    @apply border-b border-[color:var(--color-border)] bg-[color:var(--color-background)];
+  }
+
+  .userbar-inner {
+    @apply max-w-6xl mx-auto px-6 py-2 flex justify-end items-center;
+  }
+
+  .icon-link {
+    @apply flex flex-col items-center gap-1 hover:text-[color:var(--color-secondary-hover)] transition;
+  }
+
+  .icon-link:hover {
+    transform: translateY(-2px);
+    transition: transform 0.2s ease, color 0.2s ease;
+  }
+
+  .nav-link {
+    @apply capitalize tracking-wide text-[color:var(--color-primary)] font-medium px-2 py-1 transition;
+  }
+
+  .nav-link:hover {
+    color: var(--color-secondary-hover);
+  }
+
+  .nav-link-active {
+    @apply relative text-[color:var(--color-primary)] font-semibold;
+  }
+
+  .nav-link-active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 100%;
+    height: 2px;
+    background-color: var(--color-accent);
+    border-radius: 2px;
+  }
+
+  .dropdown-item {
+    @apply capitalize p-1 text-sm tracking-wide text-[color:var(--color-primary)] hover:text-[color:var(--color-secondary-hover)] transition;
+  }
+
+  .dropdown-item.font-semibold {
+    @apply font-semibold;
+  }
+
+  .filter-label {
+    @apply text-sm font-semibold text-[color:var(--color-primary)];
+  }
+
+  .filter-section {
+    @apply py-12 bg-[color:var(--color-background)] shadow-inner;
+  }
+
+  .filter-grid {
+    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-4 gap-y-6 px-6 max-w-7xl mx-auto;
+  }
+
+  .filter-buttons {
+    @apply col-span-full flex justify-center items-center gap-4 mt-6;
+  }
+
+  .slider-style {
+    @apply relative flex w-full touch-none select-none items-center;
+  }
+
+  .slider-style > .slider-track {
+    @apply relative h-2 w-full grow overflow-hidden rounded-full bg-[color:var(--color-border)];
+  }
+
+  .slider-style > .slider-track > .slider-range {
+    @apply absolute h-full bg-[color:var(--color-accent)];
+  }
+
+  .slider-style > .slider-thumb {
+    @apply block h-5 w-5 rounded-full border-2 border-[color:var(--color-primary)] bg-white shadow transition-transform duration-150 ease-in-out hover:scale-110;
+  }
+
+  .slider-style > .slider-thumb:focus-visible {
+    @apply ring-4 ring-[color:var(--color-secondary)] outline-none;
+  }
+
+  .slider-style > .slider-thumb:active {
+    @apply scale-95;
+  }
   /* Typography */
   .font-special {
     font-family: var(--font-logo); /* Playfair Display */

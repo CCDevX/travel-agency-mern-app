@@ -4,56 +4,44 @@ import { MapPin, Phone, User, Users } from "lucide-react";
 
 const Header = () => {
   return (
-    <>
-      <header className="w-full text-blue-900 py-4">
-        <div className="align-center h-full flex flex-col md:flex-row justify-between items-center">
-          <div className="h-full place-content-center py-5 md:py-0">
-            <Link to="/" className="flex items-center hover-btn">
-              <div className="h-30 w-30">
-                <img
-                  src={logo}
-                  alt="travel agency logo object-cover"
-                  className="w-full h-full"
-                />
-              </div>
-              <p className="font-special text-4xl mr-auto ml-2">
-                Travel Agency
-              </p>
-            </Link>
+    <header className="w-full bg-white text-[color:var(--color-primary)] border-b border-[color:var(--color-border)] py-4">
+      <div className="align-center flex flex-col md:flex-row justify-between items-center">
+        {/* Logo + Brand Name */}
+        <Link to="/" className="flex items-center hover-btn gap-3 mb-4 md:mb-0">
+          <div className="w-[72px] h-[72px]">
+            <img
+              src={logo}
+              alt="Travel Agency logo"
+              className="w-full h-full object-contain"
+            />
           </div>
-          <div className="self-end h-full flex justify-between items-center gap-3 mx-auto md:mr-0">
-            <Link
-              to="/agencies"
-              className="flex flex-col items-center hover-btn"
-            >
-              <MapPin size="45" className="bordered rounded-2xl p-2"></MapPin>
-              <p className="text-[0.7rem] w-max-[2]">Our Agencies</p>
-            </Link>
-            <Link
-              to="/advisors"
-              className="flex flex-col items-center hover-btn"
-            >
-              <Users size="45" className="bordered rounded-2xl p-2"></Users>
-              <p className="text-[0.7rem] w-max-[2]">Our Advisors</p>
-            </Link>
-            <Link
-              to="/hotline"
-              className="flex flex-col items-center hover-btn"
-            >
-              <Phone size="45" className="bordered rounded-2xl p-2"></Phone>
-              <p className="text-[0.7rem] w-max-[2]">+33 7 65 24 85 00</p>
-            </Link>
-            <Link
-              to="/profile"
-              className="flex flex-col items-center hover-btn"
-            >
-              <User size="45" className="bordered rounded-2xl p-2"></User>
-              <p className="text-[0.7rem] w-max-[2]">Your Account</p>
-            </Link>
-          </div>
+          <p className="font-special text-4xl leading-tight">Travel Agency</p>
+        </Link>
+
+        {/* Info Links */}
+        <div className="flex gap-5 md:gap-6 text-center text-sm font-medium">
+          <Link to="/agencies" className="icon-link">
+            <MapPin size={40} className="bordered rounded-xl p-2" />
+            <span className="text-sm md:text-base">Our Agencies</span>
+          </Link>
+
+          <Link to="/advisors" className="icon-link">
+            <Users size={40} className="bordered rounded-xl p-2" />
+            <span className="text-sm md:text-base">Our Advisors</span>
+          </Link>
+
+          <Link to="/hotline" className="icon-link">
+            <Phone size={40} className="bordered rounded-xl p-2" />
+            <span className="text-sm md:text-base">+33 7 65 24 85 00</span>
+          </Link>
+
+          <Link to="/profile" className="icon-link">
+            <User size={40} className="bordered rounded-xl p-2" />
+            <span className="text-sm md:text-base">Your Account</span>
+          </Link>
         </div>
-      </header>
-    </>
+      </div>
+    </header>
   );
 };
 
