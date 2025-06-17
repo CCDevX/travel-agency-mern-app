@@ -3,70 +3,110 @@
 
 @custom-variant dark (&:is(.dark *));
 
+:root {
+  /* Fonts */
+  --font-logo: "Playfair Display", serif;
+  --font-body: "DM Sans", sans-serif;
+
+  /* Colors */
+  --color-primary: #123c5a;
+  --color-secondary: #2f6f9f;
+  --color-accent: #e44c30;
+  --color-background: #f5f7fa;
+  --color-border: #c3ceda;
+  --color-white: #ffffff;
+
+  /* Hover colors */
+  --color-primary-hover: #0f2f48;
+  --color-secondary-hover: #256085;
+  --color-accent-hover: #cc3e27;
+
+  /* Extras */
+  --color-muted-text: #5f6e7d;
+  --color-shadow: rgba(0, 0, 0, 0.05);
+}
+
 body {
   font-family: "DM Sans", sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 @layer components {
+  /* Typography */
   .font-special {
-    font-family: "Playfair Display", serif;
+    font-family: var(--font-logo); /* Playfair Display */
     font-weight: 400;
     font-style: normal;
   }
 
-  .test {
-    @apply border-solid border-2 border-black;
-  }
-  .bordered {
-    @apply border-solid border-2 transition-none border-inherit;
-  }
+  /* Containers */
   .align-center {
     @apply max-w-6xl mx-auto px-8;
   }
+
+  /* Borders */
+  .bordered {
+    @apply border-2 border-solid transition-none border-[color:var(--color-border)];
+  }
+
+  /* Buttons & hover */
   .hover-btn {
-    @apply cursor-pointer;
+    @apply cursor-pointer text-[color:var(--color-primary)];
+    transition: color 0.2s ease;
   }
+
   .hover-btn:hover {
-    @apply text-blue-500;
-    /* tailwind color amber 600 */
+    color: var(--color-secondary-hover);
   }
+
   .hover-btn:hover > .bordered {
-    @apply border-solid border-2 border-blue-500;
+    border-color: var(--color-secondary-hover);
   }
-  .whyus {
-    /* background-image: url(./assets/images/whyus/sand3.jpg); */
-    background-size: cover;
-  }
-  .advisors {
-    /* background-image: url(./assets/images/advisors/whiteBG.jpg); */
-    background-size: cover;
-  }
+
+  /* Hover card effect */
   .hover-card {
     transition: all 250ms ease-in-out;
   }
+
   .hover-card:hover {
     transform: translateY(-10px);
-  }
-  .text-shadow-custom {
-    text-shadow: 3px 3px 12px rgba(0, 0, 0, 0.85);
-    /* font-family: "Playfair Display", serif; */
+    box-shadow: 0 10px 20px var(--color-shadow);
   }
 
-  /* Tailwind style override : scrollbar fine et transparente */
+  /* Custom text shadow */
+  .text-shadow-custom {
+    text-shadow: 3px 3px 12px rgba(0, 0, 0, 0.85);
+    font-family: var(--font-logo);
+  }
+
+  /* Scrollbar */
   .scroll-thin::-webkit-scrollbar {
     width: 4px;
   }
+
   .scroll-thin::-webkit-scrollbar-thumb {
     background-color: rgba(0, 0, 0, 0.2);
     border-radius: 4px;
   }
+
   .scroll-thin::-webkit-scrollbar-track {
     background: transparent;
+  }
+
+  /* Backgrounds */
+  .whyus {
+    background-image: url(./assets/images/whyus/sand3.jpg);
+    background-size: cover;
+    background-position: center;
   }
 
   .advisors {
     background-image: url(./assets/images/advisors/whiteBG.jpg);
     background-size: cover;
+    background-position: center;
   }
 }
 
