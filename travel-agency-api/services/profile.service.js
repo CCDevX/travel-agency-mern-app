@@ -27,8 +27,8 @@ const updateProfile = async (id, data) => {
  * @param {Object} user - The user object from the middleware
  * @returns {Promise<void>}
  */
-const deleteProfile = async (user) => {
-  await User.findByIdAndDelete(user._id);
+const deleteProfile = async (id) => {
+  await User.findByIdAndDelete(id);
   await Order.deleteMany({ email: user.email });
 };
 

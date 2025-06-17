@@ -36,12 +36,16 @@ const authenticateMiddleware = async (req, res, next) => {
     logger.error(error);
     // Token has expired (the "exp" timestamp has passed)
     if (error.name === "TokenExpiredError") {
-      return res.status(StatusCodes.UNAUTHORIZED).send("Token expired");
+      return res
+        .status(StatusCodes.UNAUTHORIZED)
+        .send({ error: "Token expired" });
     }
 
     // Token is invalid (e.g., malformed, wrong signature, etc.)
     if (error.name === "JsonWebTokenError") {
-      return res.status(StatusCodes.UNAUTHORIZED).send("Invalid token");
+      return res
+        .status(StatusCodes.UNAUTHORIZED)
+        .send({ error: "Invalied Token" });
     }
 
     // Any other unexpected error (e.g., database failure)

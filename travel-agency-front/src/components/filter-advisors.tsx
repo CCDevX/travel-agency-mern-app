@@ -1,6 +1,6 @@
 import { Form, Link } from "react-router-dom";
 import { Button } from "./ui/button";
-import CustomInput from "./custom-input";
+import CustomInput from "./input/custom-input";
 import { RotateCcw } from "lucide-react";
 import { useState } from "react";
 

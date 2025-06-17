@@ -1,11 +1,11 @@
 export { default as AdvisorsPage } from "./advisors/advisors-page";
 export { default as AdvisorsSinglePage } from "./advisors/advisors-single-page";
 export { default as AgenciesPage } from "./agencies-page";
-export { default as CheckoutPage } from "./checkout-page";
-export { default as CheckoutSuccessPage } from "./checkout-success-page";
+export { default as CheckoutPage } from "./checkout/checkout-page";
+export { default as CheckoutSuccessPage } from "./checkout/checkout-success-page";
 export { default as HotlinePage } from "./hotline-page";
 export { default as Landing } from "./landing/landing";
-export { default as Layout } from "./layout";
+export { default as Layout } from "./layout/layout";
 export { default as LoginPage } from "./auth/login-page";
 export { default as ProfilePage } from "./profile-page";
 export { default as RegisterPage } from "./auth/register-page";

@@ -6,8 +6,8 @@ import {
   colTitles,
   icons,
   text,
-} from "../utils/footer-data";
-import logo from "../assets/images/logo-removebg-white.png";
+} from "../../../utils/footer-data";
+import logo from "../../../assets/images/logo-removebg-white.png";
 
 const Footer = () => {
   return (

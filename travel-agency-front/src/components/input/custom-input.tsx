@@ -1,6 +1,6 @@
 import type { CustomInputProps } from "@/types/utils/custom-inputs-props";
-import { Input } from "./ui/input";
-import { Label } from "./ui/label";
+import { Input } from "../ui/input";
+import { Label } from "../ui/label";
 
 const CustomInput = ({
   label,

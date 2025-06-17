@@ -9,6 +9,8 @@ import {
   SelectValue,
   SelectContent,
 } from "@/components/ui/select";
+import { cleanCheckout, setCheckout } from "@/features/checkout/checkout-slice";
+import { useAppDispatch } from "@/hooks";
 import type { Trip } from "@/types/entities/trip";
 import { getCategoryColor } from "@/types/utils/category-colors-data";
 import { rangeDateFormatter } from "@/types/utils/single-trip-data";
@@ -41,10 +43,11 @@ const SingleTrip = () => {
   const [adults, setAdults] = useState(0);
   const [kids, setKids] = useState(0);
   const [photoIndex, setPhotoIndex] = useState(0);
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
-    //dispatch(cleanCheckout());
-  }, []);
+    dispatch(cleanCheckout());
+  }, [dispatch]);
 
   const handleGoToCheckout = () => {
     const payload = {
@@ -55,7 +58,7 @@ const SingleTrip = () => {
       kids,
     };
     console.log(payload);
-    // dispatch(setCheckout(payload));
+    dispatch(setCheckout(payload));
   };
   return (
     <section className="px-4 ">

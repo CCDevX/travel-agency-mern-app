@@ -28,7 +28,7 @@ const updateProfile = async (req, res) => {
   }
 
   // Check that the requester is updating their own profile
-  if (requester._id !== id && requester.role !== "admin") {
+  if (requester._id.toString() !== id && requester.role !== "admin") {
     return res
       .status(StatusCodes.FORBIDDEN)
       .send("You can only update your own profile.");
@@ -61,6 +61,8 @@ const deleteProfile = async (req, res) => {
     const user = req.user;
     const { id } = req.params;
 
+    logger.info("user  ", user);
+    logger.info("id  ", id);
     // Check if the user is authenticated
     if (!user) {
       return res
@@ -70,13 +72,13 @@ const deleteProfile = async (req, res) => {
 
     // Check if the user is allowed to delete this profile
     // Either admin, or deleting their own account
-    if (user.role !== "admin" && user._id !== id) {
+    if (user.role !== "admin" && user._id.toString() !== id) {
       return res
         .status(StatusCodes.FORBIDDEN)
         .send("You are not authorized to delete this profile");
     }
 
-    await profileService.deleteProfileById(id);
+    await profileService.deleteProfile(id);
     return res.status(StatusCodes.OK).send("User profile deleted");
   } catch (error) {
     logger.error(`Error deleting profile: ${error.message}`);

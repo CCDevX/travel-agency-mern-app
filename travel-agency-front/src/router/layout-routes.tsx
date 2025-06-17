@@ -16,6 +16,11 @@ import { advisorByIdLoader } from "@/loaders/advisor-by-id";
 import { ErrorElement } from "@/components";
 import { researchLoader } from "@/loaders/research-loader";
 import { singleTripLoader } from "@/loaders/single-trip-loader";
+import { profilePageLoader } from "@/loaders/profile-loader";
+import { store } from "@/store";
+import { ConfirmProvider } from "material-ui-confirm";
+import { checkoutPageLoader } from "@/loaders/checkout-loader";
+import { checkoutPageAction } from "@/actions/checkout/checkout.action";
 
 export const layoutRoutes: RouteObject[] = [
   {
@@ -52,6 +57,8 @@ export const layoutRoutes: RouteObject[] = [
     path: "checkout",
     element: <CheckoutPage />,
     errorElement: <ErrorElement />,
+    loader: checkoutPageLoader(store),
+    action: checkoutPageAction(store),
   },
   {
     path: "agencies",
@@ -66,7 +73,12 @@ export const layoutRoutes: RouteObject[] = [
   },
   {
     path: "profile",
-    element: <ProfilePage />,
+    element: (
+      <ConfirmProvider>
+        <ProfilePage />
+      </ConfirmProvider>
+    ),
+    loader: profilePageLoader(store),
     errorElement: <ErrorElement />,
   },
 ];

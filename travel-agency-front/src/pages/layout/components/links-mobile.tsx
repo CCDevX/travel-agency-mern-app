@@ -1,10 +1,10 @@
 import { AlignLeft } from "lucide-react";
-import { Button } from "./ui/button";
+import { Button } from "../../../components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuTrigger,
-} from "./ui/dropdown-menu";
+} from "../../../components/ui/dropdown-menu";
 import { NavLink, useLocation } from "react-router-dom";
 import { links } from "@/utils/navbar-data";
 import type { Link } from "@/types/ui/link";

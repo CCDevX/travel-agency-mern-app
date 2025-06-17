@@ -1,12 +1,12 @@
 import { Link, useNavigate } from "react-router-dom";
-import { Button } from "./ui/button";
 import { useAppDispatch, useAppSelector } from "@/hooks";
 import { logoutUser } from "@/features/users/users-slice";
+import { Button } from "@/components/ui/button";
 
 const UserBar = () => {
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
-  const userData = useAppSelector((store) => store.usersSlice.user);
+  const userData = useAppSelector((state) => state.usersSlice.user);
 
   const handleLogout = () => {
     dispatch(logoutUser());

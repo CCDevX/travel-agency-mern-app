@@ -1,5 +1,5 @@
 import { formatAsEuros } from "@/utils/format-as-euros";
-import { Slider } from "./ui/slider";
+import { Slider } from "../ui/slider";
 import type { CustomRangeProps } from "@/types/utils/custom-range-props";
 import { useState } from "react";
 
