@@ -5,46 +5,52 @@ import { Form, Link } from "react-router-dom";
 
 const RegisterPage = () => {
   return (
-    <section className="h-screen w-screen grid place-content-center bg-gradient-to-b from-blue-100 to-white">
-      <Card className="w-[360px] bg-white shadow-md border rounded-xl">
+    <section className="min-h-screen w-full flex items-center justify-center bg-gradient-to-b from-[var(--color-background)] to-white px-4">
+      <Card className="w-full max-w-sm bg-white shadow-md border border-[var(--color-border)] rounded-xl">
         <CardHeader className="text-center">
-          <h2 className="text-2xl font-bold">Create your account</h2>
-          <p className="text-sm text-gray-500">
+          <h2 className="text-2xl font-bold text-[var(--color-primary)]">
+            Create your account
+          </h2>
+          <p className="text-sm text-[var(--color-muted-text)]">
             Join us and start your journey
           </p>
         </CardHeader>
+
         <CardContent>
-          <Form method="POST">
+          <Form method="POST" className="space-y-4">
             <CustomInput
               label="Username"
               name="username"
               type="text"
               required
-              classname="my-2 w-full"
+              classname="w-full"
             />
             <CustomInput
               label="Email"
               name="email"
               type="email"
               required
-              classname="my-2 w-full"
+              classname="w-full"
             />
             <CustomInput
               label="Password"
               name="password"
               type="password"
               required
-              classname="my-2 w-full"
+              classname="w-full"
             />
             <Button
               type="submit"
-              className="my-4 w-full bg-blue-600 hover:bg-blue-700"
+              className="w-full bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] text-white"
             >
               Register
             </Button>
-            <p className="text-center text-sm text-gray-500">
+            <p className="text-center text-sm text-[var(--color-muted-text)]">
               Already a member?{" "}
-              <Link to="/login" className="text-blue-600 hover:underline">
+              <Link
+                to="/login"
+                className="text-[var(--color-secondary)] hover:underline font-medium"
+              >
                 Login
               </Link>
             </p>

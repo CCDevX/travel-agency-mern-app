@@ -61,9 +61,14 @@ const SingleTrip = () => {
     dispatch(setCheckout(payload));
   };
   return (
-    <section className="px-4 ">
+    <section className="px-4">
       <div className="align-center my-6">
-        <Button onClick={() => navigate(-1)}>← Back</Button>
+        <Button
+          onClick={() => navigate(-1)}
+          className="bg-white border border-[var(--color-border)] text-[var(--color-primary)] hover:bg-[var(--color-primary)] hover:text-white"
+        >
+          ← Back
+        </Button>
       </div>
 
       <div className="max-w-6xl mx-auto grid lg:grid-cols-4 gap-8 mb-12">
@@ -76,7 +81,9 @@ const SingleTrip = () => {
             }
             {town && <span> – {town}</span>}
           </p>
-          <h1 className="text-4xl font-special text-black mb-4">{title}</h1>
+          <h1 className="text-4xl font-special text-[var(--color-primary)] mb-4">
+            {title}
+          </h1>
           <div className="flex flex-wrap gap-2 mb-4">
             <Badge
               style={{ backgroundColor: getCategoryColor(category) }}
@@ -88,14 +95,15 @@ const SingleTrip = () => {
               <Badge
                 key={index}
                 variant="outline"
-                className="text-xs capitalize"
+                className="text-xs capitalize border-[var(--color-border)] text-[var(--color-primary)]"
               >
                 {tag}
               </Badge>
             ))}
           </div>
         </div>
-        <div className="lg:col-span-3 bg-sky-50 p-4 rounded-2xl">
+
+        <div className="lg:col-span-3 bg-[var(--color-background)] p-4 rounded-2xl">
           <img
             crossOrigin="anonymous"
             src={`${apiUrl}/images/trips/${_id}/${images[photoIndex]}`}
@@ -103,45 +111,43 @@ const SingleTrip = () => {
             className="h-[60vh] w-full object-cover rounded-3xl shadow-xl mb-4"
           />
 
-          <div className="w-full flex flex-wrap justify-between gap-y-2 px-2 py-2 bg-sky-50">
+          <div className="flex flex-wrap justify-between gap-y-2 px-2 py-2">
             {images.map((img, index) => (
               <img
                 key={index}
                 src={`${apiUrl}/images/trips/${_id}/${img}`}
                 crossOrigin="anonymous"
                 onClick={() => setPhotoIndex(index)}
-                className={`aspect-square mb-2 h-16 object-cover rounded-xl cursor-pointer transition 
-                ${
+                className={`aspect-square h-16 object-cover rounded-xl cursor-pointer transition ${
                   index === photoIndex
-                    ? "ring-2 ring-[#c99628]"
+                    ? "ring-2 ring-[var(--color-accent)]"
                     : "hover:opacity-80"
                 }`}
               />
             ))}
           </div>
-          <div className="mt-8 bg-white/80 p-6 rounded-xl shadow-sm text-gray-700 leading-relaxed text-justify">
+
+          <div className="mt-8 bg-white p-6 rounded-xl shadow-sm text-gray-700 leading-relaxed text-justify">
             <p>{summary}</p>
             {desc && <p className="mt-4">{desc}</p>}
           </div>
         </div>
+
         <div className="lg:col-span-1 px-2">
           <div className="space-y-6">
-            {/* BLOC 1 - Info tarifaire */}
-            <div className="bg-sky-50 border border-slate-200 rounded-2xl p-4 shadow-sm">
-              <p className="text-sm text-gray-600">
-                <span className="font-semibold text-gray-800">Duration: </span>
-                {duration} day(s) / {duration - 1} night(s)
+            <div className="bg-white border border-[var(--color-border)] rounded-2xl p-4 shadow-sm">
+              <p className="text-sm text-gray-700">
+                <span className="font-semibold">Duration:</span> {duration}{" "}
+                day(s) / {duration - 1} night(s)
               </p>
-              <p className="text-sm text-gray-600 mt-2">
-                <span className="font-semibold text-gray-800">
-                  Price/pers:{" "}
-                </span>
-                {formatAsEuros(adultPrice)}
+              <p className="text-sm text-gray-700 mt-2">
+                <span className="font-semibold">Price/pers:</span>
+                <br /> Adults: {formatAsEuros(adultPrice)}
+                <br /> Kids: {formatAsEuros(youngPrice)}
               </p>
             </div>
 
-            {/* BLOC 2 - Calendrier */}
-            <div className="bg-white/90 backdrop-blur-md border border-slate-200 rounded-2xl p-4 shadow-sm">
+            <div className="bg-white border border-[var(--color-border)] rounded-2xl p-4 shadow-sm">
               <Calendar
                 mode="range"
                 min={duration - 1}
@@ -154,53 +160,49 @@ const SingleTrip = () => {
                 disabled={{ before: date?.from || new Date() }}
               />
               <Button
-                className="mx-auto w-full mt-4"
+                className="w-full mt-4 bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] text-white"
                 onClick={() => setDate(initCalendarValue)}
               >
                 Reset
               </Button>
               {date?.from && date?.to && (
                 <div className="mt-4 text-sm text-gray-700">
-                  <p className="font-semibold">Selected Dates:</p>
+                  <p className="font-semibold">Selected Dates</p>
                   <p>From: {rangeDateFormatter(date).from}</p>
                   <p>To: {rangeDateFormatter(date).to}</p>
                 </div>
               )}
             </div>
 
-            {/* BLOC 3 - Sélection nombre */}
-            <div className="grid grid-cols-2 gap-4 bg-sky-50 border border-slate-200 rounded-2xl p-4 shadow-sm">
-              <div className="col-span-1">
+            <div className="grid grid-cols-2 gap-4 bg-white border border-[var(--color-border)] rounded-2xl p-4 shadow-sm">
+              <div>
                 <p className="text-sm text-gray-600 mb-1">Adults:</p>
                 <Select
                   name="adults"
-                  onValueChange={(value) => setAdults(parseInt(value))}
+                  onValueChange={(v) => setAdults(parseInt(v))}
                 >
                   <SelectTrigger className="w-full bg-white text-black rounded-md shadow-inner">
                     <SelectValue placeholder={adults} />
                   </SelectTrigger>
-                  <SelectContent className="w-full bg-white text-black">
-                    {Array.from({ length: 6 }).map((_, index) => (
-                      <SelectItem key={index} value={index.toString()}>
-                        {index}
+                  <SelectContent>
+                    {Array.from({ length: 6 }).map((_, i) => (
+                      <SelectItem key={i} value={i.toString()}>
+                        {i}
                       </SelectItem>
                     ))}
                   </SelectContent>
                 </Select>
               </div>
-              <div className="col-span-1">
+              <div>
                 <p className="text-sm text-gray-600 mb-1">Kids:</p>
-                <Select
-                  name="kids"
-                  onValueChange={(value) => setKids(parseInt(value))}
-                >
+                <Select name="kids" onValueChange={(v) => setKids(parseInt(v))}>
                   <SelectTrigger className="w-full bg-white text-black rounded-md shadow-inner">
                     <SelectValue placeholder={kids} />
                   </SelectTrigger>
-                  <SelectContent className="w-full bg-white text-black">
-                    {Array.from({ length: 6 }).map((_, index) => (
-                      <SelectItem key={index} value={index.toString()}>
-                        {index}
+                  <SelectContent>
+                    {Array.from({ length: 6 }).map((_, i) => (
+                      <SelectItem key={i} value={i.toString()}>
+                        {i}
                       </SelectItem>
                     ))}
                   </SelectContent>
@@ -210,16 +212,15 @@ const SingleTrip = () => {
                 <p className="text-sm text-gray-700">
                   Price for {adults} adults and {kids} kids:
                 </p>
-                <p className="font-bold text-lg">
+                <p className="font-bold text-lg text-[var(--color-primary)]">
                   {formatAsEuros(adults * adultPrice + kids * youngPrice)}
                 </p>
               </div>
             </div>
 
-            {/* BLOC 4 - Résumé */}
             {date?.from && date?.to && (
-              <div className="flex flex-col bg-white border border-slate-200 rounded-2xl shadow-sm p-4 text-sm text-gray-700">
-                <p className="font-semibold text-sky-800 mb-2 underline text-base">
+              <div className="flex flex-col bg-white border border-[var(--color-border)] rounded-2xl shadow-sm p-4 text-sm text-gray-700">
+                <p className="font-semibold text-[var(--color-primary)] mb-2 underline text-base">
                   Summary
                 </p>
                 <p>
@@ -227,16 +228,17 @@ const SingleTrip = () => {
                 </p>
                 <p>From: {rangeDateFormatter(date).from}</p>
                 <p>To: {rangeDateFormatter(date).to}</p>
-
                 <div className="mt-4 flex justify-between items-center">
                   <p className="text-sm font-semibold text-gray-600">Total:</p>
-                  <p className="text-lg font-bold text-sky-700">
+                  <p className="text-lg font-bold text-[var(--color-secondary)]">
                     {formatAsEuros(adults * adultPrice + kids * youngPrice)}
                   </p>
                 </div>
-
                 <Link to="/checkout" className="mt-4">
-                  <Button onClick={handleGoToCheckout} className="w-full">
+                  <Button
+                    onClick={handleGoToCheckout}
+                    className="w-full bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] text-white"
+                  >
                     Book
                   </Button>
                 </Link>

@@ -22,7 +22,10 @@ const UserBar = () => {
               Hey welcome back,{" "}
               <span className="user-name">{userData.username}</span>
             </p>
-            <Button onClick={handleLogout} className="btn-outline text-sm">
+            <Button
+              onClick={handleLogout}
+              className="text-sm text-[var(--color-primary)] border border-[var(--color-border)] bg-white rounded-md px-4 py-1 hover:bg-[var(--color-primary)] hover:text-white transition-colors"
+            >
               Logout
             </Button>
           </div>
