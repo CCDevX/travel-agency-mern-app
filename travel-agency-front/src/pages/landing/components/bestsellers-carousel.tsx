@@ -12,9 +12,11 @@ import type { Trip } from "@/types/entities/trip";
 import Autoplay from "embla-carousel-autoplay";
 import Fade from "embla-carousel-fade";
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 
 const BestsellersCarousel = () => {
+  const { t } = useTranslation();
   const [entities, setEntities] = useState<Trip[]>([]);
   const fetchEntities = async (): Promise<void> => {
     try {
@@ -32,7 +34,7 @@ const BestsellersCarousel = () => {
   return (
     <section className="py-12 px-4 md:px-8 bg-[color:var(--color-background)]">
       <div className="w-full max-w-7xl mx-auto rounded-3xl overflow-hidden shadow-xl bg-white/90">
-        <Title text="Bestsellers" level={2} />
+        <Title text={t("carouselBestsellers.title")} level={2} />
 
         <Carousel
           className="relative"
@@ -43,19 +45,20 @@ const BestsellersCarousel = () => {
             {entities.map((trip, index) => (
               <CarouselItem key={index}>
                 <div className="relative w-full h-auto">
-                  {/* Boutons identiques à RegionsCarousel */}
                   <CarouselPrevious
-                    aria-label="Previous trip"
+                    aria-label={t("carouselBestsellers.previous")}
                     className="absolute top-1/2 left-4 -translate-y-1/2 z-10 p-3 md:p-4 rounded-full border border-[color:var(--color-primary)] bg-white text-[color:var(--color-primary)] hover:bg-[color:var(--color-primary)] hover:text-white transition shadow"
                   />
                   <CarouselNext
-                    aria-label="Next trip"
+                    aria-label={t("carouselBestsellers.next")}
                     className="absolute top-1/2 right-4 -translate-y-1/2 z-10 p-3 md:p-4 rounded-full border border-[color:var(--color-primary)] bg-white text-[color:var(--color-primary)] hover:bg-[color:var(--color-primary)] hover:text-white transition shadow"
                   />
 
                   <Link
                     to={`/research/${trip._id}`}
-                    aria-label={`See ${trip.title}`}
+                    aria-label={t("carouselBestsellers.viewTrip", {
+                      title: trip.title,
+                    })}
                   >
                     <div className="flex items-center justify-center overflow-hidden max-h-[70vh] rounded-2xl">
                       <img

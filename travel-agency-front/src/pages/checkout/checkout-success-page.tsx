@@ -2,7 +2,7 @@ import { cleanCheckout } from "@/features/checkout/checkout-slice";
 import { useAppDispatch } from "@/hooks";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import animation from "../../assets/gifs/congratulations-7600_512.gif";
+import { FaRegCheckCircle } from "react-icons/fa";
 const CheckoutSuccessPage = () => {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
@@ -13,16 +13,22 @@ const CheckoutSuccessPage = () => {
   }, [dispatch, navigate]);
 
   return (
-    <section className="mt-32">
-      <div className="align-center text-center">
-        <p className="text-4xl">Congratulations. Payment was successful.</p>
-        <p className="text-4xl">
-          A proof of purchase will be sent to your email.
+    <section className="min-h-screen flex items-center justify-center bg-[var(--color-background)] px-4">
+      <div className="max-w-xl w-full text-center bg-white p-10 rounded-2xl shadow-lg">
+        <FaRegCheckCircle
+          className="text-[var(--color-primary)] mx-auto mb-4"
+          size={64}
+        />
+        <h1 className="text-3xl font-semibold text-[var(--color-primary)] mb-2">
+          Payment Successful
+        </h1>
+        <p className="text-gray-600">
+          A confirmation has been sent to your email.
         </p>
-        <p className="text-xl">Enjoy your trip !</p>
-        <img src={animation} alt="animation" className="mx-auto" />
-        <p className="mt-8">
-          You ll be redirected to home page in a few seconds...
+        <p className="text-gray-600 mb-6">Enjoy your trip!</p>
+
+        <p className="text-sm text-gray-500 mt-6">
+          You’ll be redirected to the homepage in a few seconds...
         </p>
       </div>
     </section>

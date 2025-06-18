@@ -3,6 +3,36 @@
 
 @custom-variant dark (&:is(.dark *));
 
+@media (max-width: 768px) {
+  .responsive-table {
+    display: none;
+  }
+
+  .responsive-orders {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .order-card {
+    background: white;
+    border-radius: 1rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    padding: 1rem;
+    font-size: 0.875rem;
+  }
+
+  .order-card p span {
+    font-weight: 600;
+    display: inline-block;
+    width: 100px;
+  }
+}
+@media (min-width: 769px) {
+  .responsive-orders {
+    display: none;
+  }
+}
 :root {
   /* Fonts */
   --font-logo: "Playfair Display", serif;
@@ -211,6 +241,19 @@ html {
     background: transparent;
   }
 
+  /* Scrollbar vertical */
+  .scroll-thin-vertical::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  .scroll-thin-vertical::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+  }
+
+  .scroll-thin-vertical::-webkit-scrollbar-track {
+    background: transparent;
+  }
   /* Backgrounds */
   .whyus {
     background-image: url(./assets/images/whyus/sand3.jpg);

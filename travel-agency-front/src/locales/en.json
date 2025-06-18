@@ -1,0 +1,126 @@
+{
+  "welcome": "Hey welcome back, <strong>{{name}}</strong>",
+  "logout": "Logout",
+  "signin": "Sign In",
+  "register": "Register",
+  "language": "Language",
+  "header": {
+    "brand": "Travel Agency",
+    "agencies": "Our Agencies",
+    "advisors": "Our Advisors",
+    "hotline": "+33 7 65 24 85 00",
+    "account": "Your Account"
+  },
+  "nav": {
+    "home": "Home",
+    "short": "Short Stays",
+    "long": "Long Stays",
+    "cruise": "River Cruises",
+    "tour": "Tours",
+    "deals": "Deals"
+  },
+  "filters": {
+    "title": "What kind of trip to France...",
+    "region": "Region",
+    "town": "Town",
+    "type": "Type",
+    "duration": "Duration",
+    "tags": "Themes",
+    "search": "Search",
+    "reset": "Reset",
+
+    "regions": {
+      "0": "All Regions",
+      "1": "Auvergne-Rhône-Alpes",
+      "2": "Bourgogne-Franche-Comté",
+      "3": "Brittany",
+      "4": "Centre-Val de Loire",
+      "5": "Corsica",
+      "6": "Grand Est",
+      "7": "Hauts-de-France",
+      "8": "Île-de-France",
+      "9": "Normandy",
+      "10": "Nouvelle-Aquitaine",
+      "11": "Occitanie",
+      "12": "Pays de la Loire",
+      "13": "Provence-Alpes-Côte d'Azur"
+    },
+
+    "categories": {
+      "0": "All Types",
+      "1": "Short Stay",
+      "2": "Long Stay",
+      "3": "Cruise",
+      "4": "Tour",
+      "5": "Deal"
+    },
+
+    "durations": {
+      "0": "All Durations",
+      "2": "2 days / 1 night",
+      "3": "3 days / 2 nights",
+      "4": "4 days / 3 nights",
+      "5": "5 days / 4 nights",
+      "6": "6 days / 5 nights",
+      "7": "7 days / 5 nights",
+      "8": "8 days / 5 nights",
+      "9": "9 days / 5 nights"
+    },
+
+    "tagsList": {
+      "0": "All Themes",
+      "1": "Kids",
+      "2": "Couples",
+      "3": "Families",
+      "4": "Deals",
+      "5": "Mountains",
+      "6": "Beach",
+      "7": "Bestsellers"
+    }
+  },
+  "advisors": {
+    "emptyTitle": "No advisors found",
+    "emptyText": "We're sorry, but we couldn’t find any advisors available for your current selection."
+  },
+  "common": {
+    "backToHome": "Return to Home"
+  },
+  "carousel": {
+    "title": "Explore Our Most Popular Regions",
+    "previous": "Previous region",
+    "next": "Next region",
+    "viewTripsIn": "See trips in {{name}}",
+    "photoAlt": "Photo of {{name}}"
+  },
+  "carouselBestsellers": {
+    "title": "Bestsellers",
+    "previous": "Previous trip",
+    "next": "Next trip",
+    "viewTrip": "See {{title}}"
+  },
+  "tagsCarousel": {
+    "title": "Browse by Theme",
+    "tags": {
+      "1": {
+        "title": "Kids",
+        "text": "Planning the perfect family getaway where kids and parents can both have an amazing time? Explore our curated selection of vacations designed with children in mind. From exciting activities and dedicated kids' clubs to moments of relaxation for adults, our destinations promise unforgettable memories for the whole family in a stress-free setting."
+      },
+      "3": {
+        "title": "Families",
+        "text": "Discover our handpicked selection of family vacations with kids’ clubs! Enjoy a perfect getaway where both children and adults can have fun and relax in complete peace of mind. Our idyllic destinations offer a wide range of exciting activities to entertain the little ones, allowing parents to indulge in some well-deserved relaxation."
+      },
+      "2": {
+        "title": "Couples",
+        "text": "Dreaming of an escape with your partner to a tropical paradise where the sun meets the sea? Let yourself be captivated by our exclusive destinations, perfect for an unforgettable honeymoon. Whether you want to unwind on pristine sandy beaches, explore exotic islands, or discover cities brimming with romantic charm, we’ve handpicked exceptional locations just for you."
+      },
+      "5": {
+        "title": "Mountains",
+        "text": "Dreaming of a getaway to the heart of the mountains, where nature's beauty takes your breath away? Discover our exclusive mountain destinations, perfect for an unforgettable escape. Whether you’re looking to relax in a cozy chalet, embark on thrilling outdoor adventures, or soak in panoramic views of majestic peaks, we’ve carefully selected exceptional locations to make your alpine dreams come true."
+      },
+      "6": {
+        "title": "Beach",
+        "text": "Longing for a seaside escape where golden sands meet crystal-clear waters? Explore our handpicked beach destinations, perfect for an unforgettable getaway. Whether you dream of lounging under the sun, diving into vibrant marine life, or enjoying the gentle sound of the waves, we’ve selected exceptional locations to make your coastal retreat truly magical."
+      }
+    }
+  }
+}

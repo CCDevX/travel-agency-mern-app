@@ -9,13 +9,14 @@ import {
   CarouselItem,
 } from "@/components/ui/carousel";
 import Title from "@/components/title";
+import { t } from "i18next";
 
 const TagsCarousel = () => {
   return (
     <section className="py-12 px-4 md:px-8 bg-[color:var(--color-background)]">
       <div className="w-full max-w-7xl mx-auto rounded-3xl overflow-hidden shadow-xl bg-white p-4 md:p-8">
         {/* Titre unifié */}
-        <Title text="Browse by Theme" level={2} />
+        <Title text={t("tagsCarousel.title")} level={2} />
 
         <Carousel
           className="relative"
@@ -33,17 +34,17 @@ const TagsCarousel = () => {
                     <CardHeader className="p-0 h-[200px]">
                       <img
                         src={tag.photo}
-                        alt={tag.title}
+                        alt={t(`tagsCarousel.tags.${tag.code}.title`)}
                         className="w-full h-full object-cover"
                       />
                     </CardHeader>
 
                     <CardContent className="p-4 bg-white">
                       <h3 className="text-lg font-semibold text-[color:var(--color-primary)] capitalize mb-1">
-                        {tag.title}
+                        {t(`tagsCarousel.tags.${tag.code}.title`)}
                       </h3>
                       <p className="text-sm text-[color:var(--color-secondary)] leading-relaxed max-h-[180px] overflow-y-auto pr-1 scroll-thin">
-                        {tag.text}
+                        {t(`tagsCarousel.tags.${tag.code}.text`)}
                       </p>
                     </CardContent>
                   </Card>

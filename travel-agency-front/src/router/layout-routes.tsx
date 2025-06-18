@@ -74,7 +74,50 @@ export const layoutRoutes: RouteObject[] = [
   {
     path: "profile",
     element: (
-      <ConfirmProvider>
+      <ConfirmProvider
+        defaultOptions={{
+          dialogProps: {
+            sx: {
+              borderRadius: "16px",
+              backgroundColor: "white",
+              padding: 2,
+            },
+          },
+          titleProps: {
+            sx: {
+              color: "var(--color-primary)",
+              fontWeight: "bold",
+              fontSize: "1.2rem",
+            },
+          },
+          confirmationButtonProps: {
+            variant: "contained",
+            sx: {
+              backgroundColor: "var(--color-primary)",
+              "&:hover": {
+                backgroundColor: "var(--color-primary-hover)",
+              },
+              borderRadius: "999px",
+              textTransform: "none",
+              paddingX: 3,
+            },
+          },
+          cancellationButtonProps: {
+            variant: "outlined",
+            sx: {
+              borderColor: "var(--color-border)",
+              color: "var(--color-secondary)",
+              "&:hover": {
+                borderColor: "var(--color-secondary-hover)",
+                color: "var(--color-secondary-hover)",
+              },
+              borderRadius: "999px",
+              textTransform: "none",
+              paddingX: 3,
+            },
+          },
+        }}
+      >
         <ProfilePage />
       </ConfirmProvider>
     ),

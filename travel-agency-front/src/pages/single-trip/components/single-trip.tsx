@@ -137,11 +137,12 @@ const SingleTrip = () => {
           <div className="space-y-6">
             <div className="bg-white border border-[var(--color-border)] rounded-2xl p-4 shadow-sm">
               <p className="text-sm text-gray-700">
-                <span className="font-semibold">Duration:</span> {duration}{" "}
-                day(s) / {duration - 1} night(s)
+                <span className="font-semibold">Duration:</span> {duration} day
+                {duration > 1 ? "s" : ""} / {duration - 1} night
+                {duration - 1 > 1 ? "s" : ""}
               </p>
               <p className="text-sm text-gray-700 mt-2">
-                <span className="font-semibold">Price/pers:</span>
+                <span className="font-semibold">Price/pers</span>
                 <br /> Adults: {formatAsEuros(adultPrice)}
                 <br /> Kids: {formatAsEuros(youngPrice)}
               </p>

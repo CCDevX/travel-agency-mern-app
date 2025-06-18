@@ -53,7 +53,7 @@ const login = async ({ email, password }) => {
       email: foundUser.email,
     },
     jwtSecretKey,
-    { expiresIn: "1h" }
+    { expiresIn: "3h" }
   );
 
   // Remove sensitive fields from user object

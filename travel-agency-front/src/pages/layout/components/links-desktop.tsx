@@ -1,9 +1,11 @@
 import type { Link } from "@/types/ui/link";
 import { links } from "@/utils/navbar-data";
+import { useTranslation } from "react-i18next";
 import { NavLink, useLocation } from "react-router-dom";
 
 const LinksDesktop = () => {
   const location = useLocation();
+  const { t } = useTranslation();
 
   return (
     <div className="w-full hidden lg:flex justify-between items-center">
@@ -17,7 +19,7 @@ const LinksDesktop = () => {
             key={label}
             className={`nav-link ${isActive ? "nav-link-active" : ""}`}
           >
-            {label}
+            {t(`nav.${label}`)}
           </NavLink>
         );
       })}

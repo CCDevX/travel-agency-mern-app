@@ -1,7 +1,4 @@
-import { logoutUser } from "@/features/users/users-slice";
-import { store } from "@/store";
 import axios from "axios";
-import { redirect } from "react-router-dom";
 
 export let apiUrl: string = "";
 
@@ -35,8 +32,10 @@ axiosHelper.interceptors.response.use(
     const message = error.response?.data?.error;
 
     if (status === 401 && message === "Token expired") {
-      store.dispatch(logoutUser());
-      redirect("/");
+      localStorage.removeItem("token");
+      localStorage.removeItem("user");
+      localStorage.removeItem("selection");
+      window.location.href = "/login";
     }
 
     return Promise.reject(error);

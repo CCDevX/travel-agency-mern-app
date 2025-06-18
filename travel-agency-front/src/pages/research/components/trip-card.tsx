@@ -70,7 +70,8 @@ const TripCard = ({ trip }: { trip: Trip }) => {
               {category}
             </Badge>
             <span className="text-gray-600 italic">
-              {duration} day(s), {duration - 1} night(s)
+              {duration} day{duration > 1 ? "s" : ""}, {duration - 1} night
+              {duration - 1 > 1 ? "s" : ""}
             </span>
           </div>
 

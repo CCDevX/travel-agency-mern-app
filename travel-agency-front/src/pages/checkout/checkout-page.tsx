@@ -1,20 +1,14 @@
 import { apiUrl } from "@/axios/axios-helper";
 import CustomInput from "@/components/input/custom-input";
 import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Table, TableBody, TableCell, TableRow } from "@/components/ui/table";
 import { useAppSelector } from "@/hooks";
 import type { Trip } from "@/types/entities/trip";
 import { singleDateFormatter } from "@/types/utils/single-trip-data";
 import { regionsCodes } from "@/utils/filters-data";
 import { formatAsEuros, hotelTax } from "@/utils/format-as-euros";
-import { Form, useLoaderData } from "react-router-dom";
+import { Form, Navigate, useLoaderData } from "react-router-dom";
 
 const CheckoutPage = () => {
   const selectedTrip = useLoaderData() as Trip;
@@ -25,162 +19,170 @@ const CheckoutPage = () => {
   const { _id, images, adultPrice, duration, region, title, town, youngPrice } =
     selectedTrip;
 
-  const apiImageUrl = apiUrl + "/images/trips/" + _id + "/" + images[0];
+  // Redirect if data is missing
+  if (!from || !to || adults === undefined || kids === undefined) {
+    return <Navigate to="/" />;
+  }
+
+  const apiImageUrl = `${apiUrl}/images/trips/${_id}/${images[0]}`;
   const totalPrice = adults * adultPrice + kids * youngPrice;
+
   return (
-    <section className="align-center grid md:grid-cols-10 gap-x-8 justify-center items-start">
-      {/* FORM FOR BUYER */}
-      <Form
-        method="POST"
-        className="md:col-span-6 md:my-8 order-last md:order-first"
-      >
-        <div className="bg-muted rounded-xl shadow-2xl p-8">
-          <p className="text-4xl mb-4">Required Informations Before Purchase</p>
-          <div className="flex flex-col gap-2">
-            <div className="grid grid-cols-2 gap-2">
-              <CustomInput
-                label="first name"
-                name="firstname"
-                type="search"
-                defaultValue={user?.firstname || ""}
-                classname="w-full"
-                required
-              />
-              <CustomInput
-                label="family name"
-                name="familyname"
-                type="search"
-                defaultValue={user?.familyname || ""}
-                classname="w-full"
-                required
-              />
-            </div>
-            <div className="grid grid-cols-2 gap-2">
-              <CustomInput
-                label="email"
-                name="email"
-                type="search"
-                defaultValue={user?.email || ""}
-                classname="w-full"
-                required
-              />
-              <CustomInput
-                label="telephone"
-                name="phone"
-                type="search"
-                defaultValue={user?.phone || ""}
-                classname="w-full"
-                required
-              />
-            </div>
-            <div className="grid grid-cols-1 gap-2">
-              <CustomInput
-                label="address"
-                name="address"
-                type="search"
-                defaultValue={user?.address || ""}
-                classname="w-full"
-                required
-              />
-            </div>
-            <div className="grid grid-cols-3 gap-2">
-              <CustomInput
-                label="zip"
-                name="zip"
-                type="search"
-                defaultValue={user?.zip || ""}
-                classname="w-full"
-                required
-              />
-              <CustomInput
-                label="town"
-                name="town"
-                type="search"
-                defaultValue={user?.town || ""}
-                classname="w-full"
-                required
-              />
-              <CustomInput
-                label="country"
-                name="country"
-                type="search"
-                defaultValue={user?.country || ""}
-                classname="w-full"
-                required
-              />
-            </div>
+    <section className="px-4 py-10 bg-[var(--color-background)]">
+      <h1 className="sr-only">Checkout Page - Confirm Your Booking</h1>
+
+      <div className="max-w-6xl mx-auto grid md:grid-cols-12 gap-8 items-start">
+        {/* FORM */}
+        <Form
+          method="POST"
+          className="md:col-span-7 bg-white rounded-2xl shadow-lg p-8"
+        >
+          <h2 className="text-2xl font-semibold text-[var(--color-primary)] mb-6">
+            Required Information
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <CustomInput
+              type="search"
+              label="First Name"
+              name="firstname"
+              defaultValue={user?.firstname || ""}
+              required
+              classname="w-full"
+            />
+            <CustomInput
+              type="search"
+              label="Family Name"
+              name="familyname"
+              defaultValue={user?.familyname || ""}
+              required
+              classname="w-full"
+            />
+            <CustomInput
+              type="search"
+              label="Email"
+              name="email"
+              defaultValue={user?.email || ""}
+              required
+              classname="w-full"
+            />
+            <CustomInput
+              type="search"
+              label="Telephone"
+              name="phone"
+              defaultValue={user?.phone || ""}
+              required
+              classname="w-full"
+            />
+            <CustomInput
+              type="search"
+              label="Address"
+              name="address"
+              defaultValue={user?.address || ""}
+              required
+              classname="w-full md:col-span-2"
+            />
+            <CustomInput
+              type="search"
+              label="Zip"
+              name="zip"
+              defaultValue={user?.zip || ""}
+              required
+              classname="w-full"
+            />
+            <CustomInput
+              type="search"
+              label="Town"
+              name="town"
+              defaultValue={user?.town || ""}
+              required
+              classname="w-full"
+            />
+            <CustomInput
+              type="search"
+              label="Country"
+              name="country"
+              defaultValue={user?.country || ""}
+              required
+              classname="w-full md:col-span-2"
+            />
           </div>
-        </div>
-        <div className="my-8 w-full">
-          <Button className="rounded-xl shadow-2xl p-8 w-full" type="submit">
+          <Button
+            type="submit"
+            className="mt-6 w-full rounded-full bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] transition-all duration-200 hover:scale-[1.02] text-white"
+          >
             Pay
           </Button>
-        </div>
-      </Form>
-      {/* RECALL OF BOUGHT PRODUCT */}
-      <div className="md:col-span-4 md:my-8">
-        <Card className="bg-muted overflow-hidden rounded-xl shadow-2xl p-0">
-          <CardHeader className="w-full p-0">
-            <img
-              src={apiImageUrl}
-              alt="main-photo"
-              className="h-full aspect-[2/1] object-cover"
-            />
-          </CardHeader>
-          <CardContent className="my-4">
-            <CardTitle>
-              <p className="font-special font-bold text-4xl my-2">{title}</p>
-              <p className="mb-3">
-                {regionsCodes.find((reg) => reg.code === region)?.name}, {town}
+        </Form>
+
+        {/* RECAP */}
+        <div className="md:col-span-5 space-y-6 md:sticky md:top-24">
+          <Card className="overflow-hidden rounded-2xl shadow-md p-0">
+            <CardHeader className="p-0">
+              <img
+                src={apiImageUrl}
+                alt={title}
+                className="w-full h-48 object-cover"
+              />
+            </CardHeader>
+            <CardContent className="p-5">
+              <CardTitle className="text-xl font-special text-[var(--color-primary)] mb-2">
+                {title}
+              </CardTitle>
+              <p className="text-sm text-gray-600 mb-4">
+                {regionsCodes.find((reg) => reg.code === region)?.name}
+                {town ? `, ${town}` : ""}
               </p>
-            </CardTitle>
-            <CardDescription>
               <Table>
-                <TableBody className="text-black">
+                <TableBody>
                   <TableRow>
-                    <TableCell className="font-bold">From</TableCell>
+                    <TableCell className="font-medium">From</TableCell>
                     <TableCell>{singleDateFormatter(new Date(from))}</TableCell>
                   </TableRow>
                   <TableRow>
-                    <TableCell className="font-bold">To</TableCell>
+                    <TableCell className="font-medium">To</TableCell>
                     <TableCell>{singleDateFormatter(new Date(to))}</TableCell>
                   </TableRow>
                   <TableRow>
-                    <TableCell className="font-bold">Duration</TableCell>
+                    <TableCell className="font-medium">Duration</TableCell>
                     <TableCell>
-                      {duration} day(s) / {duration - 1} night(s)
+                      {duration} day{duration > 1 ? "s" : ""} / {duration - 1}{" "}
+                      night{duration - 1 > 1 ? "s" : ""}
                     </TableCell>
                   </TableRow>
                   <TableRow>
-                    <TableCell className="font-bold">People</TableCell>
+                    <TableCell className="font-medium">People</TableCell>
                     <TableCell>
-                      {adults} adult(s) and {kids} kid(s)
+                      {adults} adult{adults > 1 ? "s" : ""} and {kids} kid
+                      {kids > 1 ? "s" : ""}
                     </TableCell>
                   </TableRow>
                 </TableBody>
               </Table>
-            </CardDescription>
-          </CardContent>
-        </Card>
-        <Card className="bg-muted my-4 rounded-xl shadow-2xl">
-          <CardContent>
-            <p className="mt-2">Price</p>
-            <Table>
-              <TableBody>
-                <TableRow>
-                  <TableCell className="font-bold text-black">Tax</TableCell>
-                  <TableCell className="">{formatAsEuros(hotelTax)}</TableCell>
-                </TableRow>
-                <TableRow>
-                  <TableCell className="font-bold text-black">Total</TableCell>
-                  <TableCell className="">
-                    {formatAsEuros(totalPrice + hotelTax)}
-                  </TableCell>
-                </TableRow>
-              </TableBody>
-            </Table>
-          </CardContent>
-        </Card>
+            </CardContent>
+          </Card>
+
+          <Card className="rounded-2xl shadow-md">
+            <CardContent className="p-5">
+              <h3 className="text-md font-semibold mb-2 text-[var(--color-primary)]">
+                Price Summary
+              </h3>
+              <Table>
+                <TableBody>
+                  <TableRow>
+                    <TableCell className="font-medium">Tax</TableCell>
+                    <TableCell>{formatAsEuros(hotelTax)}</TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell className="font-medium">Total</TableCell>
+                    <TableCell>
+                      {formatAsEuros(totalPrice + hotelTax)}
+                    </TableCell>
+                  </TableRow>
+                </TableBody>
+              </Table>
+            </CardContent>
+          </Card>
+        </div>
       </div>
     </section>
   );

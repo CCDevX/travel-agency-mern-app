@@ -54,6 +54,14 @@ const RegisterPage = () => {
                 Login
               </Link>
             </p>
+            <p className="text-center text-sm text-[var(--color-muted-text)] mt-2">
+              <Link
+                to="/"
+                className="text-[var(--color-secondary)] hover:text-[var(--color-secondary-hover)] font-medium"
+              >
+                ← Back to home
+              </Link>
+            </p>
           </Form>
         </CardContent>
       </Card>

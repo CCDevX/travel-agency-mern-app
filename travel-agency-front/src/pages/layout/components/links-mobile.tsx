@@ -8,9 +8,11 @@ import {
 import { NavLink, useLocation } from "react-router-dom";
 import { links } from "@/utils/navbar-data";
 import { DropdownMenuItem } from "@radix-ui/react-dropdown-menu";
+import { useTranslation } from "react-i18next";
 
 const LinksMobile = () => {
   const location = useLocation();
+  const { t } = useTranslation();
 
   return (
     <DropdownMenu>
@@ -34,7 +36,7 @@ const LinksMobile = () => {
                   isActive ? "font-semibold" : ""
                 }`}
               >
-                {label}
+                {t(`nav.${label}`)}
               </NavLink>
             </DropdownMenuItem>
           );
