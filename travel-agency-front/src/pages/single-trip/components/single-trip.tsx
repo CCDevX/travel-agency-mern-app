@@ -17,11 +17,14 @@ import { rangeDateFormatter } from "@/types/utils/single-trip-data";
 import type { StringMapCodes } from "@/types/utils/string-map-codes";
 import { regionsCodes } from "@/utils/filters-data";
 import { formatAsEuros } from "@/utils/format-as-euros";
+import { formatDurationByLocale } from "@/utils/format-duration-by-locale";
 import { useEffect, useState } from "react";
 import { type DateRange } from "react-day-picker";
+import { useTranslation } from "react-i18next";
 import { Link, useLoaderData, useNavigate } from "react-router-dom";
 
 const SingleTrip = () => {
+  const { t } = useTranslation();
   const navigate = useNavigate();
   const trip = useLoaderData() as Trip;
   const {
@@ -67,7 +70,7 @@ const SingleTrip = () => {
           onClick={() => navigate(-1)}
           className="bg-white border border-[var(--color-border)] text-[var(--color-primary)] hover:bg-[var(--color-primary)] hover:text-white"
         >
-          ← Back
+          ← {t("single-trip.back")}
         </Button>
       </div>
 
@@ -137,14 +140,17 @@ const SingleTrip = () => {
           <div className="space-y-6">
             <div className="bg-white border border-[var(--color-border)] rounded-2xl p-4 shadow-sm">
               <p className="text-sm text-gray-700">
-                <span className="font-semibold">Duration:</span> {duration} day
-                {duration > 1 ? "s" : ""} / {duration - 1} night
-                {duration - 1 > 1 ? "s" : ""}
+                <span className="font-semibold">
+                  {t("single-trip.duration")}:
+                </span>{" "}
+                {formatDurationByLocale(duration)}
               </p>
               <p className="text-sm text-gray-700 mt-2">
-                <span className="font-semibold">Price/pers</span>
-                <br /> Adults: {formatAsEuros(adultPrice)}
-                <br /> Kids: {formatAsEuros(youngPrice)}
+                <span className="font-semibold">
+                  {t("single-trip.pricePerPerson")}
+                </span>
+                <br /> {t("single-trip.adults")}: {formatAsEuros(adultPrice)}
+                <br /> {t("single-trip.kids")}: {formatAsEuros(youngPrice)}
               </p>
             </div>
 
@@ -164,20 +170,28 @@ const SingleTrip = () => {
                 className="w-full mt-4 bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] text-white"
                 onClick={() => setDate(initCalendarValue)}
               >
-                Reset
+                {t("single-trip.reset")}
               </Button>
               {date?.from && date?.to && (
                 <div className="mt-4 text-sm text-gray-700">
-                  <p className="font-semibold">Selected Dates</p>
-                  <p>From: {rangeDateFormatter(date).from}</p>
-                  <p>To: {rangeDateFormatter(date).to}</p>
+                  <p className="font-semibold">
+                    {t("single-trip.selectedDates")}
+                  </p>
+                  <p>
+                    {t("single-trip.from")}: {rangeDateFormatter(date).from}
+                  </p>
+                  <p>
+                    {t("single-trip.to")}: {rangeDateFormatter(date).to}
+                  </p>
                 </div>
               )}
             </div>
 
             <div className="grid grid-cols-2 gap-4 bg-white border border-[var(--color-border)] rounded-2xl p-4 shadow-sm">
               <div>
-                <p className="text-sm text-gray-600 mb-1">Adults:</p>
+                <p className="text-sm text-gray-600 mb-1">
+                  {t("single-trip.adults")}:
+                </p>
                 <Select
                   name="adults"
                   onValueChange={(v) => setAdults(parseInt(v))}
@@ -195,7 +209,9 @@ const SingleTrip = () => {
                 </Select>
               </div>
               <div>
-                <p className="text-sm text-gray-600 mb-1">Kids:</p>
+                <p className="text-sm text-gray-600 mb-1">
+                  {t("single-trip.kids")}:
+                </p>
                 <Select name="kids" onValueChange={(v) => setKids(parseInt(v))}>
                   <SelectTrigger className="w-full bg-white text-black rounded-md shadow-inner">
                     <SelectValue placeholder={kids} />
@@ -211,7 +227,7 @@ const SingleTrip = () => {
               </div>
               <div className="col-span-2 mt-2">
                 <p className="text-sm text-gray-700">
-                  Price for {adults} adults and {kids} kids:
+                  {t("single-trip.priceFor", { adults, kids })}
                 </p>
                 <p className="font-bold text-lg text-[var(--color-primary)]">
                   {formatAsEuros(adults * adultPrice + kids * youngPrice)}
@@ -222,15 +238,22 @@ const SingleTrip = () => {
             {date?.from && date?.to && (
               <div className="flex flex-col bg-white border border-[var(--color-border)] rounded-2xl shadow-sm p-4 text-sm text-gray-700">
                 <p className="font-semibold text-[var(--color-primary)] mb-2 underline text-base">
-                  Summary
+                  {t("single-trip.summary")}
                 </p>
                 <p>
-                  {adults} adult(s) and {kids} kid(s)
+                  {adults} {t("single-trip.adults")} / {kids}{" "}
+                  {t("single-trip.kids")}
                 </p>
-                <p>From: {rangeDateFormatter(date).from}</p>
-                <p>To: {rangeDateFormatter(date).to}</p>
+                <p>
+                  {t("single-trip.from")}: {rangeDateFormatter(date).from}
+                </p>
+                <p>
+                  {t("single-trip.to")}: {rangeDateFormatter(date).to}
+                </p>
                 <div className="mt-4 flex justify-between items-center">
-                  <p className="text-sm font-semibold text-gray-600">Total:</p>
+                  <p className="text-sm font-semibold text-gray-600">
+                    {t("single-trip.total")}:
+                  </p>
                   <p className="text-lg font-bold text-[var(--color-secondary)]">
                     {formatAsEuros(adults * adultPrice + kids * youngPrice)}
                   </p>
@@ -240,7 +263,7 @@ const SingleTrip = () => {
                     onClick={handleGoToCheckout}
                     className="w-full bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] text-white"
                   >
-                    Book
+                    {t("single-trip.book")}
                   </Button>
                 </Link>
               </div>

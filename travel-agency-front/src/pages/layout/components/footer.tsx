@@ -1,19 +1,20 @@
-import {
-  col1,
-  col2,
-  col3,
-  col4,
-  colTitles,
-  icons,
-  text,
-} from "../../../utils/footer-data";
+import { icons } from "../../../utils/footer-data";
 import logo from "../../../assets/images/logo-removebg-white.png";
+import { useTranslation } from "react-i18next";
 
 const Footer = () => {
+  const { t } = useTranslation();
+
+  const colData = [
+    t("footer.col2", { returnObjects: true }) as string[],
+    t("footer.col1", { returnObjects: true }) as string[],
+    t("footer.col3", { returnObjects: true }) as string[],
+    t("footer.col4", { returnObjects: true }) as string[],
+  ];
+
   return (
     <footer className="min-h-[30vh] pb-12 bg-[color:var(--color-primary)] text-[color:var(--color-white)] border-t border-white/10">
       <div className="align-center pt-6 grid grid-cols-1 lg:grid-cols-5 gap-6 place-items-center">
-        {/* Logo */}
         <div className="w-[150px] h-[150px]">
           <img
             src={logo}
@@ -22,19 +23,17 @@ const Footer = () => {
           />
         </div>
 
-        {/* Description */}
         <div className="w-full h-full lg:col-span-4 text-[color:var(--color-white)] text-sm">
-          {text}
+          {t("footer.description")}
         </div>
 
-        {/* Payment section */}
         <div className="w-full h-full flex flex-col md:flex-row lg:flex-col justify-between items-start gap-7">
           <div className="flex flex-col items-start">
-            <p className="font-semibold">Safe Payment</p>
+            <p className="font-semibold">{t("footer.payments.safe")}</p>
             <img src={icons.stripe} alt="stripe-logo" className="h-[40px]" />
           </div>
           <div className="flex flex-col items-start">
-            <p className="font-semibold">Accepted payment</p>
+            <p className="font-semibold">{t("footer.payments.accepted")}</p>
             <div className="flex justify-start gap-x-4 flex-wrap">
               <img src={icons.visa} alt="visa-logo" className="h-[40px]" />
               <img src={icons.master} alt="master-logo" className="h-[40px]" />
@@ -47,17 +46,16 @@ const Footer = () => {
             </div>
           </div>
           <div className="flex flex-col items-start">
-            <p className="font-semibold">Our partners payment</p>
+            <p className="font-semibold">{t("footer.payments.partners")}</p>
             <img src={icons.iata} alt="iata-logo" className="h-[40px]" />
           </div>
         </div>
 
-        {/* Navigation columns */}
         <div className="w-full h-full flex flex-col md:flex-row lg:col-span-4 justify-between gap-2 mt-8">
-          {[col2, col1, col3, col4].map((col, i) => (
+          {colData.map((col, i) => (
             <div className="leading-8" key={i}>
               <div className="font-bold underline text-sm mb-1">
-                {colTitles[i]}
+                {t(`footer.columns.${i}`)}
               </div>
               {col.map((content, index) => (
                 <div
@@ -72,12 +70,10 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Footer bottom line */}
       <div className="mt-5 align-center text-center capitalize text-xl border-t border-white/10 pt-6">
         <p>CCDevX – {new Date().getFullYear()}</p>
       </div>
     </footer>
   );
 };
-
 export default Footer;

@@ -2,7 +2,7 @@
   "welcome": "Bonjour, <strong>{{name}}</strong>",
   "logout": "Se déconnecter",
   "signin": "Connexion",
-  "register": "Inscription",
+  "register-icon": "Inscription",
   "language": "Langue",
   "header": {
     "brand": "Travel Agency",
@@ -26,6 +26,7 @@
     "type": "Type",
     "duration": "Durée",
     "tags": "Thèmes",
+    "price": "Prix max / pers",
     "search": "Rechercher",
     "reset": "Réinitialiser",
 
@@ -76,11 +77,21 @@
       "5": "Montagne",
       "6": "Plage",
       "7": "Meilleures ventes"
+    },
+    "advisors": {
+      "title": "Contactez nos conseillers",
+      "subtitle": "Entrez une ville pour contacter l’un de nos conseillers. Ils parlent tous anglais !",
+      "townLabel": "Ville",
+      "placeholder": "'Lyon', 'Paris'..."
     }
   },
   "advisors": {
     "emptyTitle": "Aucun conseiller trouvé",
-    "emptyText": "Désolé, aucun conseiller n'est disponible pour votre sélection."
+    "emptyText": "Désolé, aucun conseiller n'est disponible pour votre sélection.",
+    "title": "Rencontrez nos conseillers dévoués",
+    "subtitle": "Pour chaque région de France",
+    "description": "200 experts passionnés prêts à vous aider à profiter pleinement de ce magnifique pays",
+    "button": "Trouver un conseiller"
   },
   "common": {
     "backToHome": "Retour à l'accueil"
@@ -122,5 +133,129 @@
         "text": "Envie d’une évasion au bord de la mer, là où les sables dorés rencontrent les eaux cristallines ? Explorez nos destinations balnéaires triées sur le volet, idéales pour un séjour inoubliable. Que vous rêviez de vous prélasser au soleil, de plonger au cœur de la vie marine ou de vous laisser bercer par le bruit des vagues, nous avons sélectionné des lieux d’exception pour rendre votre escapade côtière magique."
       }
     }
+  },
+  "whyUs": {
+    "header": "Simple et rapide !",
+    "blocks": {
+      "0": "Parce que vous aimeriez déjà y être, on vous évite de perdre du temps dans vos recherches.",
+      "1": "Payez en toute tranquillité et à votre rythme : carte bancaire, paiement en 4 fois ou chèques vacances.",
+      "2": "Des conseillers disponibles avant, pendant et après votre séjour, c’est possible !",
+      "3": "Un imprévu ? Votre conseiller est là pour gérer la situation.",
+      "4": "Des spécialistes pour chacune de vos envies d’évasion...",
+      "5": "Autant de destinations et d’expériences uniques qu’il y a de rêves de voyage."
+    },
+    "footer": "Et toujours 200 conseillers dans plus de 20 agences pour vous accueillir près de chez vous !"
+  },
+  "whyUsText": {
+    "sectionTitle": "Pourquoi choisir Travel Agency ?",
+    "block0": {
+      "title": "L’agence de voyage qui réalise vos rêves",
+      "content": {
+        "0": "Nous transformons vos rêves de voyage en réalité. Premier réseau français de plus de 300 agences de voyages indépendantes, nous sommes spécialisés dans la création d’expériences inoubliables, parfaitement adaptées à vos besoins.",
+        "1": "Des croisières aux circuits, en passant par les hôtels et bien plus, nos conseillers experts veillent à chaque détail.",
+        "2": "Avec plus de 16 000 avis et 200 conseillers dédiés prêts à vous accompagner, organiser votre prochaine aventure n’a jamais été aussi simple. Rendez-vous dans une agence HexaTrip près de chez vous et laissez-nous tout gérer !"
+      }
+    },
+    "block1": {
+      "title": "Les meilleures destinations de l’année",
+      "content": {
+        "0": "Choisir votre prochaine destination peut s’avérer difficile tant les possibilités sont nombreuses. HexaTrip simplifie les choses avec une sélection des meilleures destinations de l’année. Découvrez la richesse de la France à travers son histoire, sa culture, ses plages ensoleillées et ses villes dynamiques.",
+        "1": "La France est une terre de beauté intemporelle et de charme, où chaque recoin raconte une histoire. De l’élégance romantique de Paris avec sa tour Eiffel et ses cafés typiques, aux vignobles baignés de soleil de Bordeaux, en passant par les eaux turquoise de la Côte d’Azur, ce pays est un enchantement pour les sens. Flânez dans des villages médiévaux, savourez une cuisine renommée dans le monde entier, et plongez dans une culture artistique qui inspire depuis des siècles. Que vous recherchiez l’aventure, la détente ou une immersion dans l’art de vivre à la française, la France vous promet un voyage inoubliable."
+      }
+    },
+    "block2": {
+      "title": "Pourquoi faire confiance à HexaTrip pour organiser le voyage de vos rêves ?",
+      "content": {
+        "0": "Un monde de destinations : que vous rêviez d’aventure, de paradis insulaires, de sensations fortes en montagne, de découvertes urbaines ou de croisières fluviales reposantes, HexaTrip a quelque chose à offrir à chaque voyageur. Des circuits sur mesure : nos conseillers créent des itinéraires personnalisés selon vos envies — laissez-nous vous concocter des expériences inoubliables.",
+        "1": "Un service client dévoué : votre satisfaction est notre priorité. Nous proposons des offres sur mesure et un accompagnement constant pour garantir un voyage sans stress. Bien plus qu’une agence de voyage, HexaTrip est votre partenaire pour explorer le monde. Transformons vos rêves de voyage en aventures extraordinaires !"
+      }
+    }
+  },
+  "gallery": {
+    "title": "Galerie d'inspiration voyage"
+  },
+  "preFooter": {
+    "title": "Suivez-nous sur les réseaux sociaux !"
+  },
+  "footer": {
+    "description": "Premier réseau français d’agences de voyages indépendantes, Travel Agency vous propose l’expertise de plus de 200 conseillers passionnés pour concevoir le voyage de vos rêves depuis plus de 20 ans. Que vous cherchiez une escapade, un circuit, une croisière, un vol, un hôtel ou une expérience inoubliable, nous vous offrons un large choix de voyages sur mesure, disponibles en ligne ou dans nos 20 agences à travers le pays.",
+    "payments": {
+      "safe": "Paiement sécurisé",
+      "accepted": "Paiements acceptés",
+      "partners": "Partenaire de paiement"
+    },
+    "columns": {
+      "0": "Engagement",
+      "1": "À propos",
+      "2": "Contacts",
+      "3": "Mentions légales"
+    },
+    "col1": [
+      "Qui sommes-nous ?",
+      "Académie Travel Agency",
+      "Nous rejoindre",
+      "Voyage d'affaires",
+      "Toutes nos destinations"
+    ],
+    "col2": ["Fondation Travel Agency", "Pourquoi choisir Travel Agency ?"],
+    "col3": ["Contactez-nous", "Espace presse"],
+    "col4": [
+      "Mentions légales",
+      "Conditions générales de vente",
+      "Gestion des cookies"
+    ]
+  },
+  "agencies": {
+    "title": "Agences",
+    "schedule": "Nos agences sont ouvertes de 9h à 18h (heure française) du lundi au vendredi, et le samedi de 9h à 12h."
+  },
+  "hotline": {
+    "title": "Hotline",
+    "text": "Si vous souhaitez nous joindre par téléphone, aucun problème ! Un conseiller répondra à votre appel du lundi au vendredi de 9h à 18h, et le samedi matin de 9h à 12h. Nous répondrons à toutes vos questions.",
+    "call": "Appeler maintenant"
+  },
+  "login": {
+    "title": "Bon retour",
+    "subtitle": "Connectez-vous à votre compte",
+    "email": "Email",
+    "password": "Mot de passe",
+    "button": "Connexion",
+    "noAccount": "Pas encore membre ?",
+    "register": "Inscription",
+    "backHome": "← Retour à l'accueil"
+  },
+  "register": {
+    "title": "Créez votre compte",
+    "subtitle": "Rejoignez-nous et commencez votre aventure",
+    "username": "Nom d'utilisateur",
+    "email": "Email",
+    "password": "Mot de passe",
+    "button": "Inscription",
+    "already": "Déjà membre ?",
+    "login": "Connexion",
+    "backHome": "← Retour à l'accueil"
+  },
+  "breadcrumbs": {
+    "home": "Accueil",
+    "research": "Rechercher"
+  },
+  "single-trip": {
+    "back": "← Retour",
+    "duration": "Durée",
+    "pricePerPerson": "Prix / pers",
+    "adults": "Adultes",
+    "kids": "Enfants",
+    "reset": "Réinitialiser",
+    "selectedDates": "Dates sélectionnées",
+    "from": "Du",
+    "to": "Au",
+    "priceFor": "Prix pour {{adults}} adulte(s) et {{kids}} enfant(s)",
+    "summary": "Résumé",
+    "total": "Total",
+    "book": "Réserver",
+    "night": "nuit",
+    "nights": "nuits",
+    "day": "jour",
+    "days": "jours"
   }
 }

@@ -5,6 +5,7 @@ import type { Trip } from "@/types/entities/trip";
 import { getCategoryColor } from "@/types/utils/category-colors-data";
 import { regionsCodes } from "@/utils/filters-data";
 import { formatAsEuros } from "@/utils/format-as-euros";
+import { formatDurationByLocale } from "@/utils/format-duration-by-locale";
 import { Link } from "react-router-dom";
 
 const TripCard = ({ trip }: { trip: Trip }) => {
@@ -70,8 +71,7 @@ const TripCard = ({ trip }: { trip: Trip }) => {
               {category}
             </Badge>
             <span className="text-gray-600 italic">
-              {duration} day{duration > 1 ? "s" : ""}, {duration - 1} night
-              {duration - 1 > 1 ? "s" : ""}
+              {formatDurationByLocale(duration)}
             </span>
           </div>
 

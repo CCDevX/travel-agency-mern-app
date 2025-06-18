@@ -2,7 +2,7 @@
   "welcome": "Hey welcome back, <strong>{{name}}</strong>",
   "logout": "Logout",
   "signin": "Sign In",
-  "register": "Register",
+  "register-icon": "Register",
   "language": "Language",
   "header": {
     "brand": "Travel Agency",
@@ -26,6 +26,7 @@
     "type": "Type",
     "duration": "Duration",
     "tags": "Themes",
+    "price": "Max price/pers",
     "search": "Search",
     "reset": "Reset",
 
@@ -76,11 +77,21 @@
       "5": "Mountains",
       "6": "Beach",
       "7": "Bestsellers"
+    },
+    "advisors": {
+      "title": "Contact our advisors",
+      "subtitle": "Enter a place and contact one of our advisors. They are all English speakers!",
+      "townLabel": "Town",
+      "placeholder": "'Lyon', 'Paris'..."
     }
   },
   "advisors": {
     "emptyTitle": "No advisors found",
-    "emptyText": "We're sorry, but we couldn’t find any advisors available for your current selection."
+    "emptyText": "We're sorry, but we couldn’t find any advisors available for your current selection.",
+    "title": "Meet Our Dedicated Advisors",
+    "subtitle": "For each place of France",
+    "description": "200 passionate experts ready to help you fully experience this beautiful country",
+    "button": "Look for a specialist"
   },
   "common": {
     "backToHome": "Return to Home"
@@ -122,5 +133,129 @@
         "text": "Longing for a seaside escape where golden sands meet crystal-clear waters? Explore our handpicked beach destinations, perfect for an unforgettable getaway. Whether you dream of lounging under the sun, diving into vibrant marine life, or enjoying the gentle sound of the waves, we’ve selected exceptional locations to make your coastal retreat truly magical."
       }
     }
+  },
+  "whyUs": {
+    "header": "Simple and easy !",
+    "blocks": {
+      "0": "Because you would like to be there already, we save you from wasting time in your research.",
+      "1": "Pay with complete peace of mind and at your own pace: credit card, 4x or holiday vouchers.",
+      "2": "Advisors available before, during and after your stay, it’s possible!",
+      "3": "An unexpected event? Your advisor is there to handle it.",
+      "4": "Specialists for each of your escapes...",
+      "5": "As many unique destinations and experiences as there are travel desires."
+    },
+    "footer": "And still  200 advisors in more than 20 agencies to welcome you near you !"
+  },
+  "whyUsText": {
+    "sectionTitle": "Why choose Travel Agency ?",
+    "block0": {
+      "title": "The travel agency that makes your dreams come true",
+      "content": {
+        "0": "Turning your travel dreams into reality. As France's leading network of over 300 independent travel agencies, we specialize in creating unforgettable experiences tailored to your unique needs.",
+        "1": "From cruises to tours, hotels, and more, our expert advisors ensure every detail is perfect.",
+        "2": "With over 16,000 reviews and 200 dedicated advisors ready to assist, planning your next adventure has never been easier. Visit a HexaTrip agency near you and let us handle the rest!"
+      }
+    },
+    "block1": {
+      "title": "Top travel destinations for this year",
+      "content": {
+        "0": "Choosing your next travel destination can be overwhelming with so many enticing options. HexaTrip makes it simple with a curated list of top destinations for the year. Discover France's blend of history, culture, sunny beaches, and its vibrant cities.",
+        "1": "France is a land of timeless beauty and enchantment, where every corner tells a story. From the romantic allure of Paris with its iconic Eiffel Tower and cozy sidewalk cafés to the sun-kissed vineyards of Bordeaux and the azure waters of the French Riviera, this country is a feast for the senses. Wander through medieval villages, savor world-renowned cuisine, and immerse yourself in art and culture that have inspired the world for centuries. Whether you're seeking adventure, relaxation, or a taste of la belle vie, France offers an unforgettable journey for every traveler."
+      }
+    },
+    "block2": {
+      "title": "Why trust HexaTrip to organize the trip of your dreams?",
+      "content": {
+        "0": "A World of Destinations: Whether you crave adventure, island paradises, mountain thrills, urban explorations, or relaxing river cruises, HexaTrip has something for every traveler. Tailor-Made Tours: Our advisors craft personalized itineraries to match your desires—simply let us create unforgettable experiences for you.",
+        "1": "Dedicated Customer Service: Your satisfaction is our priority. We provide tailored offers and unwavering support to ensure a stress-free journey. More than a travel agency, HexaTrip is your partner in exploring the world. Let us turn your travel dreams into extraordinary adventures!"
+      }
+    }
+  },
+  "gallery": {
+    "title": "Travel Inspiration Gallery"
+  },
+  "preFooter": {
+    "title": "Follow us on social medias!"
+  },
+  "footer": {
+    "description": "France's leading network of independent travel agencies, Travel Agency offers you the expertise of over 200 passionate advisors to design the trip of your dreams for more than 20 years. Whether you're looking for a getaway, a tour, a cruise, a flight, a hotel, or an unforgettable experience, we provide a wide range of tailor-made travel options, available online or through our 20 agencies across the country.",
+    "payments": {
+      "safe": "Safe Payment",
+      "accepted": "Accepted payment",
+      "partners": "Our partners payment"
+    },
+    "columns": {
+      "0": "Commitment",
+      "1": "About Us",
+      "2": "Contacts",
+      "3": "Legal information"
+    },
+    "col1": [
+      "Who are we ?",
+      "Travel Agency academy",
+      "Join us",
+      "Business trip",
+      "All our destinations"
+    ],
+    "col2": ["Travel Agency foundation", "Why choose Travel Agency ?"],
+    "col3": ["Contact us", "Press area"],
+    "col4": [
+      "Legal notices",
+      "General conditions of sale",
+      "Cookie consent management"
+    ]
+  },
+  "agencies": {
+    "title": "Agencies",
+    "schedule": "Our agencies are open from 9AM to 6PM (French time) from Monday to Friday, and Saturday from 9AM to 12PM."
+  },
+  "hotline": {
+    "title": "Hotline",
+    "text": "If you want to reach us by phone, no problem! A representative will answer your call from Monday to Friday, 9 AM to 6 PM, and Saturday mornings from 9 AM to 12 PM. We will answer all your questions.",
+    "call": "Call Now"
+  },
+  "login": {
+    "title": "Welcome back",
+    "subtitle": "Login to your account",
+    "email": "Email",
+    "password": "Password",
+    "button": "Login",
+    "noAccount": "Not yet a member?",
+    "register": "Register",
+    "backHome": "← Back to home"
+  },
+  "register": {
+    "title": "Create your account",
+    "subtitle": "Join us and start your journey",
+    "username": "Username",
+    "email": "Email",
+    "password": "Password",
+    "button": "Register",
+    "already": "Already a member?",
+    "login": "Login",
+    "backHome": "← Back to home"
+  },
+  "breadcrumbs": {
+    "home": "Home",
+    "research": "Research"
+  },
+  "single-trip": {
+    "back": "← Back",
+    "duration": "Duration",
+    "pricePerPerson": "Price / pers",
+    "adults": "Adults",
+    "kids": "Kids",
+    "reset": "Reset",
+    "selectedDates": "Selected Dates",
+    "from": "From",
+    "to": "To",
+    "priceFor": "Price for {{adults}} adult(s) and {{kids}} kid(s)",
+    "summary": "Summary",
+    "total": "Total",
+    "book": "Book",
+    "night": "night",
+    "nights": "nights",
+    "day": "day",
+    "days": "days"
   }
 }

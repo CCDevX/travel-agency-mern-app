@@ -3,14 +3,16 @@ import Title from "@/components/title";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import type { Agency } from "@/types/entities/agency";
 import { Mail, MapPinHouse, Phone } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import { useLoaderData } from "react-router-dom";
 
 const AgenciesPage = () => {
   const agencies = useLoaderData() as Agency[];
+  const { t } = useTranslation();
 
   return (
     <section className="bg-[color:var(--color-background)] py-10 px-4 lg:px-16">
-      <Title text="Agencies" />
+      <Title text={t("agencies.title")} />
       <div className="mt-8 flex flex-col gap-10">
         {agencies.map((agency, idx) => (
           <Card
@@ -47,8 +49,7 @@ const AgenciesPage = () => {
               </div>
 
               <p className="text-sm text-[color:var(--color-muted-text)] mt-4">
-                Our agencies are open from 9AM to 6PM (French time) from Monday
-                to Friday, and Saturday from 9AM to 12PM.
+                {t("agencies.schedule")}
               </p>
             </CardContent>
           </Card>

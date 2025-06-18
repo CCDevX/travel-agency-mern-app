@@ -4,9 +4,11 @@ import CustomInput from "./input/custom-input";
 import { RotateCcw } from "lucide-react";
 import { useState } from "react";
 import Title from "./title";
+import { useTranslation } from "react-i18next";
 
 const FilterAdvisors = () => {
   const [trigger, setTrigger] = useState(0);
+  const { t } = useTranslation();
 
   const handleReset = () => {
     setTrigger((oldState) => oldState + 1);
@@ -14,11 +16,10 @@ const FilterAdvisors = () => {
   return (
     <section className="py-12 bg-[color:var(--color-background)]">
       <div className="align-center flex flex-col gap-6">
-        <Title text="Contacts our advisors" />
+        <Title text={t("filters.advisors.title")} />
 
         <p className="text-center text-[color:var(--color-muted-text)] text-lg">
-          Enter a place and contact one of our advisors. They are all English
-          speakers!
+          {t("filters.advisors.subtitle")}
         </p>
 
         <Form
@@ -26,12 +27,12 @@ const FilterAdvisors = () => {
           className="flex flex-col sm:flex-row gap-4 items-center justify-center mt-4 w-full"
         >
           <CustomInput
-            label="town"
+            label={t("filters.advisors.townLabel")}
             name="town"
             type="search"
             required
             classname="w-full max-w-xl"
-            placeholder="'Lyon', 'Paris'..."
+            placeholder={t("filters.advisors.placeholder")}
             nolabel
             key={trigger}
           />
@@ -40,7 +41,7 @@ const FilterAdvisors = () => {
             size="lg"
             className="text-lg font-semibold bg-[color:var(--color-primary)] text-white hover:bg-[color:var(--color-primary-hover)] transition"
           >
-            Search
+            {t("filters.search")}
           </Button>
 
           <Link to="/advisors">
@@ -50,7 +51,7 @@ const FilterAdvisors = () => {
               className="flex gap-2 text-[color:var(--color-muted-text)] hover:text-[color:var(--color-accent)] transition"
             >
               <RotateCcw className="w-5 h-5" />
-              <span className="text-base">Reset</span>
+              <span className="text-base">{t("filters.reset")}</span>
             </Button>
           </Link>
         </Form>

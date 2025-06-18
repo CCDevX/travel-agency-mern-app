@@ -1,12 +1,14 @@
+import { useTranslation } from "react-i18next";
 import { FaFacebook, FaInstagram, FaLinkedin, FaYoutube } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 
 const PreFooter = () => {
+  const { t } = useTranslation();
   return (
     <div className="w-full min-h-[80px] bg-[color:var(--color-primary)] text-[color:var(--color-white)]">
       <div className="align-center flex flex-col md:flex-row justify-between items-center py-4 gap-4">
         <p className="text-2xl font-bold text-center md:text-left">
-          Follow us on social medias!
+          {t("preFooter.title")}
         </p>
         <div className="flex gap-6 items-center">
           <FaFacebook

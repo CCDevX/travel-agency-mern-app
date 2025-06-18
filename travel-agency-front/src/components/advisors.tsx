@@ -4,8 +4,10 @@ import type { Advisor } from "@/types/entities/advisor";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Title from "./title";
+import { useTranslation } from "react-i18next";
 
 const Advisors = () => {
+  const { t } = useTranslation();
   const [entities, setEntities] = useState<Advisor[]>([]);
 
   const fetchEntities = async (): Promise<void> => {
@@ -20,15 +22,15 @@ const Advisors = () => {
   useEffect(() => {
     fetchEntities();
   }, []);
+
   return (
     <section className="py-12 px-4 md:px-8 bg-[color:var(--color-background)]">
       <div className="w-full max-w-7xl mx-auto rounded-3xl overflow-hidden shadow-xl bg-white p-8 text-center">
-        <Title text="Meet Our Dedicated Advisors" level={2} />
+        <Title text={t("advisors.title")} level={2} />
 
-        <p className="text-2xl font-bold mt-4 mb-2">For each place of France</p>
+        <p className="text-2xl font-bold mt-4 mb-2">{t("advisors.subtitle")}</p>
         <p className="text-gray-600 mb-8 text-sm md:text-base">
-          200 passionate experts ready to help you fully experience this
-          beautiful country
+          {t("advisors.description")}
         </p>
 
         <div className="flex flex-wrap justify-center gap-8 mb-8">
@@ -53,7 +55,7 @@ const Advisors = () => {
 
         <Link to="/advisors">
           <Button className="rounded-full bg-white text-[color:var(--color-primary)] border border-[color:var(--color-primary)] hover:bg-[color:var(--color-primary)] hover:text-white transition-all hover:scale-105">
-            Look for a specialist
+            {t("advisors.button")}
           </Button>
         </Link>
       </div>

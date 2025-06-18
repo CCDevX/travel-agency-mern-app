@@ -7,8 +7,11 @@ import {
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 import { Home } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const Breadcrumbs = ({ title }: { title?: string }) => {
+  const { t } = useTranslation();
+
   return (
     <section className="bg-gray-50 py-4 px-6">
       <Breadcrumb>
@@ -18,7 +21,7 @@ const Breadcrumbs = ({ title }: { title?: string }) => {
               href="/"
               className="inline-flex items-center gap-1 hover:text-blue-500 text-blue-900 hover:underline"
             >
-              <Home size={16} /> Home
+              <Home size={16} /> {t("breadcrumbs.home")}
             </BreadcrumbLink>
           </BreadcrumbItem>
 
@@ -29,7 +32,7 @@ const Breadcrumbs = ({ title }: { title?: string }) => {
               href="/research"
               className="capitalize hover:underline hover:text-blue-500 text-blue-900"
             >
-              Research
+              {t("breadcrumbs.research")}
             </BreadcrumbLink>
           </BreadcrumbItem>
 

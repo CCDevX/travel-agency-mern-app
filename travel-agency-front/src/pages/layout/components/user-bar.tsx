@@ -58,7 +58,7 @@ const UserBar = () => {
               {t("signin")}
             </Link>
             <Link to="/register" className="link-accent text-sm">
-              {t("register")}
+              {t("register-icon")}
             </Link>
           </div>
         )}
