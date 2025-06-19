@@ -17,8 +17,10 @@ import {
 import { useAppDispatch, useAppSelector } from "@/hooks";
 import type { ProfilePageLoaderType } from "@/types/dtos/profile-page-loader-type";
 import { formatAsEuros, hotelTax } from "@/utils/format-as-euros";
+import { formatTripDetailsByLocale } from "@/utils/format-duration-by-locale";
 import { useConfirm } from "material-ui-confirm";
 import type { FormEvent } from "react";
+import { useTranslation } from "react-i18next";
 import { useLoaderData, useNavigate } from "react-router-dom";
 
 const ProfilePage = () => {
@@ -27,6 +29,7 @@ const ProfilePage = () => {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
   const confirm = useConfirm();
+  const { t } = useTranslation();
 
   const handleUpdate = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -37,11 +40,10 @@ const ProfilePage = () => {
   const handleDelete = async () => {
     try {
       const result = await confirm({
-        title: "Are you sure you want to delete your account?",
-        description:
-          "You'll be redirected to the main page. Your account data will be lost.",
-        confirmationText: "Proceed",
-        cancellationText: "Cancel",
+        title: `${t("user-profile.confirmTitle")}`,
+        description: `${t("user-profile.confirmDescription")}`,
+        confirmationText: `${t("user-profile.confirmYes")}`,
+        cancellationText: `${t("user-profile.confirmNo")}`,
       });
       if (result.confirmed) {
         await dispatch(deleteUser({ id: profile._id })).unwrap();
@@ -55,16 +57,18 @@ const ProfilePage = () => {
   return (
     <section className="bg-[var(--color-background)] py-10 px-4 min-h-screen">
       <div className="max-w-6xl mx-auto space-y-12">
-        <Title text="Profile" />
+        <Title text={t("user-profile.title")} />
 
         <div className="grid md:grid-cols-3 gap-8">
           {/* Summary block */}
           <div className="bg-white p-6 rounded-2xl shadow-md space-y-2 md:col-span-1">
             <p className="text-sm text-gray-600">
-              <span className="font-semibold">Name:</span> {profile?.username}
+              <span className="font-semibold">{t("user-profile.name")} :</span>{" "}
+              {profile?.username}
             </p>
             <p className="text-sm text-gray-600">
-              <span className="font-semibold">Email:</span> {profile?.email}
+              <span className="font-semibold">{t("user-profile.email")} :</span>{" "}
+              {profile?.email}
             </p>
           </div>
 
@@ -77,49 +81,49 @@ const ProfilePage = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <CustomInput
                 type="search"
-                label="Firstname"
+                label={t("user-profile.firstname")}
                 name="firstname"
                 defaultValue={profile.firstname || ""}
                 classname="w-full"
               />
               <CustomInput
                 type="search"
-                label="Familyname"
+                label={t("user-profile.familyname")}
                 name="familyname"
                 defaultValue={profile.familyname || ""}
                 classname="w-full"
               />
               <CustomInput
                 type="search"
-                label="Address"
+                label={t("user-profile.address")}
                 name="address"
                 defaultValue={profile.address || ""}
                 classname="w-full sm:col-span-2"
               />
               <CustomInput
                 type="search"
-                label="Town"
+                label={t("user-profile.town")}
                 name="town"
                 defaultValue={profile.town || ""}
                 classname="w-full"
               />
               <CustomInput
                 type="search"
-                label="Zip"
+                label={t("user-profile.zip")}
                 name="zip"
                 defaultValue={profile.zip || ""}
                 classname="w-full"
               />
               <CustomInput
                 type="search"
-                label="Country"
+                label={t("user-profile.country")}
                 name="country"
                 defaultValue={profile.country || ""}
                 classname="w-full"
               />
               <CustomInput
                 type="search"
-                label="Phone"
+                label={t("user-profile.phone")}
                 name="phone"
                 defaultValue={profile.phone || ""}
                 classname="w-full sm:col-span-2"
@@ -132,7 +136,9 @@ const ProfilePage = () => {
                 className="bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] text-white rounded-full px-6"
                 disabled={isLoading}
               >
-                {isLoading ? "Updating..." : "Update"}
+                {isLoading
+                  ? `${t("user-profile.updating")}`
+                  : `${t("user-profile.update")}`}
               </Button>
               <Button
                 type="button"
@@ -140,7 +146,7 @@ const ProfilePage = () => {
                 className="rounded-full px-6"
                 onClick={handleDelete}
               >
-                Delete Account
+                {t("user-profile.delete")}
               </Button>
             </div>
           </form>
@@ -149,11 +155,11 @@ const ProfilePage = () => {
         {/* Orders */}
         {/* TABLE EN VERSION DESKTOP */}
         <div className="space-y-4">
-          <Title text="Orders" />
+          <Title text={t("user-profile.ordersTitle")} />
 
           {profile.orders.length === 0 ? (
             <p className="text-center text-gray-500 italic">
-              You haven't made any reservations yet.
+              {t("user-profile.noOrders")}
             </p>
           ) : (
             <>
@@ -162,12 +168,14 @@ const ProfilePage = () => {
                 <Table>
                   <TableHeader>
                     <TableRow>
-                      <TableHead>Trip Title</TableHead>
-                      <TableHead>Email</TableHead>
-                      <TableHead>Firstname</TableHead>
-                      <TableHead>Familyname</TableHead>
-                      <TableHead>Paid</TableHead>
-                      <TableHead>Details</TableHead>
+                      <TableHead>{t("user-profile.table.trip")}</TableHead>
+                      <TableHead>{t("user-profile.table.email")}</TableHead>
+                      <TableHead>{t("user-profile.table.firstname")}</TableHead>
+                      <TableHead>
+                        {t("user-profile.table.familyname")}
+                      </TableHead>
+                      <TableHead>{t("user-profile.table.paid")}</TableHead>
+                      <TableHead>{t("user-profile.table.details")}</TableHead>
                     </TableRow>
                   </TableHeader>
                   <TableBody>
@@ -193,10 +201,7 @@ const ProfilePage = () => {
                             {formatAsEuros(totalPrice + hotelTax)}
                           </TableCell>
                           <TableCell>
-                            {duration} day{duration > 1 && "s"}/{duration - 1}{" "}
-                            night
-                            {duration - 1 > 1 && "s"} with {adults} adult
-                            {adults > 1 && "s"} and {kids} kid{kids > 1 && "s"}
+                            {formatTripDetailsByLocale(duration, adults, kids)}
                           </TableCell>
                         </TableRow>
                       );
@@ -215,23 +220,24 @@ const ProfilePage = () => {
                   return (
                     <div key={index} className="order-card">
                       <p>
-                        <span>Trip:</span> {title}
+                        <span>{t("user-profile.card.trip")} :</span>
+                        {title}
                       </p>
                       <p>
-                        <span>Email:</span> {email}
+                        <span>{t("user-profile.card.email")} :</span>
+                        {email}
                       </p>
                       <p>
-                        <span>Name:</span> {firstname} {familyname}
+                        <span>{t("user-profile.card.name")} :</span>
+                        {firstname} {familyname}
                       </p>
                       <p>
-                        <span>Paid:</span>{" "}
+                        <span>{t("user-profile.card.paid")} :</span>
                         {formatAsEuros(totalPrice + hotelTax)}
                       </p>
                       <p>
-                        <span>Details:</span> {duration} day
-                        {duration > 1 && "s"}/{duration - 1} night
-                        {duration - 1 > 1 && "s"} with {adults} adult
-                        {adults > 1 && "s"} and {kids} kid{kids > 1 && "s"}
+                        <span>{t("user-profile.card.details")} :</span>
+                        {formatTripDetailsByLocale(duration, adults, kids)}
                       </p>
                     </div>
                   );

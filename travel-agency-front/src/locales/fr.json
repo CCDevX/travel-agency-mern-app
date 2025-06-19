@@ -55,6 +55,14 @@
       "4": "Circuit",
       "5": "Offre"
     },
+    "categoriesName": {
+      "all": "Tous les types",
+      "short": "Court séjour",
+      "long": "Long séjour",
+      "cruise": "Croisière",
+      "tour": "Circuit",
+      "deal": "Offre"
+    },
 
     "durations": {
       "0": "Toutes les durées",
@@ -77,6 +85,16 @@
       "5": "Montagne",
       "6": "Plage",
       "7": "Meilleures ventes"
+    },
+    "tagsListName": {
+      "All": "Tous les thèmes",
+      "kids": "Enfants",
+      "couples": "Couples",
+      "families": "Familles",
+      "deal": "Offres",
+      "mountains": "Montagne",
+      "beach": "Plage",
+      "bestseller": "Meilleures ventes"
     },
     "advisors": {
       "title": "Contactez nos conseillers",
@@ -256,6 +274,79 @@
     "night": "nuit",
     "nights": "nuits",
     "day": "jour",
-    "days": "jours"
+    "days": "jours",
+    "person": "personne"
+  },
+  "user-profile": {
+    "title": "Profil",
+    "name": "Nom",
+    "email": "E-mail",
+    "firstname": "Prénom",
+    "familyname": "Nom de famille",
+    "address": "Adresse",
+    "town": "Ville",
+    "zip": "Code postal",
+    "country": "Pays",
+    "phone": "Téléphone",
+    "update": "Mettre à jour",
+    "updating": "Mise à jour...",
+    "delete": "Supprimer le compte",
+    "confirmTitle": "Êtes-vous sûr(e) de vouloir supprimer votre compte ?",
+    "confirmDescription": "Vous serez redirigé(e) vers la page d’accueil. Vos données seront perdues.",
+    "confirmYes": "Continuer",
+    "confirmNo": "Annuler",
+
+    "ordersTitle": "Réservations",
+    "noOrders": "Vous n’avez pas encore effectué de réservation.",
+    "table": {
+      "trip": "Séjour",
+      "email": "E-mail",
+      "firstname": "Prénom",
+      "familyname": "Nom de famille",
+      "paid": "Payé",
+      "details": "Détails"
+    },
+    "card": {
+      "trip": "Séjour",
+      "email": "E-mail",
+      "name": "Nom",
+      "paid": "Payé",
+      "details": "Détails"
+    },
+    "detailsFormat": "{{duration}} jour{{s}} / {{nights}} nuit{{ns}} avec {{adults}} adulte{{as}} et {{kids}} enfant{{ks}}"
+  },
+  "checkout": {
+    "pageTitle": "Confirmation de réservation",
+    "formTitle": "Informations requises",
+    "firstname": "Prénom",
+    "familyname": "Nom de famille",
+    "email": "Email",
+    "phone": "Téléphone",
+    "address": "Adresse",
+    "zip": "Code postal",
+    "town": "Ville",
+    "country": "Pays",
+    "pay": "Payer",
+    "from": "Du",
+    "to": "Au",
+    "duration": "Durée",
+    "people": "Participants",
+    "days": "{{count}} jour",
+    "days_plural": "{{count}} jours",
+    "nights": "{{count}} nuit",
+    "nights_plural": "{{count}} nuits",
+    "adults": "{{count}} adulte",
+    "adults_plural": "{{count}} adultes",
+    "kids": "{{count}} enfant",
+    "kids_plural": "{{count}} enfants",
+    "priceTitle": "Résumé du prix",
+    "tax": "Taxe",
+    "total": "Total"
+  },
+  "checkout-success": {
+    "title": "Paiement réussi",
+    "emailConfirmation": "Une confirmation a été envoyée à votre adresse email.",
+    "enjoy": "Bon voyage !",
+    "redirect": "Vous allez être redirigé vers la page d'accueil dans quelques secondes..."
   }
 }

@@ -3,9 +3,11 @@ import { useAppDispatch } from "@/hooks";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { FaRegCheckCircle } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
 const CheckoutSuccessPage = () => {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   useEffect(() => {
     dispatch(cleanCheckout());
@@ -20,15 +22,14 @@ const CheckoutSuccessPage = () => {
           size={64}
         />
         <h1 className="text-3xl font-semibold text-[var(--color-primary)] mb-2">
-          Payment Successful
+          {t("checkout-success.title")}
         </h1>
         <p className="text-gray-600">
-          A confirmation has been sent to your email.
+          {t("checkout-success.emailConfirmation")}
         </p>
-        <p className="text-gray-600 mb-6">Enjoy your trip!</p>
-
+        <p className="text-gray-600 mb-6">{t("checkout-success.enjoy")}</p>
         <p className="text-sm text-gray-500 mt-6">
-          You’ll be redirected to the homepage in a few seconds...
+          {t("checkout-success.redirect")}
         </p>
       </div>
     </section>

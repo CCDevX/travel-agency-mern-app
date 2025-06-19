@@ -6,6 +6,7 @@ import { getCategoryColor } from "@/types/utils/category-colors-data";
 import { regionsCodes } from "@/utils/filters-data";
 import { formatAsEuros } from "@/utils/format-as-euros";
 import { formatDurationByLocale } from "@/utils/format-duration-by-locale";
+import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 
 const TripCard = ({ trip }: { trip: Trip }) => {
@@ -23,7 +24,7 @@ const TripCard = ({ trip }: { trip: Trip }) => {
 
   const apiImageUrl = `${apiUrl}/images/trips/${_id}/${images[0]}`;
   const regionName = regionsCodes.find((item) => item.code === region)?.name;
-
+  const { t } = useTranslation();
   return (
     <Card className="p-0 rounded-2xl border border-gray-200 hover:shadow-lg transition-all duration-200 overflow-hidden bg-white max-h-[370px] cursor-pointer">
       <Link to={`/research/${_id}`} className="block h-full">
@@ -57,7 +58,7 @@ const TripCard = ({ trip }: { trip: Trip }) => {
                 variant="outline"
                 className="text-xs capitalize"
               >
-                {tag}
+                {t(`filters.tagsListName.${tag}`)}
               </Badge>
             ))}
           </div>
@@ -68,7 +69,7 @@ const TripCard = ({ trip }: { trip: Trip }) => {
               style={{ backgroundColor: getCategoryColor(category) }}
               className="text-white px-2 py-0.5 text-xs capitalize"
             >
-              {category}
+              {t(`filters.categoriesName.${category}`)}
             </Badge>
             <span className="text-gray-600 italic">
               {formatDurationByLocale(duration)}
@@ -77,7 +78,7 @@ const TripCard = ({ trip }: { trip: Trip }) => {
 
           {/* Prix */}
           <span className="font-semibold text-black">
-            {formatAsEuros(adultPrice)} / person
+            {formatAsEuros(adultPrice)} / {t(`single-trip.person`)}
           </span>
         </CardFooter>
       </Link>

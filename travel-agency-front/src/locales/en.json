@@ -55,6 +55,14 @@
       "4": "Tour",
       "5": "Deal"
     },
+    "categoriesName": {
+      "all": "All Types",
+      "short": "Short Stay",
+      "long": "Long Stay",
+      "cruise": "Cruise",
+      "tour": "Tour",
+      "deal": "Deal"
+    },
 
     "durations": {
       "0": "All Durations",
@@ -77,6 +85,16 @@
       "5": "Mountains",
       "6": "Beach",
       "7": "Bestsellers"
+    },
+    "tagsListName": {
+      "All": "All Themes",
+      "kids": "Kids",
+      "couples": "Couples",
+      "families": "Families",
+      "deal": "Deals",
+      "mountains": "Mountains",
+      "beach": "Beach",
+      "bestseller": "Bestsellers"
     },
     "advisors": {
       "title": "Contact our advisors",
@@ -256,6 +274,79 @@
     "night": "night",
     "nights": "nights",
     "day": "day",
-    "days": "days"
+    "days": "days",
+    "person": "person"
+  },
+  "user-profile": {
+    "title": "Profile",
+    "name": "Name",
+    "email": "Email",
+    "firstname": "Firstname",
+    "familyname": "Familyname",
+    "address": "Address",
+    "town": "Town",
+    "zip": "Zip",
+    "country": "Country",
+    "phone": "Phone",
+    "update": "Update",
+    "updating": "Updating...",
+    "delete": "Delete Account",
+    "confirmTitle": "Are you sure you want to delete your account?",
+    "confirmDescription": "You'll be redirected to the main page. Your account data will be lost.",
+    "confirmYes": "Proceed",
+    "confirmNo": "Cancel",
+
+    "ordersTitle": "Orders",
+    "noOrders": "You haven't made any reservations yet.",
+    "table": {
+      "trip": "Trip Title",
+      "email": "Email",
+      "firstname": "Firstname",
+      "familyname": "Familyname",
+      "paid": "Paid",
+      "details": "Details"
+    },
+    "card": {
+      "trip": "Trip",
+      "email": "Email",
+      "name": "Name",
+      "paid": "Paid",
+      "details": "Details"
+    },
+    "detailsFormat": "{{duration}} day{{s}} / {{nights}} night{{ns}} with {{adults}} adult{{as}} and {{kids}} kid{{ks}}"
+  },
+  "checkout": {
+    "pageTitle": "Checkout Page - Confirm Your Booking",
+    "formTitle": "Required Information",
+    "firstname": "First Name",
+    "familyname": "Family Name",
+    "email": "Email",
+    "phone": "Telephone",
+    "address": "Address",
+    "zip": "Zip",
+    "town": "Town",
+    "country": "Country",
+    "pay": "Pay",
+    "from": "From",
+    "to": "To",
+    "duration": "Duration",
+    "people": "People",
+    "days": "{{count}} day",
+    "days_plural": "{{count}} days",
+    "nights": "{{count}} night",
+    "nights_plural": "{{count}} nights",
+    "adults": "{{count}} adult",
+    "adults_plural": "{{count}} adults",
+    "kids": "{{count}} kid",
+    "kids_plural": "{{count}} kids",
+    "priceTitle": "Price Summary",
+    "tax": "Tax",
+    "total": "Total"
+  },
+  "checkout-success": {
+    "title": "Payment Successful",
+    "emailConfirmation": "A confirmation has been sent to your email.",
+    "enjoy": "Enjoy your trip!",
+    "redirect": "You’ll be redirected to the homepage in a few seconds..."
   }
 }

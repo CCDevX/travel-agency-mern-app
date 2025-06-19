@@ -8,9 +8,15 @@ import type { Trip } from "@/types/entities/trip";
 import { singleDateFormatter } from "@/types/utils/single-trip-data";
 import { regionsCodes } from "@/utils/filters-data";
 import { formatAsEuros, hotelTax } from "@/utils/format-as-euros";
+import {
+  formatDurationByLocale,
+  formatPeopleByLocale,
+} from "@/utils/format-duration-by-locale";
+import { useTranslation } from "react-i18next";
 import { Form, Navigate, useLoaderData } from "react-router-dom";
 
 const CheckoutPage = () => {
+  const { t } = useTranslation();
   const selectedTrip = useLoaderData() as Trip;
   const checkout = useAppSelector((state) => state.checkoutSlice);
   const user = useAppSelector((state) => state.usersSlice.user);
@@ -29,7 +35,7 @@ const CheckoutPage = () => {
 
   return (
     <section className="px-4 py-10 bg-[var(--color-background)]">
-      <h1 className="sr-only">Checkout Page - Confirm Your Booking</h1>
+      <h1 className="sr-only">{t("checkout.pageTitle")}</h1>
 
       <div className="max-w-6xl mx-auto grid md:grid-cols-12 gap-8 items-start">
         {/* FORM */}
@@ -38,12 +44,12 @@ const CheckoutPage = () => {
           className="md:col-span-7 bg-white rounded-2xl shadow-lg p-8"
         >
           <h2 className="text-2xl font-semibold text-[var(--color-primary)] mb-6">
-            Required Information
+            {t("checkout.formTitle")}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <CustomInput
               type="search"
-              label="First Name"
+              label={t("checkout.firstname")}
               name="firstname"
               defaultValue={user?.firstname || ""}
               required
@@ -51,7 +57,7 @@ const CheckoutPage = () => {
             />
             <CustomInput
               type="search"
-              label="Family Name"
+              label={t("checkout.familyname")}
               name="familyname"
               defaultValue={user?.familyname || ""}
               required
@@ -59,7 +65,7 @@ const CheckoutPage = () => {
             />
             <CustomInput
               type="search"
-              label="Email"
+              label={t("checkout.email")}
               name="email"
               defaultValue={user?.email || ""}
               required
@@ -67,7 +73,7 @@ const CheckoutPage = () => {
             />
             <CustomInput
               type="search"
-              label="Telephone"
+              label={t("checkout.phone")}
               name="phone"
               defaultValue={user?.phone || ""}
               required
@@ -75,7 +81,7 @@ const CheckoutPage = () => {
             />
             <CustomInput
               type="search"
-              label="Address"
+              label={t("checkout.address")}
               name="address"
               defaultValue={user?.address || ""}
               required
@@ -83,7 +89,7 @@ const CheckoutPage = () => {
             />
             <CustomInput
               type="search"
-              label="Zip"
+              label={t("checkout.zip")}
               name="zip"
               defaultValue={user?.zip || ""}
               required
@@ -91,7 +97,7 @@ const CheckoutPage = () => {
             />
             <CustomInput
               type="search"
-              label="Town"
+              label={t("checkout.town")}
               name="town"
               defaultValue={user?.town || ""}
               required
@@ -99,7 +105,7 @@ const CheckoutPage = () => {
             />
             <CustomInput
               type="search"
-              label="Country"
+              label={t("checkout.country")}
               name="country"
               defaultValue={user?.country || ""}
               required
@@ -135,26 +141,28 @@ const CheckoutPage = () => {
               <Table>
                 <TableBody>
                   <TableRow>
-                    <TableCell className="font-medium">From</TableCell>
+                    <TableCell className="font-medium">
+                      {t("checkout.from")}
+                    </TableCell>
                     <TableCell>{singleDateFormatter(new Date(from))}</TableCell>
                   </TableRow>
                   <TableRow>
-                    <TableCell className="font-medium">To</TableCell>
+                    <TableCell className="font-medium">
+                      {t("checkout.to")}
+                    </TableCell>
                     <TableCell>{singleDateFormatter(new Date(to))}</TableCell>
                   </TableRow>
                   <TableRow>
-                    <TableCell className="font-medium">Duration</TableCell>
-                    <TableCell>
-                      {duration} day{duration > 1 ? "s" : ""} / {duration - 1}{" "}
-                      night{duration - 1 > 1 ? "s" : ""}
+                    <TableCell className="font-medium">
+                      {t("checkout.duration")}
                     </TableCell>
+                    <TableCell>{formatDurationByLocale(duration)}</TableCell>
                   </TableRow>
                   <TableRow>
-                    <TableCell className="font-medium">People</TableCell>
-                    <TableCell>
-                      {adults} adult{adults > 1 ? "s" : ""} and {kids} kid
-                      {kids > 1 ? "s" : ""}
+                    <TableCell className="font-medium">
+                      {t("checkout.people")}
                     </TableCell>
+                    <TableCell>{formatPeopleByLocale(adults, kids)}</TableCell>
                   </TableRow>
                 </TableBody>
               </Table>
@@ -164,16 +172,20 @@ const CheckoutPage = () => {
           <Card className="rounded-2xl shadow-md">
             <CardContent className="p-5">
               <h3 className="text-md font-semibold mb-2 text-[var(--color-primary)]">
-                Price Summary
+                {t("checkout.priceTitle")}
               </h3>
               <Table>
                 <TableBody>
                   <TableRow>
-                    <TableCell className="font-medium">Tax</TableCell>
+                    <TableCell className="font-medium">
+                      {t("checkout.tax")}
+                    </TableCell>
                     <TableCell>{formatAsEuros(hotelTax)}</TableCell>
                   </TableRow>
                   <TableRow>
-                    <TableCell className="font-medium">Total</TableCell>
+                    <TableCell className="font-medium">
+                      {t("checkout.total")}
+                    </TableCell>
                     <TableCell>
                       {formatAsEuros(totalPrice + hotelTax)}
                     </TableCell>

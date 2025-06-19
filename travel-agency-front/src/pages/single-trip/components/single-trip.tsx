@@ -22,6 +22,7 @@ import { useEffect, useState } from "react";
 import { type DateRange } from "react-day-picker";
 import { useTranslation } from "react-i18next";
 import { Link, useLoaderData, useNavigate } from "react-router-dom";
+import { getCalendarLocale } from "@/locales/date-locale";
 
 const SingleTrip = () => {
   const { t } = useTranslation();
@@ -70,7 +71,7 @@ const SingleTrip = () => {
           onClick={() => navigate(-1)}
           className="bg-white border border-[var(--color-border)] text-[var(--color-primary)] hover:bg-[var(--color-primary)] hover:text-white"
         >
-          ← {t("single-trip.back")}
+          {t("single-trip.back")}
         </Button>
       </div>
 
@@ -92,15 +93,15 @@ const SingleTrip = () => {
               style={{ backgroundColor: getCategoryColor(category) }}
               className="text-white px-3 py-1 text-xs capitalize"
             >
-              {category}
+              {t(`filters.categoriesName.${category}`)}
             </Badge>
             {tags.map((tag, index) => (
               <Badge
                 key={index}
                 variant="outline"
-                className="text-xs capitalize border-[var(--color-border)] text-[var(--color-primary)]"
+                className="text-xs border-[var(--color-border)] text-[var(--color-primary)]"
               >
-                {tag}
+                {t(`filters.tagsListName.${tag}`)}
               </Badge>
             ))}
           </div>
@@ -156,6 +157,7 @@ const SingleTrip = () => {
 
             <div className="bg-white border border-[var(--color-border)] rounded-2xl p-4 shadow-sm">
               <Calendar
+                locale={getCalendarLocale()}
                 mode="range"
                 min={duration - 1}
                 max={duration - 1}
