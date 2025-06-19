@@ -240,7 +240,11 @@
     "button": "Login",
     "noAccount": "Not yet a member?",
     "register": "Register",
-    "backHome": "← Back to home"
+    "backHome": "← Back to home",
+    "errors": {
+      "invalidCredentials": "Invalid email or password.",
+      "serverError": "An unexpected error occurred. Please try again later."
+    }
   },
   "register": {
     "title": "Create your account",
@@ -251,7 +255,12 @@
     "button": "Register",
     "already": "Already a member?",
     "login": "Login",
-    "backHome": "← Back to home"
+    "backHome": "← Back to home",
+    "errors": {
+      "missingFields": "All fields are required.",
+      "alreadyRegistered": "You are already registered with this email.",
+      "serverError": "An unexpected error occurred. Please try again later."
+    }
   },
   "breadcrumbs": {
     "home": "Home",

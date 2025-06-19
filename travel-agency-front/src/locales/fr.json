@@ -240,7 +240,11 @@
     "button": "Connexion",
     "noAccount": "Pas encore membre ?",
     "register": "Inscription",
-    "backHome": "← Retour à l'accueil"
+    "backHome": "← Retour à l'accueil",
+    "errors": {
+      "invalidCredentials": "Email ou mot de passe invalide.",
+      "serverError": "Une erreur inattendue est survenue. Veuillez réessayer plus tard."
+    }
   },
   "register": {
     "title": "Créez votre compte",
@@ -251,7 +255,12 @@
     "button": "Inscription",
     "already": "Déjà membre ?",
     "login": "Connexion",
-    "backHome": "← Retour à l'accueil"
+    "backHome": "← Retour à l'accueil",
+    "errors": {
+      "missingFields": "Tous les champs sont obligatoires.",
+      "alreadyRegistered": "Vous êtes déjà inscrit avec cet email.",
+      "serverError": "Une erreur inattendue est survenue. Veuillez réessayer plus tard."
+    }
   },
   "breadcrumbs": {
     "home": "Accueil",

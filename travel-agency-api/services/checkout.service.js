@@ -25,7 +25,7 @@ const createStripeSession = async (order, items, token) => {
     price_data: {
       currency: "eur",
       product_data: {
-        name: trip.title,
+        name: trip.title["fr"],
       },
       unit_amount:
         trip.adultPrice * item.adults + trip.youngPrice * item.kids + hotelTax,

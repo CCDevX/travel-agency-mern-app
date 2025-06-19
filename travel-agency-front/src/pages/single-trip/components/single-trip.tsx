@@ -23,6 +23,7 @@ import { type DateRange } from "react-day-picker";
 import { useTranslation } from "react-i18next";
 import { Link, useLoaderData, useNavigate } from "react-router-dom";
 import { getCalendarLocale } from "@/locales/date-locale";
+import i18n from "../../../locales/i18n";
 
 const SingleTrip = () => {
   const { t } = useTranslation();
@@ -48,6 +49,19 @@ const SingleTrip = () => {
   const [kids, setKids] = useState(0);
   const [photoIndex, setPhotoIndex] = useState(0);
   const dispatch = useAppDispatch();
+  const lang = i18n.language.startsWith("fr") ? "fr" : "en";
+  const getLocalizedText = (
+    field: { [key: string]: string } | string | undefined,
+    lang: string
+  ): string => {
+    if (!field) return "";
+    if (typeof field === "string") return field;
+    return field[lang] || "";
+  };
+
+  const tripTitle = getLocalizedText(title, lang);
+  const tripSummary = getLocalizedText(summary, lang);
+  const tripDesc = getLocalizedText(desc, lang);
 
   useEffect(() => {
     dispatch(cleanCheckout());
@@ -86,7 +100,7 @@ const SingleTrip = () => {
             {town && <span> – {town}</span>}
           </p>
           <h1 className="text-4xl font-special text-[var(--color-primary)] mb-4">
-            {title}
+            {tripTitle}
           </h1>
           <div className="flex flex-wrap gap-2 mb-4">
             <Badge
@@ -132,8 +146,8 @@ const SingleTrip = () => {
           </div>
 
           <div className="mt-8 bg-white p-6 rounded-xl shadow-sm text-gray-700 leading-relaxed text-justify">
-            <p>{summary}</p>
-            {desc && <p className="mt-4">{desc}</p>}
+            <p>{tripSummary}</p>
+            {tripDesc && <p className="mt-4">{tripDesc}</p>}
           </div>
         </div>
 

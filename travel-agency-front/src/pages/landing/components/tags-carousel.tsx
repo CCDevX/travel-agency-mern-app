@@ -9,9 +9,10 @@ import {
   CarouselItem,
 } from "@/components/ui/carousel";
 import Title from "@/components/title";
-import { t } from "i18next";
+import { useTranslation } from "react-i18next";
 
 const TagsCarousel = () => {
+  const { t } = useTranslation();
   return (
     <section className="py-12 px-4 md:px-8 bg-[color:var(--color-background)]">
       <div className="w-full max-w-7xl mx-auto rounded-3xl overflow-hidden shadow-xl bg-white p-4 md:p-8">

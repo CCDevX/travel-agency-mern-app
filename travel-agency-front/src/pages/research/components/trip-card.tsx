@@ -8,7 +8,7 @@ import { formatAsEuros } from "@/utils/format-as-euros";
 import { formatDurationByLocale } from "@/utils/format-duration-by-locale";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
-
+import i18n from "../../../locales/i18n";
 const TripCard = ({ trip }: { trip: Trip }) => {
   const {
     _id,
@@ -22,8 +22,10 @@ const TripCard = ({ trip }: { trip: Trip }) => {
     tags,
   } = trip;
 
+  const lang = i18n.language.startsWith("fr") ? "fr" : "en";
   const apiImageUrl = `${apiUrl}/images/trips/${_id}/${images[0]}`;
   const regionName = regionsCodes.find((item) => item.code === region)?.name;
+  const tripTitle = title[lang];
   const { t } = useTranslation();
   return (
     <Card className="p-0 rounded-2xl border border-gray-200 hover:shadow-lg transition-all duration-200 overflow-hidden bg-white max-h-[370px] cursor-pointer">
@@ -32,7 +34,7 @@ const TripCard = ({ trip }: { trip: Trip }) => {
         <div className="h-36 w-full overflow-hidden">
           <img
             src={apiImageUrl}
-            alt={title}
+            alt={tripTitle}
             className="h-full w-full object-cover transition-transform duration-300 hover:scale-105 hover:brightness-105"
           />
         </div>
@@ -44,7 +46,7 @@ const TripCard = ({ trip }: { trip: Trip }) => {
             {town ? ` – ${town}` : ""}
           </p>
           <h3 className="text-lg font-special text-blue-900 leading-snug mb-2">
-            {title}
+            {tripTitle}
           </h3>
         </CardContent>
 

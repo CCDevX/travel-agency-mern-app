@@ -3,11 +3,23 @@ const { Schema } = mongoose;
 
 const tripSchema = new Schema(
   {
-    title: { type: String, required: true },
-    summary: { type: String },
+    // title: { type: String, required: true },
+    title: {
+      fr: { type: String, required: true },
+      en: { type: String, required: true },
+    },
+    // summary: { type: String },
+    summary: {
+      fr: { type: String, required: true },
+      en: { type: String, required: true },
+    },
     region: { type: Number },
     town: { type: String },
-    desc: { type: String },
+    // desc: { type: String },
+    desc: {
+      fr: { type: String, required: true },
+      en: { type: String, required: true },
+    },
     category: { type: String },
     images: { type: [String] },
     duration: { type: Number },

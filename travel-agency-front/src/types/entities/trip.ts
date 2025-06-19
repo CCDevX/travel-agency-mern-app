@@ -1,10 +1,19 @@
 export type Trip = {
   _id: string;
-  title: string;
-  summary: string;
+  title: {
+    en: string;
+    fr: string;
+  };
+  summary: {
+    en: string;
+    fr: string;
+  };
   region: number;
   town: string;
-  desc: string;
+  desc: {
+    en: string;
+    fr: string;
+  };
   category: string;
   images: string[];
   duration: number;

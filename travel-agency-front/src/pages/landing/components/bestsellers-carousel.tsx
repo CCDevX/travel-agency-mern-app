@@ -14,10 +14,12 @@ import Fade from "embla-carousel-fade";
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
+import i18n from "@/locales/i18n";
 
 const BestsellersCarousel = () => {
   const { t } = useTranslation();
   const [entities, setEntities] = useState<Trip[]>([]);
+  const lang = i18n.language.startsWith("fr") ? "fr" : "en";
   const fetchEntities = async (): Promise<void> => {
     try {
       const response = await axiosHelper.get<Trip[]>("trips/bestsellers");
@@ -57,19 +59,19 @@ const BestsellersCarousel = () => {
                   <Link
                     to={`/research/${trip._id}`}
                     aria-label={t("carouselBestsellers.viewTrip", {
-                      title: trip.title,
+                      title: trip.title[lang],
                     })}
                   >
                     <div className="flex items-center justify-center overflow-hidden max-h-[70vh] rounded-2xl">
                       <img
                         src={`${apiUrl}/images/trips/${trip._id}/${trip.images[0]}`}
-                        alt={trip.title}
+                        alt={trip.title[lang]}
                         className="w-full h-[70vh] object-cover rounded-2xl"
                       />
                       <div className="absolute inset-0" />
                       <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
                         <h3 className="font-special text-[2.5rem] md:text-[4rem] lg:text-[5rem] text-[color:var(--color-primary)] tracking-tight px-6 py-2 bg-white/70 backdrop-blur-sm rounded-md shadow-lg max-w-[90%]">
-                          {trip.title}
+                          {trip.title[lang]}
                         </h3>
                         <p className="text-white text-lg md:text-xl mt-2 drop-shadow-sm">
                           {trip.town}

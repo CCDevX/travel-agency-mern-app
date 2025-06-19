@@ -22,6 +22,7 @@ import { useConfirm } from "material-ui-confirm";
 import type { FormEvent } from "react";
 import { useTranslation } from "react-i18next";
 import { useLoaderData, useNavigate } from "react-router-dom";
+import i18n from "@/locales/i18n";
 
 const ProfilePage = () => {
   const profile = useLoaderData() as ProfilePageLoaderType;
@@ -30,6 +31,7 @@ const ProfilePage = () => {
   const navigate = useNavigate();
   const confirm = useConfirm();
   const { t } = useTranslation();
+  const lang = i18n.language.startsWith("fr") ? "fr" : "en";
 
   const handleUpdate = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -193,7 +195,7 @@ const ProfilePage = () => {
                         adultPrice * adults + youngPrice * kids;
                       return (
                         <TableRow key={index}>
-                          <TableCell>{title}</TableCell>
+                          <TableCell>{title[lang]}</TableCell>
                           <TableCell>{email}</TableCell>
                           <TableCell>{firstname}</TableCell>
                           <TableCell>{familyname}</TableCell>
@@ -221,7 +223,7 @@ const ProfilePage = () => {
                     <div key={index} className="order-card">
                       <p>
                         <span>{t("user-profile.card.trip")} :</span>
-                        {title}
+                        {title[lang]}
                       </p>
                       <p>
                         <span>{t("user-profile.card.email")} :</span>

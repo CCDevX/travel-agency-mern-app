@@ -1,11 +1,17 @@
 import { CustomInput } from "@/components";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import { mapRegisterErrorMessage } from "@/types/mapper/error-mapper";
+import type { ErrorResponse } from "@/types/response/error-response";
 import { useTranslation } from "react-i18next";
-import { Form, Link } from "react-router-dom";
+import { Form, Link, useActionData } from "react-router-dom";
 
 const RegisterPage = () => {
+  const actionData = useActionData() as ErrorResponse;
   const { t } = useTranslation();
+  const errorKey = actionData
+    ? mapRegisterErrorMessage(actionData.message)
+    : null;
 
   return (
     <section className="min-h-screen w-full flex items-center justify-center bg-gradient-to-b from-[var(--color-background)] to-white px-4">
@@ -66,6 +72,11 @@ const RegisterPage = () => {
               </Link>
             </p>
           </Form>
+          {errorKey && (
+            <p className="text-red-500 text-sm text-center mb-4">
+              {t(`register.errors.${errorKey}`)}
+            </p>
+          )}
         </CardContent>
       </Card>
     </section>

@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Table, TableBody, TableCell, TableRow } from "@/components/ui/table";
 import { useAppSelector } from "@/hooks";
+import i18n from "@/locales/i18n";
 import type { Trip } from "@/types/entities/trip";
 import { singleDateFormatter } from "@/types/utils/single-trip-data";
 import { regionsCodes } from "@/utils/filters-data";
@@ -20,7 +21,7 @@ const CheckoutPage = () => {
   const selectedTrip = useLoaderData() as Trip;
   const checkout = useAppSelector((state) => state.checkoutSlice);
   const user = useAppSelector((state) => state.usersSlice.user);
-
+  const lang = i18n.language.startsWith("fr") ? "fr" : "en";
   const { adults, from, to, kids } = checkout;
   const { _id, images, adultPrice, duration, region, title, town, youngPrice } =
     selectedTrip;
@@ -126,13 +127,13 @@ const CheckoutPage = () => {
             <CardHeader className="p-0">
               <img
                 src={apiImageUrl}
-                alt={title}
+                alt={title[lang]}
                 className="w-full h-48 object-cover"
               />
             </CardHeader>
             <CardContent className="p-5">
               <CardTitle className="text-xl font-special text-[var(--color-primary)] mb-2">
-                {title}
+                {title[lang]}
               </CardTitle>
               <p className="text-sm text-gray-600 mb-4">
                 {regionsCodes.find((reg) => reg.code === region)?.name}

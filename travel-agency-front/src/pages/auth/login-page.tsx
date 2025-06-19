@@ -1,12 +1,17 @@
 import { CustomInput } from "@/components";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import { mapLoginErrorMessage } from "@/types/mapper/error-mapper";
+import type { ErrorResponse } from "@/types/response/error-response";
 import { useTranslation } from "react-i18next";
 
-import { Form, Link } from "react-router-dom";
+import { Form, Link, useActionData } from "react-router-dom";
 
 const LoginPage = () => {
   const { t } = useTranslation();
+  const actionData = useActionData() as ErrorResponse;
+
+  const errorKey = actionData ? mapLoginErrorMessage(actionData.message) : null;
 
   return (
     <section className="h-screen w-screen bg-[var(--color-background)] grid place-content-center px-4">
@@ -62,6 +67,11 @@ const LoginPage = () => {
             </Link>
           </p>
         </CardContent>
+        {errorKey && (
+          <p className="text-red-500 text-sm text-center mb-4">
+            {t(`login.errors.${errorKey}`)}
+          </p>
+        )}
       </Card>
     </section>
   );
