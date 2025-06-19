@@ -1,0 +1,581 @@
+[
+  {
+    "_id": {
+      "$oid": "674b71582d7efd9e61124c60"
+    },
+    "name": "pablo",
+    "tags": ["lyon", "paris"],
+    "createdAt": {
+      "$date": "2024-11-30T20:11:04.982Z"
+    },
+    "updatedAt": {
+      "$date": "2024-11-30T20:15:33.361Z"
+    },
+    "__v": 0,
+    "image": "pablo.jpg",
+    "desc": {
+      "en": "Hello! My name is Pablo, and I’m a travel consultant passionate about helping visitors experience the best of France. Born and raised in Lyon, the culinary capital of the country, I’ve always been surrounded by rich traditions, vibrant culture, and incredible cuisine. Whether you want to explore the city’s charming traboules, savor authentic dishes in its famous bouchons, or take a day trip to the nearby Beaujolais wine region, I’m here to craft a journey that’s tailored to you. Lyon is a city where history, gastronomy, and beauty come together, and I’d be delighted to help you discover its many wonders.",
+      "fr": "Bonjour ! Je m'appelle Pablo, et je suis conseiller en voyages passionné par l'idée d'aider les visiteurs à découvrir le meilleur de la France. Né et élevé à Lyon, la capitale gastronomique du pays, j’ai grandi au cœur de traditions riches, d’une culture vibrante et d’une cuisine exceptionnelle. Que vous souhaitiez explorer les charmantes traboules de la ville, savourer des plats authentiques dans ses célèbres bouchons ou faire une excursion dans la région viticole du Beaujolais toute proche, je suis là pour créer un voyage sur mesure. Lyon est une ville où l’histoire, la gastronomie et la beauté se rencontrent, et ce serait un plaisir de vous en faire découvrir toutes les merveilles."
+    },
+    "present": "lyon",
+    "email": "pablo.d@travel-agency.com",
+    "from": "2",
+    "phone": "06 12 34 56 78"
+  },
+  {
+    "_id": {
+      "$oid": "674b760fb2bca17cb9c2b31e"
+    },
+    "name": "anna",
+    "tags": ["marseille", "lyon"],
+    "createdAt": {
+      "$date": "2024-11-30T20:31:12.009Z"
+    },
+    "updatedAt": {
+      "$date": "2024-11-30T20:31:45.724Z"
+    },
+    "__v": 0,
+    "image": "anna.jpg",
+    "desc": {
+      "en": "Hello! My name is Anna, and I’m a travel advisor dedicated to sharing the wonders of France. Born and raised in Lyon, often called the culinary heart of the country, I’ve grown up surrounded by exceptional food, rich history, and vibrant culture. Whether you’re curious to wander through the city’s hidden traboules, indulge in traditional dishes at its renowned bouchons, or explore the nearby Beaujolais wine country, I’m here to create a personalized journey just for you. Lyon is a perfect blend of history, gastronomy, and charm, and I’d love to help you experience everything it has to offer.",
+      "fr": "Bonjour ! Je m'appelle Anna, et je suis conseillère en voyages passionnée par le partage des merveilles de la France. Née et élevée à Lyon, souvent considérée comme le cœur gastronomique du pays, j’ai grandi entourée de mets d’exception, d’une histoire riche et d’une culture vibrante. Que vous souhaitiez flâner dans les traboules secrètes de la ville, déguster des plats traditionnels dans ses célèbres bouchons, ou explorer les vignobles du Beaujolais tout proches, je suis là pour créer un voyage personnalisé rien que pour vous. Lyon est un parfait mélange d’histoire, de gastronomie et de charme, et je serais ravie de vous faire découvrir tout ce qu’elle a à offrir."
+    },
+    "email": "anna.g@travel-agency.com",
+    "from": "3",
+    "phone": "06 98 76 54 32",
+    "present": "marseille"
+  },
+  {
+    "_id": {
+      "$oid": "674c2a640fb017f8cf6f8b21"
+    },
+    "name": "ada",
+    "tags": ["avignon", "cannes", "nice"],
+    "createdAt": {
+      "$date": "2024-12-01T09:20:36.669Z"
+    },
+    "updatedAt": {
+      "$date": "2024-12-01T09:42:33.118Z"
+    },
+    "__v": 0,
+    "image": "ada.jpg",
+    "present": "annecy",
+    "from": 4,
+    "desc": {
+      "en": "For more than four years, I have turned my work into a passion. I am here to help make your dream trip a reality by sharing my expertise and experiences with you. Looking forward to seeing you soon at our agency!",
+      "fr": "Depuis plus de quatre ans, j’ai transformé mon métier en passion. Je suis ici pour vous aider à concrétiser le voyage de vos rêves en partageant avec vous mon expertise et mon expérience. Au plaisir de vous accueillir bientôt dans notre agence !"
+    },
+    "phone": "06 12 34 56 78",
+    "email": "ada.w@travel-agency.com"
+  },
+  {
+    "_id": {
+      "$oid": "674c2a910fb017f8cf6f8b23"
+    },
+    "name": "anastasia",
+    "tags": ["montpellier", "annecy", "chamonix"],
+    "createdAt": {
+      "$date": "2024-12-01T09:21:21.248Z"
+    },
+    "updatedAt": {
+      "$date": "2024-12-01T09:43:22.365Z"
+    },
+    "__v": 0,
+    "image": "anastasia.jpg",
+    "desc": {
+      "en": "Hello! My name is Anastasia, and I’m a travel advisor eager to help you discover the beauty of France. I grew up in Annecy, a stunning alpine town nestled by a crystal-clear lake and surrounded by majestic mountains. Whether you're strolling through the charming old town with its canals, enjoying a boat ride on Lake Annecy, or hiking in the nearby mountains, this idyllic town offers a perfect blend of natural beauty and rich history. Let me help you create a personalized experience to explore the enchanting charm of Annecy and its breathtaking surroundings.",
+      "fr": "Bonjour ! Je m'appelle Anastasia et je suis conseillère en voyages, impatiente de vous faire découvrir les merveilles de la France. J'ai grandi à Annecy, une magnifique ville alpine nichée au bord d’un lac cristallin et entourée de montagnes majestueuses. Que vous flâniez dans la vieille ville et ses canaux, profitiez d’une balade en bateau sur le lac ou partiez en randonnée dans les montagnes voisines, cette ville idyllique allie à merveille beauté naturelle et richesse historique. Je suis là pour vous aider à vivre une expérience sur mesure à la découverte du charme envoûtant d’Annecy et de ses paysages à couper le souffle."
+    },
+    "email": "anastasia.j@travel-agency.com",
+    "from": "4",
+    "phone": "07 23 45 67 89",
+    "present": "chamonix"
+  },
+  {
+    "_id": {
+      "$oid": "674c2ac40fb017f8cf6f8b25"
+    },
+    "name": "elena",
+    "tags": ["grenoble", "lyon"],
+    "createdAt": {
+      "$date": "2024-12-01T09:22:12.464Z"
+    },
+    "updatedAt": {
+      "$date": "2024-12-01T09:44:10.839Z"
+    },
+    "__v": 0,
+    "image": "elena.jpg",
+    "desc": {
+      "en": "Hello! My name is Elena, and I’m a travel advisor eager to share the wonders of France with you. Born and raised in Grenoble, nestled in the heart of the French Alps, I’ve always been surrounded by breathtaking mountain landscapes, rich history, and a vibrant outdoor culture. Whether you want to explore the charming old town, hike in the surrounding alpine peaks, or enjoy skiing in the winter months, Grenoble offers an unforgettable experience for nature lovers and adventure seekers. Let me help you craft a journey that captures the essence of this beautiful region, where the mountains meet culture and adventure.",
+      "fr": "Bonjour ! Je m'appelle Elena et je suis conseillère en voyages, enthousiaste à l’idée de partager avec vous les merveilles de la France. Née et élevée à Grenoble, au cœur des Alpes françaises, j’ai grandi entourée de paysages montagneux à couper le souffle, d’une riche histoire et d’une culture de plein air dynamique. Que vous souhaitiez explorer la vieille ville pleine de charme, randonner dans les sommets alpins ou skier en hiver, Grenoble offre une expérience inoubliable pour les amoureux de la nature et les amateurs d’aventure. Laissez-moi vous aider à créer un voyage qui reflète l’essence de cette magnifique région, où les montagnes rencontrent la culture et l’aventure."
+    },
+    "email": "elena.b@travel-agency.com",
+    "from": "4",
+    "phone": "06 56 78 90 12",
+    "present": "grenoble"
+  },
+  {
+    "_id": {
+      "$oid": "674c2ade0fb017f8cf6f8b27"
+    },
+    "name": "emily",
+    "tags": ["rennes", "dijon"],
+    "createdAt": {
+      "$date": "2024-12-01T09:22:38.704Z"
+    },
+    "updatedAt": {
+      "$date": "2024-12-01T09:44:52.489Z"
+    },
+    "__v": 0,
+    "image": "emily.jpg",
+    "desc": {
+      "en": "Hello! My name is Emily, and I’m a travel advisor excited to help you explore the beauty of France. I grew up in Rennes, the lively capital of Brittany, known for its stunning medieval architecture, vibrant cultural scene, and rich Celtic heritage. Whether you’re strolling through the charming streets of the old town, visiting the impressive Parlement de Bretagne, or enjoying the local crêpes and cider, Rennes offers a perfect mix of history, tradition, and modern energy. Let me help you plan a personalized journey to experience the magic and warmth of this unique city.",
+      "fr": "Bonjour ! Je m'appelle Emily et je suis conseillère en voyages, ravie de vous aider à découvrir la beauté de la France. J’ai grandi à Rennes, la capitale animée de la Bretagne, réputée pour son architecture médiévale remarquable, sa scène culturelle dynamique et son riche héritage celtique. Que vous vous promeniez dans les rues pittoresques de la vieille ville, visitiez le majestueux Parlement de Bretagne ou dégustiez des crêpes et du cidre local, Rennes offre un mélange parfait d’histoire, de tradition et d’énergie contemporaine. Laissez-moi vous aider à organiser un voyage personnalisé pour découvrir la magie et la chaleur de cette ville unique."
+    },
+    "email": "emily.u@travel-agency.com",
+    "from": "2",
+    "phone": "07 65 43 21 09",
+    "present": "dijon"
+  },
+  {
+    "_id": {
+      "$oid": "674c2afd0fb017f8cf6f8b29"
+    },
+    "name": "erberto",
+    "tags": ["paris", "lyon", "marseille", "rennes"],
+    "createdAt": {
+      "$date": "2024-12-01T09:23:09.307Z"
+    },
+    "updatedAt": {
+      "$date": "2024-12-01T09:45:37.923Z"
+    },
+    "__v": 0,
+    "image": "erberto.jpg",
+    "desc": {
+      "en": "Hello! My name is Erberto, and I’m a travel advisor with a deep love for sharing the beauty of France. Born and raised in Marseille, the vibrant heart of the Mediterranean, I’ve grown up surrounded by sun-drenched landscapes, rich history, and a lively culture. Whether you’d like to stroll along the bustling Vieux-Port, explore the charming streets of Le Panier, or set sail to the stunning Calanques, I’m here to design a trip that’s tailored to your interests. Marseille offers a unique blend of tradition and modernity, and I’d be delighted to help you experience the soul of this remarkable city.",
+      "fr": "Bonjour ! Je m'appelle Erberto et je suis conseiller en voyages, passionné par le partage de la beauté de la France. Né et élevé à Marseille, le cœur vibrant de la Méditerranée, j’ai grandi entouré de paysages baignés de soleil, d’une histoire riche et d’une culture animée. Que vous souhaitiez flâner sur le Vieux-Port animé, explorer les ruelles pittoresques du quartier du Panier ou embarquer vers les splendides Calanques, je suis là pour concevoir un voyage sur mesure selon vos envies. Marseille offre un mélange unique de tradition et de modernité, et je serais ravi de vous faire découvrir l’âme de cette ville remarquable."
+    },
+    "email": "erberto.g@travel-agency.com",
+    "from": "8",
+    "phone": "06 78 90 12 34",
+    "present": "rennes"
+  },
+  {
+    "_id": {
+      "$oid": "674c2b250fb017f8cf6f8b2b"
+    },
+    "name": "ernest",
+    "tags": ["rouen", "bordeaux", "toulouse"],
+    "createdAt": {
+      "$date": "2024-12-01T09:23:49.258Z"
+    },
+    "updatedAt": {
+      "$date": "2024-12-01T09:46:02.556Z"
+    },
+    "__v": 0,
+    "image": "ernest.jpg",
+    "desc": {
+      "en": "Hello! My name is Ernest, and I’m a travel advisor eager to introduce you to the vibrant charm of France. I grew up in Toulouse, the \"Pink City,\" famous for its stunning red-brick architecture, rich history, and lively atmosphere. Whether you're wandering through the beautiful Capitole Square, exploring the fascinating Cité de l'Espace, or enjoying the delicious local cuisine like cassoulet, Toulouse offers a perfect blend of culture, heritage, and southern warmth. Let me help you create a personalized itinerary to experience the best of this dynamic city and its surroundings.",
+      "fr": "Bonjour ! Je m'appelle Ernest et je suis conseiller en voyages, enthousiaste à l’idée de vous faire découvrir le charme vibrant de la France. J’ai grandi à Toulouse, la « Ville Rose », célèbre pour son architecture en briques rouges, sa riche histoire et son ambiance animée. Que vous vous promeniez sur la magnifique place du Capitole, exploriez la fascinante Cité de l’Espace ou dégustiez la savoureuse cuisine locale comme le cassoulet, Toulouse offre un mélange parfait de culture, de patrimoine et de chaleur du Sud. Laissez-moi vous aider à créer un itinéraire personnalisé pour profiter pleinement de cette ville dynamique et de ses alentours."
+    },
+    "email": "ernest.h@travel-agency.com",
+    "from": "3",
+    "phone": "07 12 34 56 90",
+    "present": "toulouse"
+  },
+  {
+    "_id": {
+      "$oid": "674c2b4e0fb017f8cf6f8b2d"
+    },
+    "name": "federico",
+    "tags": ["rouen", "nantes", "lille"],
+    "createdAt": {
+      "$date": "2024-12-01T09:24:30.806Z"
+    },
+    "updatedAt": {
+      "$date": "2024-12-01T09:46:34.684Z"
+    },
+    "__v": 0,
+    "image": "federico.jpg",
+    "desc": {
+      "en": "Hello! My name is Federico, and I’m a travel advisor excited to share the charm of France with you. I grew up in Nantes, a dynamic city on the banks of the Loire River, known for its rich maritime history, vibrant arts scene, and beautiful green spaces. Whether you’re exploring the majestic Château des Ducs de Bretagne, wandering through the unique Machines of the Isle of Nantes, or enjoying a boat ride along the river, Nantes offers a perfect blend of culture, history, and creativity. Let me help you plan a personalized trip to experience the magic of this welcoming and lively city.",
+      "fr": "Bonjour ! Je m'appelle Federico et je suis conseiller en voyages, ravi de partager avec vous le charme de la France. J’ai grandi à Nantes, une ville dynamique située sur les rives de la Loire, connue pour sa riche histoire maritime, sa scène artistique vibrante et ses magnifiques espaces verts. Que vous exploriez le majestueux Château des Ducs de Bretagne, flâniez parmi les étonnantes Machines de l’île ou profitiez d’une balade en bateau sur la Loire, Nantes offre un mélange parfait de culture, d’histoire et de créativité. Laissez-moi vous aider à organiser un voyage sur mesure pour découvrir la magie de cette ville accueillante et pleine de vie."
+    },
+    "email": "federico.t@travel-agency.com",
+    "from": "3",
+    "phone": "06 43 21 09 87",
+    "present": "nantes"
+  },
+  {
+    "_id": {
+      "$oid": "674c2ba60fb017f8cf6f8b2f"
+    },
+    "name": "francois",
+    "tags": ["montpellier", "rouen", "dijon"],
+    "createdAt": {
+      "$date": "2024-12-01T09:25:58.284Z"
+    },
+    "updatedAt": {
+      "$date": "2024-12-01T09:47:07.559Z"
+    },
+    "__v": 0,
+    "image": "francois.jpg",
+    "desc": {
+      "en": "Hello! My name is Francois, and I’m a travel advisor excited to share the wonders of France with you. I was born and raised in Montpellier, a lively and historic city in the south of France, where the Mediterranean climate meets rich culture and beautiful architecture. Whether you're wandering through the charming streets of the old town, enjoying the vibrant atmosphere of Place de la Comédie, or exploring nearby beaches and vineyards, Montpellier offers a perfect mix of history, modernity, and relaxation. Let me help you create a tailored experience to discover the warmth and charm of this remarkable region.",
+      "fr": "Bonjour ! Je m'appelle François et je suis conseiller en voyages, enthousiaste à l'idée de vous faire découvrir les merveilles de la France. Je suis né et j'ai grandi à Montpellier, une ville animée et historique du sud de la France, où le climat méditerranéen se mêle à une culture riche et une architecture remarquable. Que vous déambuliez dans les ruelles pittoresques du centre historique, profitiez de l’ambiance vibrante de la place de la Comédie, ou exploriez les plages et les vignobles alentours, Montpellier offre un parfait équilibre entre histoire, modernité et détente. Laissez-moi vous aider à créer une expérience sur mesure pour découvrir la chaleur et le charme de cette région exceptionnelle."
+    },
+    "email": "francois.c@travel-agency.com",
+    "from": "7",
+    "phone": "07 54 32 10 98",
+    "present": "rouen"
+  },
+  {
+    "_id": {
+      "$oid": "674c2be90fb017f8cf6f8b31"
+    },
+    "name": "gwen",
+    "tags": [
+      "aigues mortes",
+      "aix en provence",
+      "ajaccio",
+      "bordeaux",
+      "toulouse"
+    ],
+    "createdAt": {
+      "$date": "2024-12-01T09:27:05.791Z"
+    },
+    "updatedAt": {
+      "$date": "2024-12-01T09:47:51.969Z"
+    },
+    "__v": 0,
+    "image": "gwen.jpg",
+    "desc": {
+      "en": "Hello! My name is Gwen, and I’m a travel advisor specializing in uncovering the wonders of France. Born and raised in Provence, I have a deep passion for the cultural, historical, and natural treasures of my country. Whether you dream of exploring the charming hilltop villages of my home region, strolling through the streets of Paris, or savoring fine wines in the vineyards of Burgundy, I’m here to help you craft a tailor-made journey. France, with its stunning diversity of landscapes and vibrant traditions, is an open invitation to escape and be amazed—and I would be delighted to help you experience it in the most authentic way possible.",
+
+      "fr": "Bonjour ! Je m'appelle Gwen et je suis conseillère en voyages, spécialisée dans la découverte des merveilles de la France. Née et ayant grandi en Provence, je nourris une passion profonde pour les trésors culturels, historiques et naturels de mon pays. Que vous rêviez d’explorer les charmants villages perchés de ma région natale, de flâner dans les rues de Paris ou de savourer de grands vins dans les vignobles de Bourgogne, je suis là pour vous aider à concevoir un voyage sur mesure. La France, avec sa diversité éblouissante de paysages et ses traditions vibrantes, est une invitation à l’évasion et à l’émerveillement — et je serais ravie de vous faire vivre cette expérience de la manière la plus authentique qui soit."
+    },
+    "email": "gwen.s@travel-agency.com",
+    "from": "12",
+    "phone": "06 90 12 34 56",
+    "present": "aigues mortes"
+  },
+  {
+    "_id": {
+      "$oid": "674c2c090fb017f8cf6f8b33"
+    },
+    "name": "heather",
+    "tags": ["ajaccio", "bordeaux", "toulouse"],
+    "createdAt": {
+      "$date": "2024-12-01T09:27:37.010Z"
+    },
+    "updatedAt": {
+      "$date": "2024-12-01T09:48:23.736Z"
+    },
+    "__v": 0,
+    "image": "heather.jpg",
+    "desc": {
+      "en": "Hello! My name is Heather, and I’m a travel advisor excited to help you explore the wonders of France. I grew up in Bordeaux, a city renowned for its world-class wines, elegant architecture, and vibrant culture. Whether you're strolling along the beautiful Place de la Bourse, enjoying a wine tour through the nearby vineyards, or savoring delicious local cuisine, Bordeaux offers a perfect blend of sophistication and charm. Let me help you plan a personalized journey to discover the rich history, flavors, and beauty of this remarkable city and the surrounding region.",
+
+      "fr": "Bonjour ! Je m'appelle Heather et je suis conseillère en voyages, ravie de vous aider à explorer les merveilles de la France. J'ai grandi à Bordeaux, une ville renommée pour ses vins de classe mondiale, son architecture élégante et sa culture dynamique. Que vous flâniez sur la magnifique Place de la Bourse, que vous participiez à une visite œnologique dans les vignobles environnants ou que vous savouriez la délicieuse cuisine locale, Bordeaux offre un mélange parfait de raffinement et de charme. Laissez-moi vous aider à planifier un voyage personnalisé pour découvrir l’histoire, les saveurs et la beauté de cette ville remarquable et de sa région."
+    },
+    "email": "heather.g@travel-agency.com",
+    "from": "5",
+    "phone": "07 67 89 01 23",
+    "present": "ajaccio"
+  },
+  {
+    "_id": {
+      "$oid": "674c2c1b0fb017f8cf6f8b35"
+    },
+    "name": "hector",
+    "tags": ["lyon"],
+    "createdAt": {
+      "$date": "2024-12-01T09:27:55.660Z"
+    },
+    "updatedAt": {
+      "$date": "2024-12-01T09:49:03.820Z"
+    },
+    "__v": 0,
+    "image": "hector.jpg",
+    "desc": {
+      "en": "Hello! My name is Hector, and I’m a travel advisor excited to share the wonders of France with you. I grew up in Lyon, the gastronomic capital of the country, where history, culture, and incredible food come together in perfect harmony. Whether you’re wandering through the charming Old Town, exploring the vibrant traboules, or enjoying a meal at one of the city’s famous bouchons, Lyon offers a unique blend of tradition and modernity. Let me help you craft a personalized experience to explore the rich heritage, culinary delights, and lively atmosphere of this remarkable city.",
+
+      "fr": "Bonjour ! Je m'appelle Hector et je suis conseiller en voyages, enthousiaste à l'idée de vous faire découvrir les merveilles de la France. J'ai grandi à Lyon, la capitale gastronomique du pays, où l’histoire, la culture et la cuisine exceptionnelle s’unissent en parfaite harmonie. Que vous flâniez dans le charmant Vieux-Lyon, exploriez les traboules animées ou savouriez un repas dans l’un des célèbres bouchons de la ville, Lyon offre un mélange unique de tradition et de modernité. Laissez-moi vous aider à concevoir une expérience personnalisée pour explorer le riche patrimoine, les délices culinaires et l’ambiance vivante de cette ville remarquable."
+    },
+    "email": "hector.s@travel-agency.com",
+    "from": "8",
+    "phone": "06 21 09 87 65",
+    "present": "lyon"
+  },
+  {
+    "_id": {
+      "$oid": "674c2c370fb017f8cf6f8b37"
+    },
+    "name": "james",
+    "tags": ["lyon", "paris", "toulouse", "bordeaux"],
+    "createdAt": {
+      "$date": "2024-12-01T09:28:23.024Z"
+    },
+    "updatedAt": {
+      "$date": "2024-12-01T09:49:40.232Z"
+    },
+    "__v": 0,
+    "image": "james.jpg",
+    "desc": {
+      "en": "Hello! My name is James, and I’m a travel consultant passionate about showcasing the best of France. Growing up in Lyon, often celebrated as the gastronomic capital of the country, I’ve always been immersed in its rich history, vibrant culture, and exceptional cuisine. From exploring the city’s secret traboules and enjoying traditional bouchon dining to venturing into the picturesque Beaujolais wine region, I can help you plan a unique and memorable experience. Lyon is a city that perfectly blends charm, flavor, and heritage, and I’d be thrilled to guide you in discovering its magic.",
+
+      "fr": "Bonjour ! Je m'appelle James et je suis conseiller en voyages, passionné par l'idée de vous faire découvrir le meilleur de la France. Ayant grandi à Lyon, souvent considérée comme la capitale gastronomique du pays, j’ai toujours baigné dans son histoire riche, sa culture vibrante et sa cuisine exceptionnelle. Que ce soit en explorant les traboules secrètes de la ville, en savourant un repas traditionnel dans un bouchon ou en partant à la découverte de la pittoresque région viticole du Beaujolais, je peux vous aider à planifier une expérience unique et mémorable. Lyon est une ville qui marie parfaitement charme, saveurs et patrimoine, et je serais ravi de vous accompagner dans la découverte de sa magie."
+    },
+    "email": "james.c@travel-agency.com",
+    "from": "4",
+    "phone": "07 45 67 89 01",
+    "present": "bordeaux"
+  },
+  {
+    "_id": {
+      "$oid": "674c2c6f0fb017f8cf6f8b39"
+    },
+    "name": "jamy",
+    "tags": ["chamonix", "lyon", "montpellier", "lille"],
+    "createdAt": {
+      "$date": "2024-12-01T09:29:19.075Z"
+    },
+    "updatedAt": {
+      "$date": "2024-12-01T09:50:33.251Z"
+    },
+    "__v": 0,
+    "image": "jamy.jpg",
+    "desc": {
+      "en": "Hello! My name is Jamy, and I’m a travel advisor excited to help you experience the best of France. I grew up in Montpellier, a lively city in the south known for its vibrant atmosphere, stunning architecture, and Mediterranean charm. Whether you’re exploring the historic Place de la Comédie, wandering through the narrow streets of the old town, or enjoying the sunny weather in the nearby parks and beaches, Montpellier offers a perfect blend of culture, history, and relaxation. Let me help you craft a personalized itinerary to experience the warmth and beauty of this remarkable city.",
+
+      "fr": "Bonjour ! Je m'appelle Jamy et je suis conseiller en voyages, enthousiaste à l'idée de vous faire découvrir le meilleur de la France. J’ai grandi à Montpellier, une ville animée du sud réputée pour son ambiance vibrante, son architecture remarquable et son charme méditerranéen. Que vous exploriez la célèbre Place de la Comédie, flâniez dans les ruelles de la vieille ville ou profitiez du soleil dans les parcs et plages environnants, Montpellier offre un parfait équilibre entre culture, histoire et détente. Je serais ravi de vous aider à créer un itinéraire personnalisé pour découvrir toute la chaleur et la beauté de cette ville remarquable."
+    },
+    "email": "jamy.l@travel-agency.com",
+    "from": "5",
+    "phone": "06 89 01 23 45",
+    "present": "lille"
+  },
+  {
+    "_id": {
+      "$oid": "674c2c920fb017f8cf6f8b3b"
+    },
+    "name": "john",
+    "tags": ["annecy", "nice", "avignon"],
+    "createdAt": {
+      "$date": "2024-12-01T09:29:54.383Z"
+    },
+    "updatedAt": {
+      "$date": "2024-12-01T09:53:50.849Z"
+    },
+    "__v": 0,
+    "image": "john.jpg",
+    "desc": {
+      "en": "Hello! My name is John, and I’m a travel advisor passionate about helping you discover the treasures of France. I was born and raised in Avignon, a city steeped in history and charm, famous for its stunning Papal Palace and the iconic Pont Saint-Bénézet. Surrounded by the beauty of Provence, with its lavender fields, vineyards, and charming villages, Avignon offers a unique blend of culture, heritage, and natural beauty. Whether you’re interested in exploring medieval streets, enjoying local wines, or taking a scenic drive through the Provence countryside, I’m here to create a personalized experience just for you. Let me help you uncover the magic of Avignon and its surroundings!",
+
+      "fr": "Bonjour ! Je m'appelle John et je suis conseiller en voyages, passionné par l’idée de vous faire découvrir les trésors de la France. Je suis né et j’ai grandi à Avignon, une ville pleine de charme et d’histoire, célèbre pour son impressionnant Palais des Papes et l’iconique Pont Saint-Bénézet. Entourée par la beauté de la Provence — ses champs de lavande, ses vignobles et ses villages pittoresques — Avignon offre un mélange unique de culture, de patrimoine et de nature. Que vous souhaitiez explorer des ruelles médiévales, déguster des vins locaux ou parcourir les routes de campagne provençales, je suis là pour vous créer une expérience sur mesure. Laissez-moi vous faire découvrir la magie d’Avignon et de ses environs !"
+    },
+    "email": "john.d@travel-agency.com",
+    "from": "6",
+    "phone": "07 34 56 78 90",
+    "present": "annecy"
+  },
+  {
+    "_id": {
+      "$oid": "674c2d090fb017f8cf6f8b3e"
+    },
+    "name": "julie",
+    "tags": ["aigues mortes", "tours", "strasbourg"],
+    "createdAt": {
+      "$date": "2024-12-01T09:31:53.939Z"
+    },
+    "updatedAt": {
+      "$date": "2024-12-01T10:02:33.573Z"
+    },
+    "__v": 0,
+    "image": "julie.jpg",
+    "desc": {
+      "en": "Hello! My name is Julie, and I’m a travel advisor with a passion for showcasing the unique beauty of France. I grew up in the Loire Valley, a region renowned for its grand châteaux, lush vineyards, and tranquil rivers. Whether you’re eager to explore iconic landmarks like Château de Chambord, indulge in wine tastings at local vineyards, or enjoy a leisurely bike ride along the scenic Loire River, I’ll help you create a bespoke experience. The Loire Valley is one of France’s most captivating treasures, and I would love to guide you in discovering its magic.",
+
+      "fr": "Bonjour ! Je m'appelle Julie et je suis conseillère en voyages, passionnée par l'idée de vous faire découvrir la beauté unique de la France. J'ai grandi dans la Vallée de la Loire, une région célèbre pour ses somptueux châteaux, ses vignobles verdoyants et ses rivières paisibles. Que vous souhaitiez explorer des lieux emblématiques comme le Château de Chambord, savourer des dégustations de vins dans des domaines locaux ou faire une balade à vélo le long de la Loire, je vous aiderai à créer une expérience sur mesure. La Vallée de la Loire est l’un des joyaux les plus fascinants de la France, et je serais ravie de vous en dévoiler toute la magie."
+    },
+    "email": "julie.l@travel-agency.com",
+    "from": "8",
+    "phone": "06 78 12 34 90",
+    "present": "strasbourg"
+  },
+  {
+    "_id": {
+      "$oid": "674c2d2c0fb017f8cf6f8b40"
+    },
+    "name": "lisa",
+    "tags": ["rennes", "nantes"],
+    "createdAt": {
+      "$date": "2024-12-01T09:32:28.026Z"
+    },
+    "updatedAt": {
+      "$date": "2024-12-01T10:03:03.569Z"
+    },
+    "__v": 0,
+    "image": "lisa.jpg",
+    "desc": {
+      "en": "Hello! My name is Lisa, and I’m a travel advisor excited to help you discover the beauty of France. I grew up in Nantes, a vibrant city on the banks of the Loire River, known for its rich history, artistic spirit, and dynamic atmosphere. Whether you’re exploring the stunning Château des Ducs de Bretagne, marveling at the imaginative Machines of the Isle of Nantes, or enjoying a stroll through its picturesque parks and along the river, Nantes offers a perfect blend of culture, history, and creativity. Let me help you create a personalized journey to experience the charm and innovation of this incredible city.",
+
+      "fr": "Bonjour ! Je m'appelle Lisa et je suis conseillère en voyages, ravie de vous faire découvrir la beauté de la France. J'ai grandi à Nantes, une ville dynamique située sur les rives de la Loire, réputée pour sa riche histoire, son esprit artistique et son atmosphère animée. Que vous exploriez le magnifique Château des Ducs de Bretagne, que vous vous émerveilliez devant les Machines de l'île ou que vous flâniez dans ses parcs pittoresques et le long du fleuve, Nantes offre un parfait mélange de culture, d’histoire et de créativité. Laissez-moi vous aider à organiser un voyage sur mesure pour découvrir tout le charme et l’innovation de cette ville incroyable."
+    },
+    "email": "lisa.p@travel-agency.com",
+    "from": "2",
+    "phone": "07 23 45 67 10",
+    "present": "rennes"
+  },
+  {
+    "_id": {
+      "$oid": "674c2d500fb017f8cf6f8b42"
+    },
+    "name": "lock",
+    "tags": ["annecy", "chamonix", "lyon"],
+    "createdAt": {
+      "$date": "2024-12-01T09:33:04.750Z"
+    },
+    "updatedAt": {
+      "$date": "2024-12-01T10:03:28.360Z"
+    },
+    "__v": 0,
+    "image": "lock.jpg",
+    "desc": {
+      "en": "Hello! My name is Lock, and I’m a travel advisor with a passion for sharing the beauty of France. I grew up in Chamonix, a stunning alpine town nestled at the foot of Mont Blanc, where I’ve always been surrounded by awe-inspiring mountain views and a vibrant outdoor lifestyle. Whether you're eager to ski on world-famous slopes, hike through breathtaking alpine landscapes, or explore the charming streets of Chamonix, this region offers an unforgettable adventure for nature enthusiasts. Let me help you create a personalized journey to experience the perfect blend of adventure, relaxation, and natural beauty that Chamonix has to offer.",
+
+      "fr": "Bonjour ! Je m'appelle Lock et je suis conseiller en voyages, passionné par le partage des merveilles de la France. J'ai grandi à Chamonix, une magnifique ville alpine nichée au pied du Mont Blanc, où j'ai toujours été entouré de paysages montagneux à couper le souffle et d’un style de vie axé sur les activités de plein air. Que vous rêviez de skier sur des pistes mondialement célèbres, de randonner dans des paysages alpins spectaculaires ou d’explorer les charmantes rues de Chamonix, cette région offre une aventure inoubliable pour les amoureux de la nature. Laissez-moi vous aider à organiser un voyage personnalisé mêlant aventure, détente et beauté naturelle que seul Chamonix peut offrir."
+    },
+    "email": "lock.r@travel-agency.com",
+    "from": "9",
+    "phone": "06 90 21 34 56",
+    "present": "chamonix"
+  },
+  {
+    "_id": {
+      "$oid": "674c2d6e0fb017f8cf6f8b44"
+    },
+    "name": "meredith",
+    "tags": ["strasbourg", "nantes", "lille"],
+    "createdAt": {
+      "$date": "2024-12-01T09:33:34.633Z"
+    },
+    "updatedAt": {
+      "$date": "2024-12-01T10:04:00.917Z"
+    },
+    "__v": 0,
+    "image": "meredith.jpg",
+    "desc": {
+      "en": "Hello! My name is Meredith, and I’m a travel advisor eager to share the charm of France with you. I grew up in Lille, a dynamic and welcoming city known for its rich history, vibrant cultural scene, and warm Flemish influences. Whether you’re exploring the stunning Grand Place, wandering through the charming Old Town, or enjoying the city’s lively cafés and delicious local cuisine, Lille offers a unique blend of French and Belgian cultures. Let me help you create a personalized experience to discover the hidden gems and lively spirit of this remarkable northern city.",
+
+      "fr": "Bonjour ! Je m'appelle Meredith et je suis conseillère en voyages, enthousiaste à l'idée de vous faire découvrir le charme de la France. J'ai grandi à Lille, une ville dynamique et accueillante, connue pour sa riche histoire, sa scène culturelle animée et ses chaleureuses influences flamandes. Que vous exploriez la magnifique Grand-Place, flâniez dans les ruelles pittoresques du Vieux-Lille ou profitiez des cafés animés et de la délicieuse cuisine locale, Lille offre un mélange unique de cultures française et belge. Laissez-moi vous aider à créer une expérience sur mesure pour découvrir les trésors cachés et l’esprit vivant de cette ville remarquable du nord."
+    },
+    "email": "meredith.b@travel-agency.com",
+    "from": "4",
+    "phone": "07 54 32 10 87",
+    "present": "strasbourg"
+  },
+  {
+    "_id": {
+      "$oid": "674c2d9f0fb017f8cf6f8b46"
+    },
+    "name": "mickael",
+    "tags": ["carcassonne", "tours", "rouen"],
+    "createdAt": {
+      "$date": "2024-12-01T09:34:23.828Z"
+    },
+    "updatedAt": {
+      "$date": "2024-12-01T10:04:39.266Z"
+    },
+    "__v": 0,
+    "image": "mickael.jpg",
+    "desc": {
+      "en": "Hello! My name is Mickael, and I’m a travel consultant with a deep love for France and its extraordinary regions. I grew up in the Loire Valley, a land of majestic châteaux, rolling vineyards, and enchanting riverscapes. Whether you want to explore the historic castles like Chambord and Chenonceau, savor exquisite wines in family-run cellars, or take a peaceful bike ride along the Loire River, I’m here to design a personalized journey that captures the heart of this beautiful region. France is full of wonders, and the Loire Valley is one of its finest gems—let me help you uncover its charm!",
+
+      "fr": "Bonjour ! Je m'appelle Mickael et je suis conseiller en voyages, passionné par la France et ses régions extraordinaires. J'ai grandi dans la Vallée de la Loire, une terre de châteaux majestueux, de vignobles vallonnés et de paysages fluviaux enchanteurs. Que vous souhaitiez explorer des châteaux historiques comme Chambord et Chenonceau, savourer des vins d’exception dans des caves familiales ou faire une paisible balade à vélo le long de la Loire, je suis là pour créer un voyage sur mesure qui vous fera découvrir l’âme de cette magnifique région. La France regorge de merveilles, et la Vallée de la Loire est l’un de ses joyaux les plus précieux — laissez-moi vous aider à en révéler tout le charme !"
+    },
+    "email": "mickael.y@travel-agency.com",
+    "from": "4",
+    "phone": "06 67 89 01 23",
+    "present": "carcassonne"
+  },
+  {
+    "_id": {
+      "$oid": "674c2dc20fb017f8cf6f8b48"
+    },
+    "name": "miguel",
+    "tags": ["carcassonne", "toulouse", "bordeaux"],
+    "createdAt": {
+      "$date": "2024-12-01T09:34:58.676Z"
+    },
+    "updatedAt": {
+      "$date": "2024-12-01T10:05:17.904Z"
+    },
+    "__v": 0,
+    "image": "miguel.jpg",
+    "desc": {
+      "en": "Hello! My name is Miguel, and I’m a travel advisor excited to help you discover the charm of France. I grew up in Carcassonne, a breathtaking medieval city famous for its magnificent fortified castle and winding cobblestone streets. Whether you’re exploring the ancient citadel, enjoying the stunning views from the ramparts, or savoring local wines and cuisine, Carcassonne offers a truly unforgettable experience. Let me help you craft a personalized itinerary to immerse yourself in the rich history and beauty of this UNESCO World Heritage site.",
+
+      "fr": "Bonjour ! Je m'appelle Miguel et je suis conseiller en voyages, enthousiaste à l'idée de vous faire découvrir le charme de la France. J'ai grandi à Carcassonne, une ville médiévale à couper le souffle, célèbre pour son magnifique château fortifié et ses ruelles pavées sinueuses. Que vous exploriez la cité ancienne, profitiez des vues imprenables depuis les remparts ou savouriez les vins et la cuisine locale, Carcassonne offre une expérience véritablement inoubliable. Laissez-moi vous aider à créer un itinéraire personnalisé pour vous immerger dans l'histoire et la beauté de ce site classé au patrimoine mondial de l'UNESCO."
+    },
+    "email": "miguel.s@travel-agency.com",
+    "from": "11",
+    "phone": "07 11 22 33 44",
+    "present": "toulouse"
+  },
+  {
+    "_id": {
+      "$oid": "674c2df10fb017f8cf6f8b4a"
+    },
+    "name": "sam",
+    "tags": [
+      "carcassonne",
+      "toulouse",
+      "bordeaux",
+      "montpellier",
+      "chamonix",
+      "aix en provence"
+    ],
+    "createdAt": {
+      "$date": "2024-12-01T09:35:45.936Z"
+    },
+    "updatedAt": {
+      "$date": "2024-12-01T10:05:43.591Z"
+    },
+    "__v": 0,
+    "image": "sam.jpg",
+    "desc": {
+      "en": "Hello! My name is Sam, and I’m a travel advisor thrilled to help you discover the charm of France. I was born and raised in Carcassonne, a breathtaking medieval city that feels like stepping back in time. Famous for its massive fortified walls and towers, Carcassonne offers a unique blend of history, culture, and picturesque beauty. Whether you're exploring the ancient castle, wandering through cobbled streets, or savoring local wines and cuisine, Carcassonne promises an unforgettable experience. Let me help you create a personalized itinerary to immerse yourself in the magic of this incredible UNESCO World Heritage site.",
+
+      "fr": "Bonjour ! Je m'appelle Sam, et je suis conseiller en voyages, ravi de vous faire découvrir le charme de la France. Je suis né et j'ai grandi à Carcassonne, une ville médiévale à couper le souffle qui donne l'impression de remonter le temps. Célèbre pour ses impressionnants remparts et tours fortifiées, Carcassonne offre un mélange unique d'histoire, de culture et de beauté pittoresque. Que vous exploriez l'ancien château, flâniez dans les rues pavées ou dégustiez les vins et la cuisine locale, Carcassonne promet une expérience inoubliable. Laissez-moi vous aider à créer un itinéraire personnalisé pour vous plonger dans la magie de ce site exceptionnel classé au patrimoine mondial de l'UNESCO."
+    },
+    "email": "sam.n@travel-agency.com",
+    "from": "10",
+    "phone": "06 77 88 99 00",
+    "present": "aix en provence"
+  },
+  {
+    "_id": {
+      "$oid": "674c2e0f0fb017f8cf6f8b4c"
+    },
+    "name": "vesper",
+    "tags": ["nice"],
+    "createdAt": {
+      "$date": "2024-12-01T09:36:15.257Z"
+    },
+    "updatedAt": {
+      "$date": "2024-12-01T10:06:10.735Z"
+    },
+    "__v": 0,
+    "image": "vesper.jpg",
+    "desc": {
+      "en": "Hello! My name is Vesper, and I’m a travel advisor eager to introduce you to the magic of France. I grew up in Nice, the heart of the French Riviera, where stunning Mediterranean views, vibrant markets, and a rich cultural heritage are part of everyday life. Whether you're strolling along the famous Promenade des Anglais, exploring the colorful Old Town, or relaxing on the beautiful beaches, Nice offers a perfect blend of history, art, and coastal charm. Let me help you craft a personalized journey to experience the elegance and warmth of this incredible city and the surrounding Riviera.",
+
+      "fr": "Bonjour ! Je m'appelle Vesper, et je suis conseillère en voyages, impatiente de vous faire découvrir la magie de la France. J'ai grandi à Nice, au cœur de la Côte d’Azur, où les vues méditerranéennes à couper le souffle, les marchés colorés et le riche patrimoine culturel font partie du quotidien. Que vous vous promeniez le long de la célèbre Promenade des Anglais, exploriez la vieille ville haute en couleurs ou vous détendiez sur les magnifiques plages, Nice offre un mélange parfait d'histoire, d'art et de charme côtier. Laissez-moi vous aider à créer un voyage sur mesure pour découvrir l'élégance et la douceur de cette ville incroyable et de toute la Riviera."
+    },
+    "email": "vesper.h@travel-agency.com",
+    "from": "4",
+    "phone": "07 66 55 44 33",
+    "present": "nice"
+  }
+]

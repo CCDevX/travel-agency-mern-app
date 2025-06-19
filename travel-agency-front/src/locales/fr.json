@@ -348,5 +348,12 @@
     "emailConfirmation": "Une confirmation a été envoyée à votre adresse email.",
     "enjoy": "Bon voyage !",
     "redirect": "Vous allez être redirigé vers la page d'accueil dans quelques secondes..."
+  },
+  "single-advisor": {
+    "back": "← Retour",
+    "agency": "Agence de ",
+    "member": "Membre depuis {{count}} an",
+    "member_plural": "Membre depuis {{count}} ans",
+    "contact": "Contact"
   }
 }

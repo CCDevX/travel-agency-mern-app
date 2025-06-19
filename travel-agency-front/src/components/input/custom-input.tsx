@@ -31,7 +31,7 @@ const CustomInput = ({
         className="w-full rounded-md border border-[color:var(--color-border)] bg-white px-4 py-2 text-[color:var(--color-primary)] placeholder:text-gray-400 shadow-sm transition hover:border-[color:var(--color-secondary-hover)] focus:outline-none focus:ring-2 focus:ring-[color:var(--color-accent)]"
         disabled={disabled}
         required={required}
-        placeholder={placeholder || "Enter value..."}
+        placeholder={placeholder || ""}
       />
     </div>
   );

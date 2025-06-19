@@ -3,11 +3,30 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import type { Advisor } from "@/types/entities/advisor";
 import { useLoaderData, useNavigate } from "react-router-dom";
+import i18n from "@/locales/i18n";
+import { useTranslation } from "react-i18next";
 
 const AdvisorsSinglePage = () => {
   const advisor = useLoaderData() as Advisor;
   const navigate = useNavigate();
-
+  const { t } = useTranslation();
+  const lang = i18n.language.startsWith("fr") ? "fr" : "en";
+  const desc = advisor.desc[lang];
+  const getMembershipText = (count: number, lang: string): string => {
+    const isFrench = lang.startsWith("fr");
+    if (isFrench) {
+      return count === 1
+        ? `Conseiller depuis ${count} an`
+        : `Conseiller depuis ${count} ans`;
+    } else {
+      return count === 1
+        ? `Member for ${count} year`
+        : `Member for ${count} years`;
+    }
+  };
+  const yearCount = isNaN(parseInt(advisor.from, 10))
+    ? 0
+    : parseInt(advisor.from, 10);
   return (
     <section>
       {/* Back button */}
@@ -16,7 +35,7 @@ const AdvisorsSinglePage = () => {
           onClick={() => navigate(-1)}
           className="rounded-full bg-[color:var(--color-primary)] text-white hover:bg-[color:var(--color-primary-hover)]"
         >
-          ← Back
+          {t("single-advisor.back")}
         </Button>
       </div>
 
@@ -38,19 +57,20 @@ const AdvisorsSinglePage = () => {
             {advisor.name}
           </h2>
           <p className="text-sm text-[color:var(--color-muted-text)]">
-            Agency of <span className="capitalize">{advisor.present}</span>
+            {t("single-advisor.agency")}
+            <span className="capitalize">{advisor.present}</span>
           </p>
           <p className="text-sm text-[color:var(--color-muted-text)]">
-            Member for {advisor.from} year(s)
+            {getMembershipText(yearCount, i18n.language)}
           </p>
 
           <p className="mt-6 text-base leading-relaxed text-[color:var(--color-muted-text)]">
-            {advisor.desc}
+            {desc}
           </p>
 
           <div className="mt-6">
             <p className="font-semibold text-[color:var(--color-primary)] mb-1">
-              Contact
+              {t("single-advisor.contact")}
             </p>
             <p className="text-[color:var(--color-muted-text)]">
               {advisor.phone}

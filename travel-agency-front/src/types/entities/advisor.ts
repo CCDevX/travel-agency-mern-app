@@ -5,7 +5,10 @@ export type Advisor = {
   image: string;
   present: string;
   from: string;
-  desc: string;
+  desc: {
+    en: string;
+    fr: string;
+  };
   phone: string;
   email: string;
 };
