@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const { logger } = require("./utils/logger");
 
-const mongoUriAtlas = ``;
+const mongoUriAtlas = process.env.MONGO_URI;
 const mongoUriLocalhost = `mongodb://localhost:27017/hexa-trip`;
 
 let mongoUri = ``;
@@ -15,7 +15,7 @@ const connectToDatabase = async () => {
 
   try {
     await mongoose.connect(mongoUri, {
-      dbName: "hexa-trip",
+      dbName: "travel-agency",
       tls: process.env.NODE_ENV === "production",
     });
     logger.info("Connection with db successful");
