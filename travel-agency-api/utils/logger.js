@@ -1,4 +1,5 @@
 const winston = require("winston");
+const path = require("path");
 
 const logsDir = path.join(__dirname, "logs");
 
