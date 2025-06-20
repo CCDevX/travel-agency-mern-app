@@ -5,7 +5,7 @@ export let apiUrl: string = "";
 if (!process.env.NODE_ENV || process.env.NODE_ENV === "development") {
   apiUrl = "http://localhost:3000";
 } else {
-  apiUrl = "https://travel-agency-mern-app.vercel.app/";
+  apiUrl = "https://travel-agency-mern-app.vercel.app";
 }
 
 const axiosHelper = axios.create({
