@@ -87,9 +87,9 @@ npm install
 # Frontend
 cd ../travel-agency-front
 npm install
-``` 
+
 2. **Create a .env file in travel-agency-api/ with the following variables**:
-``` 
+
 JWT_SECRET_KEY=your_jwt_secret
 STRIPE_PRIVATE_KEY=your_stripe_secret
 CLIENT_URL_LOCAL=http://localhost:5173
