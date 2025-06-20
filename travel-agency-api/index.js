@@ -48,7 +48,10 @@ const limiter = rateLimit({
 app.use(limiter);
 
 // CORS Configuration
-const allowedOrigins = ["https://production-site.com", "http://localhost:5173"];
+const allowedOrigins = [
+  "https://travel-agency-ccdevx.netlify.app/",
+  "http://localhost:5173",
+];
 
 const corsOptions = {
   origin: (origin, callback) => {
