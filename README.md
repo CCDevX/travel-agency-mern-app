@@ -72,7 +72,7 @@ travel-agency-mern-app/
 │ └── tsconfig.*.json # TypeScript configuration files
 ``` 
 ## Local Installation (Quick Start)
-
+``` 
 1. **Clone the project**:
 
 git clone https://github.com/your-username/travel-agency-mern-app.git
@@ -87,7 +87,7 @@ npm install
 # Frontend
 cd ../travel-agency-front
 npm install
-
+``` 
 2. **Create a .env file in travel-agency-api/ with the following variables**:
 ``` 
 JWT_SECRET_KEY=your_jwt_secret
