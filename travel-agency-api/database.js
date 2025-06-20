@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const { logger } = require("./utils/logger");
 
-const mongoUriAtlas = process.env.MONGO_URI;
+const mongoUriAtlas = `mongodb+srv://TravelAgency:${process.env.MONGO_PWD}@cluster0.urovw63.mongodb.net/?retryWrites=true&w=majority&appName=travel-agency`;
 const mongoUriLocalhost = `mongodb://localhost:27017/hexa-trip`;
 
 let mongoUri = ``;
