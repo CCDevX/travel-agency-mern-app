@@ -1,23 +1,24 @@
 const winston = require("winston");
 
-// Create and export a custom logger instance
+const logsDir = path.join(__dirname, "logs");
+
+// Check if the directory exists, if not, create it
+if (!fs.existsSync(logsDir)) {
+  fs.mkdirSync(logsDir);
+}
+
 const logger = winston.createLogger({
   level: process.env.LOG_LEVEL || "info",
-  format: winston.format.json({
-    space: 4,
-  }),
+  format: winston.format.json({ space: 4 }),
   transports: [
+    new winston.transports.File({ filename: path.join(logsDir, "all.log") }),
     new winston.transports.File({
-      filename: "logs/all.log",
-    }),
-    new winston.transports.File({
-      filename: "logs/error.log",
+      filename: path.join(logsDir, "error.log"),
       level: "error",
     }),
   ],
 });
 
-// In non-production environments, also log to the console
 if (process.env.NODE_ENV !== "production") {
   logger.add(
     new winston.transports.Console({
