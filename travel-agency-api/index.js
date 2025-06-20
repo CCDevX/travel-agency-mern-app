@@ -49,7 +49,7 @@ app.use(limiter);
 
 // CORS Configuration
 const allowedOrigins = [
-  "https://travel-agency-ccdevx.netlify.app/",
+  "https://travel-agency-ccdevx.netlify.app",
   "http://localhost:5173",
 ];
 
