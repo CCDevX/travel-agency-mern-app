@@ -42,7 +42,7 @@ A full-stack travel booking platform built with the **MERN stack**, featuring us
 ---
 
 ## Project Structure
-
+```
 travel-agency-mern-app/
 ├── travel-agency-api/ # Backend (Node.js + Express + MongoDB)
 │ ├── api/ # Reusable backend modules (ex: validators)
@@ -70,7 +70,7 @@ travel-agency-mern-app/
 │ ├── index.html # HTML entry point
 │ ├── vite.config.ts # Vite configuration
 │ └── tsconfig.*.json # TypeScript configuration files
-
+``` 
 ## Local Installation (Quick Start)
 
 1. **Clone the project**:
@@ -89,11 +89,11 @@ cd ../travel-agency-front
 npm install
 
 2. **Create a .env file in travel-agency-api/ with the following variables**:
-
+``` 
 JWT_SECRET_KEY=your_jwt_secret
 STRIPE_PRIVATE_KEY=your_stripe_secret
 CLIENT_URL_LOCAL=http://localhost:5173
 CLIENT_URL_PROD=https://your-netlify-url.netlify.app
 MONGO_PWD=your_mongodb_password
-
+``` 
 Make sure to whitelist the frontend URLs in your backend CORS configuration.
