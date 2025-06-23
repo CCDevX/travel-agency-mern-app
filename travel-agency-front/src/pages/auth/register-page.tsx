@@ -15,7 +15,7 @@ const RegisterPage = () => {
 
   return (
     <section className="min-h-screen w-full flex items-center justify-center bg-gradient-to-b from-[var(--color-background)] to-white px-4">
-      <Card className="w-full max-w-sm bg-white shadow-md border border-[var(--color-border)] rounded-xl">
+      <Card className="w-full max-w-sm bg-white shadow-md border border-[var(--color-border)] rounded-xl mx-5">
         <CardHeader className="text-center">
           <h2 className="text-2xl font-bold text-[var(--color-primary)]">
             {t("register.title")}
