@@ -15,7 +15,7 @@ const LoginPage = () => {
 
   return (
     <section className="h-screen w-screen bg-[var(--color-background)] grid place-content-center px-4">
-      <Card className="w-[400px] bg-white shadow-lg border border-[var(--color-border)] rounded-2xl px-6 py-8 mx-5">
+      <Card className="w-full min-w-[325px] bg-white shadow-lg border border-[var(--color-border)] rounded-2xl px-6 py-8">
         <CardHeader className="text-center mb-4">
           <h2 className="text-2xl font-logo text-[var(--color-primary)] font-semibold">
             {t("login.title")}
