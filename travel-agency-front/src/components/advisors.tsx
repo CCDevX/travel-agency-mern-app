@@ -39,6 +39,7 @@ const Advisors = () => {
               <div className="transition-all hover:scale-105">
                 <div className="h-[220px] w-[220px] mx-auto overflow-hidden rounded-full shadow-lg">
                   <img
+                      loading="lazy"
                     crossOrigin="anonymous"
                     src={`${apiUrl}/images/advisers/${advisor._id}/${advisor.image}`}
                     alt={advisor.name}

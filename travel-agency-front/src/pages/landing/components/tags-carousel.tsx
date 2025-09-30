@@ -34,6 +34,7 @@ const TagsCarousel = () => {
                   <Card className="m-4 p-0 w-full max-w-xs rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300">
                     <CardHeader className="p-0 h-[200px]">
                       <img
+                          loading="lazy"
                         src={tag.photo}
                         alt={t(`tagsCarousel.tags.${tag.code}.title`)}
                         className="w-full h-full object-cover"

@@ -16,6 +16,7 @@ const HotlinePage = () => {
               src={hotlineData.src}
               alt="Représentant hotline"
               className="h-full w-full object-cover"
+              loading="lazy"
             />
           </div>
 

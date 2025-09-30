@@ -33,6 +33,7 @@ const TripCard = ({ trip }: { trip: Trip }) => {
         {/* IMAGE */}
         <div className="h-36 w-full overflow-hidden">
           <img
+              loading="lazy"
             src={apiImageUrl}
             alt={tripTitle}
             className="h-full w-full object-cover transition-transform duration-300 hover:scale-105 hover:brightness-105"

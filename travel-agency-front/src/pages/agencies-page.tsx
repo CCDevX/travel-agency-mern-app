@@ -26,6 +26,7 @@ const AgenciesPage = () => {
                 src={`${apiUrl}/images/agencies/${agency._id}/${agency.photo}`}
                 alt={agency.title}
                 className="absolute inset-0 w-full h-full object-cover"
+                loading="lazy"
               />
             </CardHeader>
 

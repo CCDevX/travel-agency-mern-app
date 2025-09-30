@@ -127,6 +127,7 @@ const SingleTrip = () => {
             src={`${apiUrl}/images/trips/${_id}/${images[photoIndex]}`}
             alt="main image"
             className="h-[60vh] w-full object-cover rounded-3xl shadow-xl mb-4"
+            loading="lazy"
           />
 
           <div className="flex flex-wrap justify-between gap-y-2 px-2 py-2">
@@ -141,6 +142,7 @@ const SingleTrip = () => {
                     ? "ring-2 ring-[var(--color-accent)]"
                     : "hover:opacity-80"
                 }`}
+                loading="lazy"
               />
             ))}
           </div>

@@ -12,6 +12,7 @@ const Header = () => {
         <Link to="/" className="flex items-center hover-btn gap-3 mb-4 md:mb-0">
           <div className="w-[72px] h-[72px]">
             <img
+                loading="lazy"
               src={logo}
               alt="Travel Agency logo"
               className="w-full h-full object-contain"

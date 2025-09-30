@@ -53,6 +53,7 @@ const RegionsCarousel = () => {
                     >
                       <div className="flex items-center justify-center overflow-hidden max-h-[70vh] rounded-2xl">
                         <img
+                            loading="lazy"
                           src={region.photo}
                           alt={t("carousel.photoAlt", { name: translatedName })}
                           className="w-full h-[70vh] object-cover"

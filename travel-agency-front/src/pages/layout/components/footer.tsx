@@ -17,6 +17,7 @@ const Footer = () => {
       <div className="align-center pt-6 grid grid-cols-1 lg:grid-cols-5 gap-6 place-items-center">
         <div className="w-[150px] h-[150px]">
           <img
+              loading="lazy"
             src={logo}
             alt="Travel Agency logo"
             className="w-full h-full object-cover"
@@ -30,24 +31,25 @@ const Footer = () => {
         <div className="w-full h-full flex flex-col md:flex-row lg:flex-col justify-between items-start gap-7">
           <div className="flex flex-col items-start">
             <p className="font-semibold">{t("footer.payments.safe")}</p>
-            <img src={icons.stripe} alt="stripe-logo" className="h-[40px]" />
+            <img loading="lazy" src={icons.stripe} alt="stripe-logo" className="h-[40px]" />
           </div>
           <div className="flex flex-col items-start">
             <p className="font-semibold">{t("footer.payments.accepted")}</p>
             <div className="flex justify-start gap-x-4 flex-wrap">
-              <img src={icons.visa} alt="visa-logo" className="h-[40px]" />
-              <img src={icons.master} alt="master-logo" className="h-[40px]" />
+              <img loading="lazy" src={icons.visa} alt="visa-logo" className="h-[40px]" />
+              <img loading="lazy" src={icons.master} alt="master-logo" className="h-[40px]" />
               <img
+                  loading="lazy"
                 src={icons.bitcoin}
                 alt="bitcoin-logo"
                 className="h-[40px]"
               />
-              <img src={icons.amex} alt="amex-logo" className="h-[40px]" />
+              <img loading="lazy" src={icons.amex} alt="amex-logo" className="h-[40px]" />
             </div>
           </div>
           <div className="flex flex-col items-start">
             <p className="font-semibold">{t("footer.payments.partners")}</p>
-            <img src={icons.iata} alt="iata-logo" className="h-[40px]" />
+            <img loading="lazy" src={icons.iata} alt="iata-logo" className="h-[40px]" />
           </div>
         </div>
 

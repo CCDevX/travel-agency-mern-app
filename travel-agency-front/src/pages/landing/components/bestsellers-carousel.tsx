@@ -64,6 +64,7 @@ const BestsellersCarousel = () => {
                   >
                     <div className="flex items-center justify-center overflow-hidden max-h-[70vh] rounded-2xl">
                       <img
+                          loading="lazy"
                         src={`${apiUrl}/images/trips/${trip._id}/${trip.images[0]}`}
                         alt={trip.title[lang]}
                         className="w-full h-[70vh] object-cover rounded-2xl"

@@ -44,6 +44,7 @@ const AdvisorsSinglePage = () => {
         {/* Profile image */}
         <div className="w-[250px] h-[250px] mx-auto rounded-full overflow-hidden shadow-lg">
           <img
+              loading="lazy"
             crossOrigin="anonymous"
             src={`${apiUrl}/images/advisers/${advisor._id}/${advisor.image}`}
             alt={advisor.name}

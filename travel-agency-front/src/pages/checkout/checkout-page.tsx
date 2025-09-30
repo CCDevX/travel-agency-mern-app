@@ -126,6 +126,7 @@ const CheckoutPage = () => {
           <Card className="overflow-hidden rounded-2xl shadow-md p-0">
             <CardHeader className="p-0">
               <img
+                  loading="lazy"
                 src={apiImageUrl}
                 alt={title[lang]}
                 className="w-full h-48 object-cover"

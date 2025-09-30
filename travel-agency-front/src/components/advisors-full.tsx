@@ -42,6 +42,7 @@ const AdvisorsFull = () => {
             <CardHeader className="mt-5 flex align-center justify-center h-[200px] w-[200px] cursor-pointer grayscale hover:grayscale-0 transition duration-300">
               <Link className="h-full w-full" to={`${advisor._id}`}>
                 <img
+                    loading="lazy"
                   crossOrigin="anonymous"
                   className="h-full w-full object-cover rounded-full"
                   src={`${apiUrl}/images/advisers/${advisor._id}/${advisor.image}`}
